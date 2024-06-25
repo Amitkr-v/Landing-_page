@@ -10,7 +10,7 @@ class search1 extends StatefulWidget {
 class _Search1State extends State<search1> {
   TextEditingController _search1Controller = TextEditingController();
   final List<String> jobs = [
-    'Software Engineer',
+    'NS APPS INNOVATION LLP',
     'Data Scientist',
     'Product Manager',
     'Designer',
@@ -187,18 +187,26 @@ class _Search1State extends State<search1> {
 
                                 CompanyModel companyMod = CompanyModel(
                                   id: k,
-                                  cover: 'assets/images/cover.png',
-                                  profile: 'assets/images/ppp.png',
-                                  name: 'B-hub Space',
-                                  details: 'Co-working space',
+                                  profile: 'assets/images/nsapps.png',
+                                  name: 'NS APPS INNOVATION LLP',
                                   address:
                                       'A-block 5th floor Mauryalok complex Patna',
-                                  website: 'https://bhub.org.in',
-                                  email: 'enquiry@bhub.org.in',
+                                  facebook:
+                                      'https://www.facebook.com/nsgamesstudio/',
+                                  instagram:
+                                      'https://www.instagram.com/peepalbaba/',
+                                  linkedin:
+                                      'https://www.linkedin.com/company/ns-apps-innovations/?originalSubdomain=in',
+                                  map:
+                                      'https://www.google.com/maps/place/B-HUB/@25.6102306,85.1351869,19.92z/data=!4m6!3m5!1s0x39ed59346f4e3b4d:0xdaa21a164b9e944f!8m2!3d25.6094616!4d85.1350599!16s%2Fg%2F11kb9s657c?entry=ttu',
+                                  website: 'https://nsappsstudio.com',
+                                  email: 'enquiry@nsapps.in',
                                   phone: '+919128712345',
                                   joined: '26 March,2015',
-                                  aboutCompany:
-                                      'B-Hub is an innovative initiative by the Bihar government aimed at fostering the growth of startups in the region. Located in the heart of Bihar, B-Hub provides budding entrepreneurs with state-of-the-art infrastructure, mentorship, and access to a network of investors and industry experts.',
+                                  totalmem: '10+ member',
+                                  status: 'Active',
+                                  about:
+                                      'NS APPS INNOVATION LLP is an innovative initiative by the Bihar government aimed at fostering the growth of startups in the region. Located in the heart of Bihar, B-Hub provides budding entrepreneurs with state-of-the-art infrastructure, mentorship, and access to a network of investors and industry experts.',
                                 );
 
                                 // Update the search box with the selected job name

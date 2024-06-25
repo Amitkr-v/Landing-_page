@@ -343,35 +343,7 @@ class BottomPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            text: 'Startup Space',
-                            style: TextStyle(
-                              fontSize: 16,
-                              letterSpacing: 0,
-                              color: Color.fromARGB(255, 122, 122, 122),
-                              fontWeight: FontWeight.w600,
-                            ),
-                            children: const <TextSpan>[
-                              TextSpan(
-                                text: '.',
-                                style: TextStyle(
-                                  fontSize: 25,
-                                  letterSpacing: 0,
-                                  fontWeight: FontWeight.w900,
-                                  color: Colors.red,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                    
                   ],
                 ),
                 Row(

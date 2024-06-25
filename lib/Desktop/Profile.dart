@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Profile/Details.dart';
 import 'package:flutter_application_1/Desktop/Profile/newProfile.dart';
 import 'package:flutter_application_1/Mobile/Profile/mprofile.dart';
+import 'package:flutter_application_1/Mobile/Profile/profile.dart';
 import 'package:flutter_application_1/Model/company.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -34,11 +35,11 @@ class DesktopLayout extends StatelessWidget {
 
     return Container(
       width: screenWidth,
-      height: double.infinity, // Allow the container to take full height
+      height: double.infinity,
       child: Column(
         children: [
           Expanded(
-            child: MainProfile1Widget(),
+            child: MainProfile1Widget(companyModel),
           ),
         ],
       ),
@@ -61,8 +62,7 @@ class TabletLayout extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    //page1
-                    MobileprofileWidget(companyModel),
+                    mobileProfile(companyModel),
                   ],
                 ),
               ),
@@ -89,7 +89,7 @@ class Mobilelayout extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    MobileprofileWidget(companyModel),
+                    mobileProfile(companyModel),
                   ],
                 ),
               ),

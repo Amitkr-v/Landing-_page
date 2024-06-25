@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Page1.dart';
+import 'package:flutter_application_1/Desktop/Page1Sections/bodySection.dart';
 import 'package:flutter_application_1/Desktop/Page1Sections/navbar.dart';
 import 'package:flutter_application_1/Desktop/Page1Sections/stest.dart';
 import 'package:flutter_application_1/Desktop/Page2.dart';
 import 'package:flutter_application_1/Desktop/Page3.dart';
+import 'package:flutter_application_1/Desktop/Page3sections/Section1.dart';
 import 'package:flutter_application_1/Desktop/team.dart';
 import 'package:flutter_application_1/Desktop/Page4.dart';
 import 'package:flutter_application_1/Mobile/Page1section/Section1.dart';
@@ -62,17 +64,16 @@ class DesktopLayout extends StatelessWidget {
                 child: Column(
                   children: [
                     //Page1
-                    LandingPage(),
-                    
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
+                      child: BodySection(),
+                    ),
 
                     //page2
-                    Container(
-                      width: screenWidth,
-                      height: screenHeight,
-                      child: Page2Widget(),
-                    ),
+                    Page2Widget(),
+
                     //page3
-                    Page3(),
+                    Section1(),
 
                     // Page3
                     //Container(

@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_application_1/Model/company.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class section1p extends StatelessWidget {
+  final CompanyModel companyModel;
+  section1p(this.companyModel);
+
+  void _launchURL(Uri url) async {
+    if (await canLaunchUrl(url)) {
+      await launchUrl(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
-    
     return Expanded(
       flex: 3,
       child: Container(
@@ -27,11 +40,11 @@ class section1p extends StatelessWidget {
                       width: 140,
                       height: 140,
                       decoration: BoxDecoration(
-                        color: Color(0xFFFFFFFF),
+                        color: Color.fromARGB(255, 85, 90, 251),
                         shape: BoxShape.circle,
                       ),
                       child: Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                        padding: EdgeInsetsDirectional.all(2),
                         child: Container(
                           width: 70,
                           height: 70,
@@ -40,7 +53,7 @@ class section1p extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Image.asset(
-                            'assets/images/com.png',
+                            companyModel.profile,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -52,7 +65,7 @@ class section1p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                           child: Text(
-                            'B-hub Space',
+                            companyModel.name,
                             style: GoogleFonts.poppins(
                               fontSize: 20,
                               letterSpacing: 0,
@@ -65,7 +78,7 @@ class section1p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                           child: Text(
-                            'Mauryalok Complex A-block Patna',
+                            companyModel.address,
                             style: Brown(),
                           ),
                         ),
@@ -77,41 +90,27 @@ class section1p extends StatelessWidget {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                            child: Icon(
-                              Icons.facebook,
-                              color: Colors.black,
-                              size: 24,
-                            ),
+                          IconButton(
+                            icon: Icon(Icons.facebook,
+                                color: Colors.black, size: 24),
+                            onPressed: () => _launchURL(companyModel.facebook),
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                            child: SvgPicture.asset(
-                              'assets/images/instagram.svg',
-                              width: 20,
-                              height: 20,
-                            ),
+                          IconButton(
+                            icon: SvgPicture.asset(
+                                'assets/images/instagram.svg',
+                                width: 20,
+                                height: 20),
+                            onPressed: () => _launchURL(companyModel.instagram),
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                            child: SvgPicture.asset(
-                              'assets/images/linkedin.svg',
-                              width: 20,
-                              height: 20,
-                            ),
+                          IconButton(
+                            icon: SvgPicture.asset('assets/images/linkedin.svg',
+                                width: 20, height: 20),
+                            onPressed: () => _launchURL(companyModel.linkedin),
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                            child: Icon(
-                              Icons.location_on,
-                              color: Colors.black,
-                              size: 24,
-                            ),
+                          IconButton(
+                            icon: Icon(Icons.location_on,
+                                color: Colors.black, size: 24),
+                            onPressed: () => _launchURL(companyModel.map),
                           ),
                         ],
                       ),
@@ -148,7 +147,7 @@ class section1p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Text(
-                            'https://bhub.org.in',
+                            companyModel.website,
                             style: Textstyle(),
                           ),
                         ),
@@ -168,7 +167,7 @@ class section1p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Text(
-                            'bhubspace@gmail.com',
+                            companyModel.email,
                             style: Textstyle(),
                           ),
                         ),
@@ -188,7 +187,7 @@ class section1p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Text(
-                            '+918982738493',
+                            companyModel.phone,
                             style: Textstyle(),
                           ),
                         ),
@@ -208,7 +207,7 @@ class section1p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Text(
-                            '9th july 2021',
+                            companyModel.joined,
                             style: Textstyle(),
                           ),
                         ),
@@ -228,7 +227,7 @@ class section1p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Text(
-                            '20+ members',
+                            companyModel.totalmem,
                             style: Textstyle(),
                           ),
                         ),
@@ -248,7 +247,7 @@ class section1p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                           child: Text(
-                            'Open now',
+                            companyModel.status,
                             style: Textstyle(),
                           ),
                         ),
@@ -285,7 +284,7 @@ class section1p extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
                     child: Text(
-                      'B-Hub is an innovative initiative by the Bihar government aimed at fostering the growth of startups in the region. Located in the heart of Bihar, B-Hub provides budding entrepreneurs with state-of-the-art infrastructure, mentorship, and access to a network of investors and industry experts.',
+                      companyModel.about,
                       style: Textstyleabout(),
                     ),
                   ),
