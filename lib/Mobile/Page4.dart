@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Page4m extends StatelessWidget {
   @override
@@ -37,33 +38,28 @@ class Page4m extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.network(
-                          'https://picsum.photos/seed/371/600',
-                          width: 40,
-                          height: 35,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Text(
-                            'TM',
-                            style: TextStyle(
-                              fontSize: 25,
-                              letterSpacing: 0,
-                              fontWeight: FontWeight.w600,
-                            ),
-                          ),
-                          Text(
-                            '.',
-                            style: TextStyle(
-                              color: Color(0xFFF60B0B),
-                              fontSize: 25,
-                              letterSpacing: 0,
-                              fontWeight: FontWeight.w600,
+                          RichText(
+                            text: TextSpan(
+                              text: 'Startup Space',
+                              style: TextStyle(
+                                fontSize: 20,
+                                letterSpacing: 0,
+                                fontWeight: FontWeight.w900,
+                              ),
+                              children: const <TextSpan>[
+                                TextSpan(
+                                  text: '.',
+                                  style: TextStyle(
+                                    fontSize: 25,
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.w900,
+                                    color: Colors.red,
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         ],
@@ -76,10 +72,10 @@ class Page4m extends StatelessWidget {
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                       child: Text(
-                        'Design at Meta is a window into the unique expertise',
+                        'Startup Space is a dynamic hub fostering innovation and entrepreneurship, providing resources and support for emerging startups to thrive.',
                         style: TextStyle(
                           color: Color(0xFF67788A),
-                          fontSize: 20,
+                          fontSize: 16,
                           letterSpacing: 1,
                         ),
                       ),
@@ -186,47 +182,123 @@ class Page4m extends StatelessWidget {
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Icon(
-                  Icons.facebook,
-                  color: Color.fromARGB(255, 0, 0, 0),
-                  size: 28,
+                GestureDetector(
+                  onTap: () async {
+                    const url =
+                        'https://www.facebook.com/people/B-HUB/100089167454769/';
+                    if (await canLaunch(url)) {
+                      await launch(url);
+                    } else {
+                      throw 'Could not launch $url';
+                    }
+                  },
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.facebook,
+                      color: Colors.black,
+                      size: 24,
+                    ),
+                    onPressed: () {}, // GestureDetector handles the tap action
+                  ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                  child:SvgPicture.asset(
-                    'assets/images/inst.svg',
-                    width:30,
-                    height:25,
-
-                  )
-                ),
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    child: GestureDetector(
+                      onTap: () async {
+                        const url = 'https://www.instagram.com/';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(0),
+                          child: SvgPicture.asset(
+                            'assets/images/instagram.svg',
+                            width: 20,
+                            height: 20,
+                          ),
+                        ),
+                      ),
+                    )),
+                Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    child: GestureDetector(
+                      onTap: () async {
+                        const url =
+                            'https://www.linkedin.com/in/followbhub/?originalSubdomain=in';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(0),
+                          child: SvgPicture.asset(
+                            'assets/images/linkedin.svg',
+                            width: 20,
+                            height: 20,
+                          ),
+                        ),
+                      ),
+                    )),
+                Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    child: GestureDetector(
+                      onTap: () async {
+                        const url =
+                            'https://x.com/i/flow/login?redirect_after_login=%2FFollowBhub';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(0),
+                          child: SvgPicture.asset(
+                            'assets/images/tw.svg',
+                            width: 20,
+                            height: 20,
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                    )),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                  child:SvgPicture.asset(
-                    'assets/images/ln.svg',
-                    width:30,
-                    height:25,
-
-                  )
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                  child:SvgPicture.asset(
-                    'assets/images/tw.svg',
-                    width:30,
-                    height:25,
-
-                  )
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                  child:SvgPicture.asset(
-                    'assets/images/dribbble.svg',
-                    width:30,
-                    height:25,
-
-                  )
+                  child: GestureDetector(
+                    onTap: () async {
+                      const url = 'https://dribbble.com/';
+                      if (await canLaunch(url)) {
+                        await launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(0),
+                        child: SvgPicture.asset(
+                          'assets/images/dribbble.svg',
+                          width: 24,
+                          height: 24,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -307,21 +379,7 @@ class Page4m extends StatelessWidget {
                       Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Text(
-                            'TM',
-                            style: TextStyle(
-                              fontSize: 16,
-                              letterSpacing: 0,
-                            ),
-                          ),
-                          Text(
-                            '.',
-                            style: TextStyle(
-                              color: Color(0xFFF60B0B),
-                              fontSize: 20,
-                              letterSpacing: 0,
-                            ),
-                          ),
+                          
                         ],
                       ),
                     ],

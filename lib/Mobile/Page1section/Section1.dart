@@ -6,119 +6,77 @@ class Bodym extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(20, 10, 20, 0),
-      child: TweenAnimationBuilder<double>(
-        tween: Tween<double>(begin: -100, end: 0),
-        duration: Duration(seconds: 1),
-        builder: (context, value, child) {
-          return Transform.translate(
-            offset: Offset(value, 0),
-            child: Opacity(
-              opacity: (100 + value) / 100,
-              child: child,
+      padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 0),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: MediaQuery.sizeOf(context).width * 0.4,
+            decoration: BoxDecoration(),
+            child: Text(
+              '',
+              style: TextStyle(
+                color: Color(0xFFff5700),
+                letterSpacing: 1,
+                fontWeight: FontWeight.w500,
+                fontSize: 20,
+              ),
             ),
-          );
-        },
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Expanded(
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(8, 20, 8, 0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Container(
-                          width: MediaQuery.sizeOf(context).width * 0.8,
-                          decoration: BoxDecoration(),
-                          child: Text(
-                            'Start Your Journey Toward Success with Us!',
-                            style: TextStyle(
-                              color: Color(0xFFFD7E41),
-                              letterSpacing: 1,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ),
-                      ],
+          ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+            child: Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'Discover and ',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 35,
+                      letterSpacing: 1.5,
+                      fontWeight: FontWeight.w600,
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.6,
-                            decoration: BoxDecoration(),
-                            child: RichText(
-                              text: TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: 'Find your next ',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 30,
-                                      letterSpacing: 1,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: 'career',
-                                    style: TextStyle(
-                                      color: Colors.blue,
-                                      fontSize: 30,
-                                      letterSpacing: 1,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text:
-                                        ' move on the go with our mobile app!',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontSize: 30,
-                                      letterSpacing: 0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                  ),
+                  TextSpan(
+                    text: 'connect ',
+                    style: GoogleFonts.poppins(
+                        color: Color(0xFF5824ff), // Highlight color
+                        fontSize: 35,
+                        letterSpacing: 1.5,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  TextSpan(
+                    text: 'with startups',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 35,
+                      letterSpacing: 1.5,
+                      fontWeight: FontWeight.w600,
                     ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.85,
-                            decoration: BoxDecoration(),
-                            child: Text(
-                              'Unlock Your Potential: Find Your Perfect Fit!',
-                              style: TextStyle(
-                                color: Color(0xFF2E2D2C),
-                                letterSpacing: 1,
-                                fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                  ),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+              child: Text(
+                'Connecting You to Bihars Brightest Startups\n',
+                style: TextStyle(
+                  color: Color(0xFF2E2D2C),
+                  letterSpacing: 1,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

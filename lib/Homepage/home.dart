@@ -10,8 +10,9 @@ import 'package:flutter_application_1/Desktop/team.dart';
 import 'package:flutter_application_1/Desktop/Page4.dart';
 import 'package:flutter_application_1/Mobile/Page1section/Section1.dart';
 import 'package:flutter_application_1/Mobile/Page1section/Section2.dart';
-import 'package:flutter_application_1/Mobile/Page2section/Section1.dart';
-import 'package:flutter_application_1/Mobile/Page3section/Myteam.dart';
+import 'package:flutter_application_1/Mobile/Page2.dart';
+import 'package:flutter_application_1/Mobile/Page3sections/Section1.dart';
+import 'package:flutter_application_1/Mobile/Myteam/Myteam.dart';
 import 'package:flutter_application_1/Mobile/Page4.dart';
 import 'package:flutter_application_1/Mobile/navm.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -109,19 +110,7 @@ class TabletLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFFFD7E41),
-            Color(0xFFFCC232),
-            Color(0xFFFDF6EC),
-            Color(0xFFFFFFFF),
-          ],
-          stops: [0, 0.1, 0.23, 0.615],
-          begin: AlignmentDirectional(-1, -0.98),
-          end: AlignmentDirectional(1, 0.98),
-        ),
-      ),
+      color: Color(0xFFFFFFFF),
       child: Stack(children: [
         Column(
           children: [
@@ -135,19 +124,9 @@ class TabletLayout extends StatelessWidget {
                     Bodym(),
                     Bodym1(),
                     //page2
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(45, 5, 0, 10),
-                          child: search1(),
-                        ),
-                      ],
-                    ),
-                    Section1m(),
+                    Page2m(),
                     //Page3
-
-                    Myteamm(),
+                    Section1m(),
 
                     //page4
                     Page4m(),
@@ -166,19 +145,7 @@ class Mobilelayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color(0xFFFD7E41),
-            Color(0xFFFCC232),
-            Color(0xFFFDF6EC),
-            Color(0xFFFFFFFF),
-          ],
-          stops: [0, 0.1, 0.23, 0.615],
-          begin: AlignmentDirectional(-1, -0.98),
-          end: AlignmentDirectional(1, 0.98),
-        ),
-      ),
+      color: Color(0xFFFFFFFF),
       child: Stack(children: [
         Column(
           children: [
@@ -192,14 +159,9 @@ class Mobilelayout extends StatelessWidget {
                     Bodym(),
                     Bodym1(),
                     //page2
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(30, 5, 0, 10),
-                      child: search1(),
-                    ),
-                    Section1m(),
+                    Page2m(),
                     //Page3
-
-                    Myteamm(),
+                    Section1m(),
 
                     //page4
                     Page4m(),

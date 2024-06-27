@@ -65,7 +65,7 @@ class _BodySectionState extends State<BodySection> {
                               fontWeight: FontWeight.w600),
                         ),
                         TextSpan(
-                          text: 'with startups for innovative services.',
+                          text: 'with startups',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 40,

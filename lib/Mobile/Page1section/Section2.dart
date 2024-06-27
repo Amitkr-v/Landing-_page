@@ -1,102 +1,130 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/Desktop/Page1Sections/stest.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class Bodym1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // First Image: Left to Right
-          TweenAnimationBuilder<double>(
-            tween: Tween<double>(begin: -100, end: 0),
-            duration: Duration(seconds: 1),
-            builder: (context, value, child) {
-              return Transform.translate(
-                offset: Offset(value, 0),
-                child: Opacity(
-                  opacity: (100 + value) / 100,
-                  child: child,
+    return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [search1()],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              children: [
+                Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 10),
+                    child: Text(
+                      '\nUp to',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xFF1b1d51),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    )),
+                TweenAnimationBuilder<int>(
+                  tween: IntTween(begin: 0, end: 150),
+                  duration: Duration(seconds: 2),
+                  builder: (context, value, child) {
+                    return Text(
+                      '$value',
+                      style: GoogleFonts.archivoBlack(
+                        textStyle: TextStyle(
+                          fontSize: 40,
+                          letterSpacing: 0,
+                          fontWeight: FontWeight.w100,
+                          decoration: TextDecoration.none,
+                          color: Color(0xFF1b1d51),
+                        ),
+                      ),
+                    );
+                  },
                 ),
-              );
-            },
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 50, 5, 0),
-              child: Container(
-                width: MediaQuery.sizeOf(context).width * 0.18,
-                decoration: BoxDecoration(),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(0),
-                  child: Image.asset(
-                    'assets/images/Home2.png',
-                    fit: BoxFit.fitHeight,
+                Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                    child: Text(
+                      'Startups',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xFF1b1d51),
+                        fontWeight: FontWeight.w600,
+                      ),
+                    )),
+              ],
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(150, 0, 0, 0),
+              child: Column(
+                children: [
+                  Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 10),
+                      child: Text(
+                        '\nUp to',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color(0xFF1b1d51),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      )),
+                  TweenAnimationBuilder<int>(
+                    tween: IntTween(begin: 0, end: 20),
+                    duration: Duration(seconds: 2),
+                    builder: (context, value, child) {
+                      return Text(
+                        '$value',
+                        style: GoogleFonts.archivoBlack(
+                          textStyle: TextStyle(
+                            fontSize: 40,
+                            letterSpacing: 0,
+                            fontWeight: FontWeight.w100,
+                            decoration: TextDecoration.none,
+                            color: Color(0xFF1b1d51),
+                          ),
+                        ),
+                      );
+                    },
                   ),
-                ),
+                  Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
+                      child: Text(
+                        'Services\n\n',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Color(0xFF1b1d51),
+                          fontWeight: FontWeight.w600,
+                        ),
+                      )),
+                ],
               ),
             ),
-          ),
-          // Second Image: Bottom to Top
-          TweenAnimationBuilder<double>(
-            tween: Tween<double>(begin: 100, end: 0),
-            duration: Duration(seconds: 1),
-            builder: (context, value, child) {
-              return Transform.translate(
-                offset: Offset(0, value),
-                child: Opacity(
-                  opacity: (100 - value) / 100,
-                  child: child,
-                ),
-              );
-            },
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 5, 0),
-              child: Container(
-                width: MediaQuery.sizeOf(context).width * 0.18,
-                decoration: BoxDecoration(),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(0),
-                  child: Image.asset(
-                    'assets/images/Profile2.png',
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
+          ],
+        ),
+        Container(
+          width: MediaQuery.sizeOf(context).width * 0.7,
+          decoration: BoxDecoration(),
+          child: ClipRRect(
+            borderRadius: BorderRadius.zero,
+            child: Lottie.asset(
+              'assets/images/anim1.json',
+              fit: BoxFit.cover,
             ),
           ),
-          // Third Image: Right to Left
-          TweenAnimationBuilder<double>(
-            tween: Tween<double>(begin: 100, end: 0),
-            duration: Duration(seconds: 1),
-            builder: (context, value, child) {
-              return Transform.translate(
-                offset: Offset(-value, 0),
-                child: Opacity(
-                  opacity: (100 - value) / 100,
-                  child: child,
-                ),
-              );
-            },
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 70, 0, 0),
-              child: Container(
-                width: MediaQuery.sizeOf(context).width * 0.18,
-                decoration: BoxDecoration(),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(0),
-                  child: Image.asset(
-                    'assets/images/Home3.png',
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

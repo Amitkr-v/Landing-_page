@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Mobile/Page3section/Myteam.dart';
+import 'package:flutter_application_1/Mobile/Myteam/Myteam.dart';
 
 class Navbar extends StatefulWidget {
   @override
