@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
 
 class Page2Widget extends StatefulWidget {
   const Page2Widget({super.key});
@@ -11,6 +9,8 @@ class Page2Widget extends StatefulWidget {
 }
 
 class _Page2WidgetState extends State<Page2Widget> {
+  final PageController _pageController = PageController(initialPage: 0);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,12 +19,10 @@ class _Page2WidgetState extends State<Page2Widget> {
         Positioned(
           left: -80,
           bottom: 0,
-          // right: 0,
           child: Opacity(
             opacity: 0.2,
             child: Container(
                 height: MediaQuery.of(context).size.height * 0.4,
-                // color: Colors.green,
                 child: ClipRect(
                   child: Image.asset(
                     'assets/images/ltbt.png',
@@ -35,12 +33,10 @@ class _Page2WidgetState extends State<Page2Widget> {
         Positioned(
           right: -80,
           top: 0,
-          // right: 0,
           child: Opacity(
             opacity: 0.6,
             child: Container(
                 height: MediaQuery.of(context).size.height * 0.4,
-                // color: Colors.green,
                 child: ClipRect(
                   child: Image.asset(
                     'assets/images/rtup.png',
@@ -59,19 +55,6 @@ class _Page2WidgetState extends State<Page2Widget> {
             ),
           ),
         ),
-        /* Positioned(
-          top: 20,
-          right: 90,
-          child: Container(
-              height: 180,
-              child: Lottie.asset(
-                'assets/images/announcement.json',
-                repeat: true,
-                width: MediaQuery.of(context).size.width * 0.3,
-                height: MediaQuery.of(context).size.height * 0.3,
-              )),
-        ),*/
-
         Container(
           width: MediaQuery.of(context).size.width,
           child: Column(
@@ -128,59 +111,75 @@ class _Page2WidgetState extends State<Page2Widget> {
               SizedBox(
                 height: 70,
               ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    /* Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(40, 0, 0, 0),
-                      child: Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.chevron_right_sharp,
-                          color: const Color.fromARGB(255, 142, 141, 141),
-                          size: 24,
-                        ),
-                      ),
-                    ),*/
-                    companyItem("NS Apps Innovations",
-                        'assets/images/nsapps.png', "Sofware Company"),
-                    companyItem("Medishala", 'assets/images/logo.png',
-                        "Sofware Company"),
-                    companyItem("College club", 'assets/images/logo.png',
-                        "Sofware Company"),
-                    companyItem(
-                        "Floww", 'assets/images/logo.png', "Sofware Company"),
-                    companyItem(
-                        "Floww", 'assets/images/logo.png', "Sofware Company"),
-                    companyItem("Kridha tutor", 'assets/images/logo.png',
-                        "Sofware Company"),
-
-                    /* Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(40, 0, 40, 0),
-                      child: Container(
-                        width: 50,
-                        height: 50,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.keyboard_arrow_left_outlined,
-                          color: const Color.fromARGB(255, 142, 141, 141),
-                          size: 24,
-                        ),
-                      ),
-                    ),*/
-                  ],
-                ),
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  Container(
+                    height: 300, // Provide a fixed height for the PageView
+                    child: PageView(
+                      controller: _pageController,
+                      physics: NeverScrollableScrollPhysics(),
+                      children: [
+                        buildCompanyPage([
+                          companyItem("NS Apps Innovations", 'assets/images/nsapps.png', "Software Company"),
+                          companyItem("Medishala", 'assets/images/logo.png', "Software Company"),
+                          companyItem("College club", 'assets/images/logo.png', "Software Company"),
+                          companyItem("Floww", 'assets/images/logo.png', "Software Company"),
+                          companyItem("Kridha tutor", 'assets/images/logo.png', "Software Company"),
+                        ]),
+                        buildCompanyPage([
+                          companyItem("NS Apps Innovations", 'assets/images/nsapps.png', "Software Company"),
+                          companyItem("Medishala", 'assets/images/logo.png', "Software Company"),
+                          companyItem("College club", 'assets/images/logo.png', "Software Company"),
+                          companyItem("Floww", 'assets/images/logo.png', "Software Company"),
+                          companyItem("Kridha tutor", 'assets/images/logo.png', "Software Company"),
+                        ]),
+                        buildCompanyPage([
+                          companyItem("NS Apps Innovations", 'assets/images/nsapps.png', "Software Company"),
+                          companyItem("Medishala", 'assets/images/logo.png', "Software Company"),
+                          companyItem("College club", 'assets/images/logo.png', "Software Company"),
+                          companyItem("Floww", 'assets/images/logo.png', "Software Company"),
+                          companyItem("Kridha tutor", 'assets/images/logo.png', "Software Company"),
+                        ]),
+                        buildCompanyPage([
+                          companyItem("NS Apps Innovations", 'assets/images/nsapps.png', "Software Company"),
+                          companyItem("Medishala", 'assets/images/logo.png', "Software Company"),
+                          companyItem("College club", 'assets/images/logo.png', "Software Company"),
+                          companyItem("Floww", 'assets/images/logo.png', "Software Company"),
+                          companyItem("Kridha tutor", 'assets/images/logo.png', "Software Company"),
+                        ]),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    left: 10,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                      onPressed: () {
+                        if (_pageController.page! > 0) {
+                          _pageController.previousPage(
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        }
+                      },
+                    ),
+                  ),
+                  Positioned(
+                    right: 10,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
+                      onPressed: () {
+                        if (_pageController.page! < 4) { // Update the maximum page index accordingly
+                          _pageController.nextPage(
+                            duration: Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        }
+                      },
+                    ),
+                  ),
+                ],
               ),
               SizedBox(
                 height: 160,
@@ -192,12 +191,19 @@ class _Page2WidgetState extends State<Page2Widget> {
     );
   }
 
+  Widget buildCompanyPage(List<Widget> items) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: items,
+    );
+  }
+
   Column companyItem(String name, String image, String about) {
     return Column(
       mainAxisSize: MainAxisSize.max,
       children: [
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(40, 40, 40, 40),
+          padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 40),
           child: Container(
             width: 120,
             height: 120,
