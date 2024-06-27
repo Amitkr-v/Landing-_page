@@ -3,13 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BottomPage extends StatelessWidget {
- void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
-  }
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -104,69 +97,123 @@ class BottomPage extends StatelessWidget {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              Icon(
-                                Icons.facebook,
-                                color: Colors.black,
-                                size: 24,
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                                child: Container(
-                                  decoration: BoxDecoration(),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
-                                    child: SvgPicture.asset(
-                                      'assets/images/instagram.svg',
-                                      width: 20,
-                                      height: 20,
-                                    ),
+                              GestureDetector(
+                                onTap: () async {
+                                  const url =
+                                      'https://www.facebook.com/people/B-HUB/100089167454769/';
+                                  if (await canLaunch(url)) {
+                                    await launch(url);
+                                  } else {
+                                    throw 'Could not launch $url';
+                                  }
+                                },
+                                child: IconButton(
+                                  icon: Icon(
+                                    Icons.facebook,
+                                    color: Colors.black,
+                                    size: 24,
                                   ),
+                                  onPressed:
+                                      () {}, // GestureDetector handles the tap action
                                 ),
                               ),
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                                child: Container(
-                                  decoration: BoxDecoration(),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
-                                    child: SvgPicture.asset(
-                                      'assets/images/linkedin.svg',
-                                      width: 20,
-                                      height: 20,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 0, 0, 0),
+                                  child: GestureDetector(
+                                    onTap: () async {
+                                      const url =
+                                          'https://www.instagram.com/';
+                                      if (await canLaunch(url)) {
+                                        await launch(url);
+                                      } else {
+                                        throw 'Could not launch $url';
+                                      }
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(0),
+                                        child: SvgPicture.asset(
+                                          'assets/images/instagram.svg',
+                                          width: 20,
+                                          height: 20,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              ),
+                                  )),
+                              Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 0, 0, 0),
+                                  child: GestureDetector(
+                                    onTap: () async {
+                                      const url =
+                                          'https://www.linkedin.com/in/followbhub/?originalSubdomain=in';
+                                      if (await canLaunch(url)) {
+                                        await launch(url);
+                                      } else {
+                                        throw 'Could not launch $url';
+                                      }
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(0),
+                                        child: SvgPicture.asset(
+                                          'assets/images/linkedin.svg',
+                                          width: 20,
+                                          height: 20,
+                                        ),
+                                      ),
+                                    ),
+                                  )),
+                              Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 0, 0, 0),
+                                  child: GestureDetector(
+                                    onTap: () async {
+                                      const url = 'https://x.com/i/flow/login?redirect_after_login=%2FFollowBhub';
+                                      if (await canLaunch(url)) {
+                                        await launch(url);
+                                      } else {
+                                        throw 'Could not launch $url';
+                                      }
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(0),
+                                        child: SvgPicture.asset(
+                                          'assets/images/tw.svg',
+                                          width: 20,
+                                          height: 20,
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                    ),
+                                  )),
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                                child: Container(
-                                  decoration: BoxDecoration(),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
-                                    child: SvgPicture.asset(
-                                      'assets/images/tw.svg',
-                                      width: 20,
-                                      height: 20,
-                                      fit: BoxFit.contain,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                                child: Container(
-                                  decoration: BoxDecoration(),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(0),
-                                    child: SvgPicture.asset(
-                                      'assets/images/dribbble.svg',
-                                      width: 24,
-                                      height: 24,
-                                      fit: BoxFit.contain,
+                                child: GestureDetector(
+                                  onTap: () async {
+                                    const url = 'https://dribbble.com/';
+                                    if (await canLaunch(url)) {
+                                      await launch(url);
+                                    } else {
+                                      throw 'Could not launch $url';
+                                    }
+                                  },
+                                  child: Container(
+                                    decoration: BoxDecoration(),
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(0),
+                                      child: SvgPicture.asset(
+                                        'assets/images/dribbble.svg',
+                                        width: 24,
+                                        height: 24,
+                                        fit: BoxFit.contain,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -351,7 +398,6 @@ class BottomPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    
                   ],
                 ),
                 Row(
