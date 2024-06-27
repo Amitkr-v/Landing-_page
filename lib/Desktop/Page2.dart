@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Desktop/Profile.dart';
+import 'package:flutter_application_1/Model/company.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Page2Widget extends StatefulWidget {
@@ -121,32 +123,52 @@ class _Page2WidgetState extends State<Page2Widget> {
                       physics: NeverScrollableScrollPhysics(),
                       children: [
                         buildCompanyPage([
-                          companyItem("NS Apps Innovations", 'assets/images/nsapps.png', "Software Company"),
-                          companyItem("Medishala", 'assets/images/logo.png', "Software Company"),
-                          companyItem("College club", 'assets/images/logo.png', "Software Company"),
-                          companyItem("Floww", 'assets/images/logo.png', "Software Company"),
-                          companyItem("Kridha tutor", 'assets/images/logo.png', "Software Company"),
+                          companyItem("NS Apps Innovations",
+                              'assets/images/nsapps.png', "Software Company"),
+                          companyItem("Medishala", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("College club", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("Floww", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("Kridha tutor", 'assets/images/logo.png',
+                              "Software Company"),
                         ]),
                         buildCompanyPage([
-                          companyItem("NS Apps Innovations", 'assets/images/nsapps.png', "Software Company"),
-                          companyItem("Medishala", 'assets/images/logo.png', "Software Company"),
-                          companyItem("College club", 'assets/images/logo.png', "Software Company"),
-                          companyItem("Floww", 'assets/images/logo.png', "Software Company"),
-                          companyItem("Kridha tutor", 'assets/images/logo.png', "Software Company"),
+                          companyItem("NS Apps Innovations",
+                              'assets/images/nsapps.png', "Software Company"),
+                          companyItem("Medishala", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("College club", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("Floww", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("Kridha tutor", 'assets/images/logo.png',
+                              "Software Company"),
                         ]),
                         buildCompanyPage([
-                          companyItem("NS Apps Innovations", 'assets/images/nsapps.png', "Software Company"),
-                          companyItem("Medishala", 'assets/images/logo.png', "Software Company"),
-                          companyItem("College club", 'assets/images/logo.png', "Software Company"),
-                          companyItem("Floww", 'assets/images/logo.png', "Software Company"),
-                          companyItem("Kridha tutor", 'assets/images/logo.png', "Software Company"),
+                          companyItem("NS Apps Innovations",
+                              'assets/images/nsapps.png', "Software Company"),
+                          companyItem("Medishala", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("College club", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("Floww", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("Kridha tutor", 'assets/images/logo.png',
+                              "Software Company"),
                         ]),
                         buildCompanyPage([
-                          companyItem("NS Apps Innovations", 'assets/images/nsapps.png', "Software Company"),
-                          companyItem("Medishala", 'assets/images/logo.png', "Software Company"),
-                          companyItem("College club", 'assets/images/logo.png', "Software Company"),
-                          companyItem("Floww", 'assets/images/logo.png', "Software Company"),
-                          companyItem("Kridha tutor", 'assets/images/logo.png', "Software Company"),
+                          companyItem("NS Apps Innovations",
+                              'assets/images/nsapps.png', "Software Company"),
+                          companyItem("Medishala", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("College club", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("Floww", 'assets/images/logo.png',
+                              "Software Company"),
+                          companyItem("Kridha tutor", 'assets/images/logo.png',
+                              "Software Company"),
                         ]),
                       ],
                     ),
@@ -170,7 +192,8 @@ class _Page2WidgetState extends State<Page2Widget> {
                     child: IconButton(
                       icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
                       onPressed: () {
-                        if (_pageController.page! < 4) { // Update the maximum page index accordingly
+                        if (_pageController.page! < 4) {
+                          // Update the maximum page index accordingly
                           _pageController.nextPage(
                             duration: Duration(milliseconds: 300),
                             curve: Curves.easeInOut,
@@ -198,58 +221,85 @@ class _Page2WidgetState extends State<Page2Widget> {
     );
   }
 
-  Column companyItem(String name, String image, String about) {
-    return Column(
-      mainAxisSize: MainAxisSize.max,
-      children: [
-        Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 40),
-          child: Container(
-            width: 120,
-            height: 120,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: Border.all(
-                color: Color(0xFFFFD8D8),
-                width: 4,
+  GestureDetector companyItem(String name, String image, String about) {
+    CompanyModel companyMod = CompanyModel(
+      id: 'NS apps innovations',
+      profile: 'assets/images/nsapps.png',
+      name: 'NS APPS INNOVATION LLP',
+      address: 'A-block 5th floor Mauryalok complex Patna',
+      facebook: 'https://www.facebook.com/nsgamesstudio/',
+      instagram: 'https://www.instagram.com/peepalbaba/',
+      linkedin:
+          'https://www.linkedin.com/company/ns-apps-innovations/?originalSubdomain=in',
+      map:
+          'https://www.google.com/maps/place/B-HUB/@25.6102306,85.1351869,19.92z/data=!4m6!3m5!1s0x39ed59346f4e3b4d:0xdaa21a164b9e944f!8m2!3d25.6094616!4d85.1350599!16s%2Fg%2F11kb9s657c?entry=ttu',
+      website: 'https://nsappsstudio.com',
+      email: 'enquiry@nsapps.in',
+      phone: '+919128712345',
+      joined: '26 March,2015',
+      totalmem: '10+ member',
+      status: 'Active',
+      about:
+          'NS APPS INNOVATION LLP is an innovative initiative by the Bihar government aimed at fostering the growth of startups in the region. Located in the heart of Bihar, B-Hub provides budding entrepreneurs with state-of-the-art infrastructure, mentorship, and access to a network of investors and industry experts.',
+    );
+
+    return GestureDetector(
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(builder: (((context) => Profile(companyMod)))),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.max,
+        children: [
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 40),
+            child: Container(
+              width: 120,
+              height: 120,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Color(0xFFFFD8D8),
+                  width: 4,
+                ),
+              ),
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Container(
+                  width: 180,
+                  height: 180,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                  ),
+                  child: Image.asset(
+                    image,
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
             ),
-            child: Padding(
-              padding: EdgeInsets.all(10),
-              child: Container(
-                width: 180,
-                height: 180,
-                clipBehavior: Clip.antiAlias,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.cover,
-                ),
-              ),
+          ),
+          Text(
+            name,
+            style: GoogleFonts.poppins(
+              color: Color(0xFFF8F8F8),
+              fontSize: 20,
+              letterSpacing: 0,
+              fontWeight: FontWeight.w400,
             ),
           ),
-        ),
-        Text(
-          name,
-          style: GoogleFonts.poppins(
-            color: Color(0xFFF8F8F8),
-            fontSize: 20,
-            letterSpacing: 0,
-            fontWeight: FontWeight.w400,
+          Text(
+            about,
+            style: GoogleFonts.poppins(
+              color: Color.fromARGB(255, 225, 225, 225),
+              fontSize: 16,
+              letterSpacing: 0,
+              fontWeight: FontWeight.w400,
+            ),
           ),
-        ),
-        Text(
-          about,
-          style: GoogleFonts.poppins(
-            color: Color.fromARGB(255, 225, 225, 225),
-            fontSize: 16,
-            letterSpacing: 0,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
