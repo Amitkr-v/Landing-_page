@@ -119,7 +119,7 @@ class BottomPage extends StatelessWidget {
                               ),
                               Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 0, 0, 0),
+                                      10, 0, 0, 0),
                                   child: GestureDetector(
                                     onTap: () async {
                                       const url =

@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Desktop/Page1Sections/stest.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
@@ -118,8 +119,8 @@ class Bodym1 extends StatelessWidget {
           decoration: BoxDecoration(),
           child: ClipRRect(
             borderRadius: BorderRadius.zero,
-            child: Lottie.asset(
-              'assets/images/anim1.json',
+            child: Image.asset(
+              'assets/images/asset1.png',
               fit: BoxFit.cover,
             ),
           ),

@@ -120,7 +120,7 @@ class section2p extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(15, 20, 15, 20),
+          padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 20),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -186,7 +186,7 @@ class section2p extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                      width: MediaQuery.sizeOf(context).width * 0.20,
+                      width: MediaQuery.sizeOf(context).width * 0.18,
                       height: MediaQuery.sizeOf(context).height * 0.31,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -212,7 +212,7 @@ class section2p extends StatelessWidget {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                               child: Container(
-                                width: MediaQuery.sizeOf(context).width * 0.1,
+                                width: MediaQuery.sizeOf(context).width * 0.11,
                                 height:
                                     MediaQuery.sizeOf(context).height * 0.15,
                                 decoration: BoxDecoration(
@@ -234,7 +234,7 @@ class section2p extends StatelessWidget {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                               child: Container(
-                                width: MediaQuery.sizeOf(context).width * 0.1,
+                                width: MediaQuery.sizeOf(context).width * 0.11,
                                 height:
                                     MediaQuery.sizeOf(context).height * 0.15,
                                 decoration: BoxDecoration(
@@ -263,7 +263,7 @@ class section2p extends StatelessWidget {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 0.1,
+                                  width: MediaQuery.sizeOf(context).width * 0.11,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.15,
                                   decoration: BoxDecoration(
@@ -285,7 +285,7 @@ class section2p extends StatelessWidget {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 0.1,
+                                  width: MediaQuery.sizeOf(context).width * 0.11,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.15,
                                   decoration: BoxDecoration(

@@ -66,52 +66,32 @@ class Section1m extends StatelessWidget {
             ],
           ),
         ),
-        Stack(
-          children: [
-            Align(
-              alignment: AlignmentDirectional(0, -2.41),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 110, 0, 0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 200,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFFFFCEF),
-                  ),
+        Container(
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ImageTextWidget1(
+                  "Explore & Discover",
+                  "Connect with Bihar's brightest startups based on various criteria and search options.",
+                  'assets/images/Explore.png',
                 ),
-              ),
-            ),
-            Container(
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ImageTextWidget1(
-                        "Explore & Discover",
-                        "Connect with Bihar's brightest startups based on various criteria and search options.",
-                        'assets/images/Explore.png',
-                      ),
-                      ImageTextWidget1(
-                        "Connect with Startup",
-                        "Initiate connections with startups to explore opportunities and collaborations.",
-                        'assets/images/startup.png',
-                      ),
-                      ImageTextWidget1(
-                        "Engage Service",
-                        "Actively participate and utilize startup services to support Bihar's entrepreneurial growth.",
-                        'assets/images/Engage.png',
-                      ),
-                    ],
-                  ),
+                ImageTextWidget1(
+                  "Connect with Startup",
+                  "Initiate connections with startups to explore opportunities and collaborations.",
+                  'assets/images/startup.png',
                 ),
-              ),
+                ImageTextWidget1(
+                  "Engage Service",
+                  "Actively participate and utilize startup services to support Bihar's entrepreneurial growth.",
+                  'assets/images/Engage.png',
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ],
     );

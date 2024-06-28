@@ -4,7 +4,7 @@ import 'package:flutter_application_1/Model/company.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Page2m extends StatefulWidget {
-  const Page2m({super.key});
+  const Page2m({Key? key}) : super(key: key);
 
   @override
   State<Page2m> createState() => _Page2mWidgetState();
@@ -12,188 +12,218 @@ class Page2m extends StatefulWidget {
 
 class _Page2mWidgetState extends State<Page2m> {
   final PageController _pageController = PageController(initialPage: 0);
+  int _currentPage = 0;
+  int _totalPages = 4;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Color(0xFF704FE6),
-      child: Stack(children: <Widget>[
-        Positioned(
-          left: 0,
-          bottom: 0,
-          child: Opacity(
-            opacity: 0.2,
-            child: Container(
+      child: Stack(
+        children: <Widget>[
+          Positioned(
+            left: 0,
+            bottom: 0,
+            child: Opacity(
+              opacity: 0.2,
+              child: Container(
                 height: MediaQuery.of(context).size.height * 0.11,
                 child: ClipRect(
                   child: Image.asset(
                     'assets/images/ltbt.png',
                   ),
-                )),
+                ),
+              ),
+            ),
           ),
-        ),
-        Positioned(
-          right: 0,
-          top: 0,
-          child: Opacity(
-            opacity: 0.6,
-            child: Container(
+          Positioned(
+            right: 0,
+            top: 0,
+            child: Opacity(
+              opacity: 0.6,
+              child: Container(
                 height: MediaQuery.of(context).size.height * 0.2,
                 child: ClipRect(
                   child: Image.asset(
                     'assets/images/rtup.png',
                   ),
-                )),
-          ),
-        ),
-        Positioned(
-          top: 0,
-          left: 5,
-          child: Container(
-            height: 180,
-            child: Image.asset(
-              'assets/images/bulb.png',
-              fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
-        ),
-        Container(
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              SizedBox(
-                height: 50,
+          Positioned(
+            top: 0,
+            left: 5,
+            child: Container(
+              height: 180,
+              child: Image.asset(
+                'assets/images/bulb.png',
+                fit: BoxFit.cover,
               ),
-              Container(
-                width: MediaQuery.of(context).size.width * 0.85,
-                child: const Align(
-                  alignment: Alignment.center,
-                  child: Text.rich(
-                    textAlign: TextAlign.center,
-                    TextSpan(
-                      children: [
-                        TextSpan(
-                          text: 'Our aim is to empower ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontStyle: FontStyle.italic,
-                            fontSize: 25,
-                            letterSpacing: 1.5,
-                            fontWeight: FontWeight.w400,
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SizedBox(
+                  height: 50,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.85,
+                  child: const Align(
+                    alignment: Alignment.center,
+                    child: Text.rich(
+                      textAlign: TextAlign.center,
+                      TextSpan(
+                        children: [
+                          TextSpan(
+                            text: 'Our aim is to empower  ',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontStyle: FontStyle.italic,
+                              fontSize: 25,
+                              letterSpacing: 1.5,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text: 'Bihar\'s Startups ',
-                          style: TextStyle(
-                            fontFamily: 'AmsterdamOne',
-                            fontStyle: FontStyle.italic,
-                            fontSize: 25,
-                            color: Color.fromARGB(255, 255, 225, 0),
-                            fontWeight: FontWeight.w700,
+                          TextSpan(
+                            text: 'Bihar\'s Startups  ',
+                            style: TextStyle(
+                              fontFamily: 'AmsterdamOne',
+                              fontStyle: FontStyle.italic,
+                              fontSize: 25,
+                              color: Color.fromARGB(255, 255, 225, 0),
+                              fontWeight: FontWeight.w700,
+                            ),
                           ),
-                        ),
-                        TextSpan(
-                          text:
-                              'with a seamless platform for innovation and engagement.',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontStyle: FontStyle.italic,
-                            letterSpacing: 1.5,
-                            fontWeight: FontWeight.w400,
+                          TextSpan(
+                            text:
+                                'with a seamless platform for innovation and engagement.',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontStyle: FontStyle.italic,
+                              letterSpacing: 1.5,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(
-                height: 70,
-              ),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    height: 300, // Provide a fixed height for the PageView
-                    child: PageView(
-                      controller: _pageController,
-                      children: [
-                        buildCompanyPage([
-                          companyItem("NS Apps Innovations",
-                              'assets/images/nsapps.png', "Software Company"),
-                          companyItem("Medishala", 'assets/images/logo.png',
-                              "Software Company"),
-                          companyItem("College club", 'assets/images/logo.png',
-                              "Software Company"),
-                        ]),
-                        buildCompanyPage([
-                          companyItem("Floww", 'assets/images/logo.png',
-                              "Software Company"),
-                          companyItem("Kridha tutor", 'assets/images/logo.png',
-                              "Software Company"),
-                          companyItem("NS Apps Innovations",
-                              'assets/images/nsapps.png', "Software Company"),
-                        ]),
-                        buildCompanyPage([
-                          companyItem("Medishala", 'assets/images/logo.png',
-                              "Software Company"),
-                          companyItem("College club", 'assets/images/logo.png',
-                              "Software Company"),
-                          companyItem("Floww", 'assets/images/logo.png',
-                              "Software Company"),
-                        ]),
-                        buildCompanyPage([
-                          companyItem("NS Apps Innovations",
-                              'assets/images/nsapps.png', "Software Company"),
-                          companyItem("Medishala", 'assets/images/logo.png',
-                              "Software Company"),
-                          companyItem("Kridha tutor", 'assets/images/logo.png',
-                              "Software Company"),
-                        ]),
-                      ],
+                SizedBox(
+                  height: 70,
+                ),
+                Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      height: 300, // Provide a fixed height for the PageView
+                      child: PageView(
+                        controller: _pageController,
+                        onPageChanged: (index) {
+                          setState(() {
+                            _currentPage = index;
+                          });
+                        },
+                        children: [
+                          buildCompanyPage([
+                            companyItem("NS Apps Innovations",
+                                'assets/images/nsapps.png', "Software Company"),
+                            companyItem("Medishala", 'assets/images/logo.png',
+                                "Software Company"),
+                            companyItem("College club", 'assets/images/logo.png',
+                                "Software Company"),
+                          ]),
+                          buildCompanyPage([
+                            companyItem("Floww", 'assets/images/logo.png',
+                                "Software Company"),
+                            companyItem("Kridha tutor", 'assets/images/logo.png',
+                                "Software Company"),
+                            companyItem("NS Apps Innovations",
+                                'assets/images/nsapps.png', "Software Company"),
+                          ]),
+                          buildCompanyPage([
+                            companyItem("Medishala", 'assets/images/logo.png',
+                                "Software Company"),
+                            companyItem("College club", 'assets/images/logo.png',
+                                "Software Company"),
+                            companyItem("Floww", 'assets/images/logo.png',
+                                "Software Company"),
+                          ]),
+                          buildCompanyPage([
+                            companyItem("NS Apps Innovations",
+                                'assets/images/nsapps.png', "Software Company"),
+                            companyItem("Medishala", 'assets/images/logo.png',
+                                "Software Company"),
+                            companyItem("Kridha tutor", 'assets/images/logo.png',
+                                "Software Company"),
+                          ]),
+                        ],
+                      ),
                     ),
-                  ),
-                  /*Positioned(
-                    left: 10,
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back_ios, color: Colors.white),
-                      onPressed: () {
-                        if (_pageController.page! > 0) {
-                          _pageController.previousPage(
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.easeInOut,
-                          );
-                        }
-                      },
+                    /*Positioned(
+                      left: 10,
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                        onPressed: () {
+                          if (_currentPage > 0) {
+                            _pageController.previousPage(
+                              duration: Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                        },
+                      ),
+                    ),*/
+                    /*Positioned(
+                      right: 10,
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
+                        onPressed: () {
+                          if (_currentPage < _totalPages - 1) {
+                            _pageController.nextPage(
+                              duration: Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                        },
+                      ),
+                    ),*/
+                    Positioned(
+                      bottom: 10,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          _totalPages,
+                          (index) => Container(
+                            margin: EdgeInsets.symmetric(horizontal: 4),
+                            width: 8,
+                            height: 8,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: _currentPage == index
+                                  ? Colors.white
+                                  : Colors.white54,
+                            ),
+                          ),
+                        ),
+                      ),
                     ),
-                  ),*/
-                  Positioned(
-                    right: 10,
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
-                      onPressed: () {
-                        if (_pageController.page! < 4) {
-                          // Update the maximum page index accordingly
-                          _pageController.nextPage(
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.easeInOut,
-                          );
-                        }
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 160,
-              ),
-            ],
+                  ],
+                ),
+                SizedBox(
+                  height: 160,
+                ),
+              ],
+            ),
           ),
-        ),
-      ]),
+        ],
+      ),
     );
   }
 

@@ -12,6 +12,8 @@ class Page2Widget extends StatefulWidget {
 
 class _Page2WidgetState extends State<Page2Widget> {
   final PageController _pageController = PageController(initialPage: 0);
+  int _currentPage = 0;
+  int _totalPages = 4;
 
   @override
   Widget build(BuildContext context) {
@@ -120,6 +122,11 @@ class _Page2WidgetState extends State<Page2Widget> {
                     height: 300, // Provide a fixed height for the PageView
                     child: PageView(
                       controller: _pageController,
+                        onPageChanged: (index) {
+                          setState(() {
+                            _currentPage = index;
+                          });
+                        },
                       physics: NeverScrollableScrollPhysics(),
                       children: [
                         buildCompanyPage([
@@ -174,34 +181,53 @@ class _Page2WidgetState extends State<Page2Widget> {
                     ),
                   ),
                   Positioned(
-                    left: 10,
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back_ios, color: Colors.white),
-                      onPressed: () {
-                        if (_pageController.page! > 0) {
-                          _pageController.previousPage(
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.easeInOut,
-                          );
-                        }
-                      },
+                      left: 10,
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_back_ios, color: Colors.white),
+                        onPressed: () {
+                          if (_currentPage > 0) {
+                            _pageController.previousPage(
+                              duration: Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                        },
+                      ),
                     ),
-                  ),
                   Positioned(
-                    right: 10,
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
-                      onPressed: () {
-                        if (_pageController.page! < 4) {
-                          // Update the maximum page index accordingly
-                          _pageController.nextPage(
-                            duration: Duration(milliseconds: 300),
-                            curve: Curves.easeInOut,
-                          );
-                        }
-                      },
+                      right: 10,
+                      child: IconButton(
+                        icon: Icon(Icons.arrow_forward_ios, color: Colors.white),
+                        onPressed: () {
+                          if (_currentPage < _totalPages - 1) {
+                            _pageController.nextPage(
+                              duration: Duration(milliseconds: 300),
+                              curve: Curves.easeInOut,
+                            );
+                          }
+                        },
+                      ),
                     ),
-                  ),
+                  Positioned(
+                      bottom: 10,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          _totalPages,
+                          (index) => Container(
+                            margin: EdgeInsets.symmetric(horizontal: 4),
+                            width: 8,
+                            height: 8,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: _currentPage == index
+                                  ? Colors.white
+                                  : Colors.white54,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                 ],
               ),
               SizedBox(

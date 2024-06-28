@@ -185,14 +185,13 @@ class _BodySectionState extends State<BodySection> {
                           builder: (context, value, child) {
                             return Text(
                               '$value',
-                              style: GoogleFonts.archivoBlack(
-                                textStyle: TextStyle(
-                                  fontSize: 60,
-                                  letterSpacing: 0,
-                                  fontWeight: FontWeight.w100,
-                                  decoration: TextDecoration.none,
-                                  color: Color(0xFF1b1d51),
-                                ),
+                              style: TextStyle(
+                                fontFamily: 'ArchivoBlack',
+                                fontSize: 60,
+                                letterSpacing: 0,
+                                fontWeight: FontWeight.w100,
+                                decoration: TextDecoration.none,
+                                color: Color(0xFF1b1d51),
                               ),
                             );
                           },
@@ -231,14 +230,13 @@ class _BodySectionState extends State<BodySection> {
                             builder: (context, value, child) {
                               return Text(
                                 '$value',
-                                style: GoogleFonts.archivoBlack(
-                                  textStyle: TextStyle(
-                                    fontSize: 60,
-                                    letterSpacing: 0,
-                                    fontWeight: FontWeight.w100,
-                                    decoration: TextDecoration.none,
-                                    color: Color(0xFF1b1d51),
-                                  ),
+                                style: TextStyle(
+                                  fontFamily: 'ArchivoBlack',
+                                  fontSize: 60,
+                                  letterSpacing: 0,
+                                  fontWeight: FontWeight.w100,
+                                  decoration: TextDecoration.none,
+                                  color: Color(0xFF1b1d51),
                                 ),
                               );
                             },
@@ -318,7 +316,6 @@ class _BodySectionState extends State<BodySection> {
                     fit: BoxFit.contain,
                   ),
                 ),
-                
                 Text(
                   'Thank you for choosing us!',
                   style: TextStyle(

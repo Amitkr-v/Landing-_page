@@ -138,6 +138,7 @@ class section1p extends StatelessWidget {
                     padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Icon(
                           Icons.ads_click_sharp,
@@ -146,9 +147,12 @@ class section1p extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                          child: Text(
-                            companyModel.website,
-                            style: Textstyle(),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.11,
+                            child: Text(
+                              companyModel.website,
+                              style: Textstyle(),
+                            ),
                           ),
                         ),
                       ],
@@ -166,9 +170,12 @@ class section1p extends StatelessWidget {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                          child: Text(
-                            companyModel.email,
-                            style: Textstyle(),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width * 0.11,
+                            child: Text(
+                              companyModel.email,
+                              style: Textstyle(),
+                            ),
                           ),
                         ),
                       ],

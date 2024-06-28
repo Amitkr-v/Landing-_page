@@ -29,7 +29,7 @@ class Page4m extends StatelessWidget {
               ),
             ),
             Container(
-              width: MediaQuery.sizeOf(context).width * 0.4,
+              width: MediaQuery.sizeOf(context).width * 0.9,
               decoration: BoxDecoration(),
               child: Column(
                 mainAxisSize: MainAxisSize.max,
@@ -67,7 +67,7 @@ class Page4m extends StatelessWidget {
                     ],
                   ),
                   Container(
-                    width: MediaQuery.sizeOf(context).width * 0.5,
+                    width: MediaQuery.sizeOf(context).width * 1,
                     decoration: BoxDecoration(),
                     child: Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
@@ -204,7 +204,7 @@ class Page4m extends StatelessWidget {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                     child: GestureDetector(
                       onTap: () async {
                         const url = 'https://www.instagram.com/';
