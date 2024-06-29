@@ -28,21 +28,29 @@ class Profile extends StatelessWidget {
 class DesktopLayout extends StatelessWidget {
   final CompanyModel companyModel;
   DesktopLayout(this.companyModel);
-
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
       width: screenWidth,
-      height: double.infinity,
-      child: Column(
-        children: [
-          Expanded(
-            child: MainProfile1Widget(companyModel),
-          ),
-        ],
-      ),
+      height: screenWidth,
+      child: Stack(children: [
+        Column(
+          children: [
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    MainProfile1Widget(companyModel),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ]),
     );
   }
 }

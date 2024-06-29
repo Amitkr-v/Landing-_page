@@ -76,21 +76,21 @@ class Section1 extends StatelessWidget {
                         child: ImageTextWidget(
                             "Explore & Discover",
                             "Connect with Bihar's brightest startups based on various criteria and search options.",
-                            'assets/images/Explore.png'),
+                            'assets/images/exp.png'),
                       ),
                       Flexible(
                         flex: 1,
                         child: ImageTextWidget(
                             "Connect with Startup",
                             "Initiate connections with startups to explore opportunities and collaborations.",
-                            'assets/images/startup.png'),
+                            'assets/images/star.png'),
                       ),
                       Flexible(
                         flex: 1,
                         child: ImageTextWidget(
                             "Engage Service",
                             "Actively participate and utilize startup services to support Bihar's entrepreneurial growth.",
-                            'assets/images/Engage.png'),
+                            'assets/images/eng.png'),
                       ),
                     ],
                   ),

@@ -21,10 +21,11 @@ class ImageTextWidget extends StatelessWidget {
             width: 200,
             height: 170,
             decoration: BoxDecoration(
+              color: Color.fromARGB(255, 240, 240, 240),
               boxShadow: [
                 BoxShadow(
                   blurRadius: 8,
-                  color: Color(0x33000000),
+                  color: Color.fromARGB(51, 137, 136, 136),
                   offset: Offset(
                     0,
                     2,
@@ -33,75 +34,36 @@ class ImageTextWidget extends StatelessWidget {
               ],
               borderRadius: BorderRadius.circular(5),
             ),
-            child: TweenAnimationBuilder<double>(
-              tween: Tween<double>(begin: -100, end: 0),
-              duration: Duration(seconds: 1),
-              builder: (context, value, child) {
-                return Transform.translate(
-                  offset: Offset(value, 0),
-                  child: Opacity(
-                    opacity: (100 + value) / 100,
-                    child: child,
-                  ),
-                );
-              },
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.cover,
-                ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                image,
+                fit: BoxFit.cover,
               ),
             ),
           ),
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
-            child: TweenAnimationBuilder<double>(
-              tween: Tween<double>(begin: -100, end: 0),
-              duration: Duration(seconds: 1),
-              builder: (context, value, child) {
-                return Transform.translate(
-                  offset: Offset(value, 0),
-                  child: Opacity(
-                    opacity: (100 + value) / 100,
-                    child: child,
-                  ),
-                );
-              },
-              child: Text(
-                t1,
-                style: TextStyle(
-                  fontSize: 20,
-                  letterSpacing: 2,
-                  fontWeight: FontWeight.bold,
-                ),
+            child: Text(
+              t1,
+              style: TextStyle(
+                fontSize: 20,
+                letterSpacing: 2,
+                fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          TweenAnimationBuilder<double>(
-            tween: Tween<double>(begin: -100, end: 0),
-            duration: Duration(seconds: 1),
-            builder: (context, value, child) {
-              return Transform.translate(
-                offset: Offset(value, 0),
-                child: Opacity(
-                  opacity: (100 + value) / 100,
-                  child: child,
-                ),
-              );
-            },
-            child: Container(
-              width: MediaQuery.sizeOf(context).height * 0.4,
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                child: Text(
-                  textAlign: TextAlign.center,
-                  t2,
-                  style: TextStyle(
-                    fontSize: 18,
-                    letterSpacing: 1,
-                    fontWeight: FontWeight.w500,
-                  ),
+          Container(
+            width: MediaQuery.sizeOf(context).height * 0.4,
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+              child: Text(
+                textAlign: TextAlign.center,
+                t2,
+                style: TextStyle(
+                  fontSize: 18,
+                  letterSpacing: 1,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),

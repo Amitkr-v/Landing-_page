@@ -37,11 +37,11 @@ class mobileSection1p extends StatelessWidget {
                   width: 150,
                   height: 150,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 88, 93, 251),
+                    color: Color.fromARGB(50, 198, 197, 197),
                     shape: BoxShape.circle,
                   ),
                   child: Padding(
-                    padding: EdgeInsetsDirectional.all(2),
+                    padding: EdgeInsetsDirectional.all(4),
                     child: Container(
                       clipBehavior: Clip.antiAlias,
                       decoration: BoxDecoration(
@@ -112,7 +112,7 @@ class mobileSection1p extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.80,
+                  width: MediaQuery.of(context).size.width * 0.85,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(

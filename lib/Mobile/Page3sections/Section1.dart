@@ -7,60 +7,47 @@ class Section1m extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(35, 10, 10, 25),
+          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 25),
           child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
-                child: TweenAnimationBuilder<double>(
-                  tween: Tween<double>(begin: -100, end: 0),
-                  duration: Duration(seconds: 1),
-                  builder: (context, value, child) {
-                    return Transform.translate(
-                      offset: Offset(value, 0),
-                      child: Opacity(
-                        opacity: (100 + value) / 100,
-                        child: child,
+                child: Text.rich(
+                  TextSpan(children: [
+                    TextSpan(
+                      text: '\nExplore, ',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        letterSpacing: 2,
+                        fontWeight: FontWeight.w600,
                       ),
-                    );
-                  },
-                  child: Text.rich(
-                    TextSpan(children: [
-                      TextSpan(
-                        text: '\nExplore, ',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 25,
-                          letterSpacing: 2,
-                          fontWeight: FontWeight.w600,
-                        ),
+                    ),
+                    TextSpan(
+                      text: 'Connect, ',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'AmsterdamOne',
+                        letterSpacing: 2,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xFF704FE6),
                       ),
-                      TextSpan(
-                        text: 'Connect, ',
-                        style: TextStyle(
-                          fontSize: 25,
-                          fontFamily: 'AmsterdamOne',
-                          letterSpacing: 2,
-                          fontWeight: FontWeight.w600,
-                          color: Color(0xFF704FE6),
-                        ),
+                    ),
+                    TextSpan(
+                      text: 'Engage: Unveiling the Journey!\n',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 25,
+                        letterSpacing: 2,
+                        fontWeight: FontWeight.w600,
                       ),
-                      TextSpan(
-                        text: 'Engage: Unveiling the Journey!\n',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 25,
-                          letterSpacing: 2,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      )
-                    ]),
-                  ),
+                    )
+                  ]),
                 ),
               ),
             ],
@@ -68,26 +55,26 @@ class Section1m extends StatelessWidget {
         ),
         Container(
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(10,0,10, 0),
             child: Column(
-              mainAxisSize: MainAxisSize.max,
+              mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ImageTextWidget1(
                   "Explore & Discover",
                   "Connect with Bihar's brightest startups based on various criteria and search options.",
-                  'assets/images/Explore.png',
+                  'assets/images/exp.png',
                 ),
                 ImageTextWidget1(
                   "Connect with Startup",
                   "Initiate connections with startups to explore opportunities and collaborations.",
-                  'assets/images/startup.png',
+                  'assets/images/star.png',
                 ),
                 ImageTextWidget1(
                   "Engage Service",
                   "Actively participate and utilize startup services to support Bihar's entrepreneurial growth.",
-                  'assets/images/Engage.png',
+                  'assets/images/eng.png',
                 ),
               ],
             ),

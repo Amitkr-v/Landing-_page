@@ -10,7 +10,7 @@ class section3p extends StatelessWidget {
       flex: 4,
       child: Container(
         color: Colors.white,
-        child: SingleChildScrollView(
+        //child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.start,
@@ -36,7 +36,7 @@ class section3p extends StatelessWidget {
             ],
           ),
         ),
-      ),
+      //),
     );
   }
 

@@ -10,17 +10,18 @@ class ImageTextWidget1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0),
+      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
       child: Row(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             width: 150,
-            height: 180,
+            height: 140,
             decoration: BoxDecoration(
-              boxShadow: [],
+              color: Color.fromARGB(255, 240, 240, 240),
+              
               borderRadius: BorderRadius.circular(5),
             ),
             child: ClipRRect(
@@ -34,9 +35,9 @@ class ImageTextWidget1 extends StatelessWidget {
           Column(
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(24, 0, 0, 0),
                 child: Container(
-                  width: MediaQuery.of(context).size.height * 0.3,
+                  width: MediaQuery.of(context).size.height * 0.28,
                   child: Text(
                     t1,
                     style: TextStyle(
@@ -48,9 +49,9 @@ class ImageTextWidget1 extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(24, 10, 0, 0),
                 child: Container(
-                  width: MediaQuery.of(context).size.height * 0.3,
+                  width: MediaQuery.of(context).size.height * 0.28,
                   child: Text(
                     t2,
                     style: TextStyle(

@@ -6,26 +6,29 @@ import 'package:flutter_application_1/Model/company.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MainProfile1Widget extends StatelessWidget {
-   final CompanyModel companyModel;
+  final CompanyModel companyModel;
   MainProfile1Widget(this.companyModel);
-  
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
-      child: Expanded(
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+      child: SingleChildScrollView(
+        child: Column(
           children: [
-            section1p(companyModel),
-            section2p(),
-            section3p(),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                section1p(companyModel),
+                section2p(),
+                section3p(),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
-

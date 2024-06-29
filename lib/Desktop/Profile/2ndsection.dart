@@ -12,7 +12,7 @@ class section2p extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
-          child: SingleChildScrollView(
+          //child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -107,7 +107,7 @@ class section2p extends StatelessWidget {
             ),
           ),
         ),
-      ),
+     // ),
     );
   }
 
@@ -185,7 +185,17 @@ class section2p extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    Container(
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FullScreenImage(
+                                imagePath: 'assets/images/pic1.png'),
+                          ),
+                        );
+                      },
+                    child:Container(
                       width: MediaQuery.sizeOf(context).width * 0.18,
                       height: MediaQuery.sizeOf(context).height * 0.31,
                       decoration: BoxDecoration(
@@ -201,6 +211,7 @@ class section2p extends StatelessWidget {
                           fit: BoxFit.cover,
                         ),
                       ),
+                    ),
                     ),
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -430,5 +441,23 @@ class section2p extends StatelessWidget {
         fontSize: 12,
         decoration: TextDecoration.none,
         fontWeight: FontWeight.w400);
+  }
+}
+class FullScreenImage extends StatelessWidget {
+  final String imagePath;
+
+  FullScreenImage({required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        iconTheme: IconThemeData(color: Colors.white),
+      ),
+      body: Center(
+        child: Image.asset(imagePath),
+      ),
+    );
   }
 }
