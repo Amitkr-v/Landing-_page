@@ -664,7 +664,7 @@ class section2p extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 5),
                           child: Container(
                             width: MediaQuery.sizeOf(context).width * 0.2,
                             height: MediaQuery.sizeOf(context).height * 0.15,
