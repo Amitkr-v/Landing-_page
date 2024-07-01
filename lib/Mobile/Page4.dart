@@ -184,8 +184,13 @@ class Page4m extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                GestureDetector(
-                  onTap: () async {
+                IconButton(
+                  icon: Icon(
+                    Icons.facebook,
+                    color: Colors.black,
+                    size: 24,
+                  ),
+                  onPressed: () async {
                     const url =
                         'https://www.facebook.com/people/B-HUB/100089167454769/';
                     if (await canLaunch(url)) {
@@ -194,14 +199,6 @@ class Page4m extends StatelessWidget {
                       throw 'Could not launch $url';
                     }
                   },
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.facebook,
-                      color: Colors.black,
-                      size: 24,
-                    ),
-                    onPressed: () {}, // GestureDetector handles the tap action
-                  ),
                 ),
                 Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
@@ -378,9 +375,7 @@ class Page4m extends StatelessWidget {
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
-                        children: [
-                          
-                        ],
+                        children: [],
                       ),
                     ],
                   ),

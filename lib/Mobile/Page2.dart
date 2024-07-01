@@ -133,36 +133,52 @@ class _Page2mWidgetState extends State<Page2m> {
                         },
                         children: [
                           buildCompanyPage([
-                            companyItem("NS Apps Innovations",
-                                'assets/images/nsapps.png', "Software Company"),
-                            companyItem("Medishala", 'assets/images/logo.png',
-                                "Software Company"),
+                            companyItem(
+                                name: "NS Apps Innovations",
+                                image: 'assets/images/nsapps.png',
+                                about: "Software Company"),
+                            companyItem(
+                                name: "Medishala",
+                                image: 'assets/images/logo.png',
+                                about: "Software Company"),
                             //companyItem("College club",
-                              //  'assets/images/logo.png', "Software Company"),
+                            //  'assets/images/logo.png', "Software Company"),
                           ]),
                           buildCompanyPage([
-                            companyItem("Floww", 'assets/images/logo.png',
-                                "Software Company"),
-                            companyItem("Kridha tutor",
-                                'assets/images/logo.png', "Software Company"),
+                            companyItem(
+                                name: "Floww",
+                                image: 'assets/images/logo.png',
+                                about: "Software Company"),
+                            companyItem(
+                                name: "Kridha tutor",
+                                image: 'assets/images/logo.png',
+                                about: "Software Company"),
                             //companyItem("NS Apps Innovations",
-                              //  'assets/images/nsapps.png', "Software Company"),
+                            //  'assets/images/nsapps.png', "Software Company"),
                           ]),
                           buildCompanyPage([
-                            companyItem("Medishala", 'assets/images/logo.png',
-                                "Software Company"),
-                            companyItem("College club",
-                                'assets/images/logo.png', "Software Company"),
-                           // companyItem("Floww", 'assets/images/logo.png',
-                              //  "Software Company"),
+                            companyItem(
+                                name: "Medishala",
+                                image: 'assets/images/logo.png',
+                                about: "Software Company"),
+                            companyItem(
+                                name: "College club",
+                                image: 'assets/images/logo.png',
+                                about: "Software Company"),
+                            // companyItem("Floww", 'assets/images/logo.png',
+                            //  "Software Company"),
                           ]),
                           buildCompanyPage([
-                            companyItem("NS Apps Innovations",
-                                'assets/images/nsapps.png', "Software Company"),
-                            companyItem("Medishala", 'assets/images/logo.png',
-                                "Software Company"),
+                            companyItem(
+                                name: "NS Apps Innovations",
+                                image: 'assets/images/nsapps.png',
+                                about: "Software Company"),
+                            companyItem(
+                                name: "Medishala",
+                                image: 'assets/images/logo.png',
+                                about: "Software Company"),
                             //companyItem("Kridha tutor",
-                              //  'assets/images/logo.png', "Software Company"),
+                            //  'assets/images/logo.png', "Software Company"),
                           ]),
                         ],
                       ),
@@ -234,8 +250,30 @@ class _Page2mWidgetState extends State<Page2m> {
       children: items,
     );
   }
+}
 
-  GestureDetector companyItem(String name, String image, String about) {
+class companyItem extends StatefulWidget {
+  final String name;
+  final String image;
+  final String about;
+
+  companyItem({required this.name, required this.image, required this.about});
+
+  @override
+  _CompanyItemState createState() => _CompanyItemState();
+}
+
+class _CompanyItemState extends State<companyItem> {
+  bool _isHovered = false;
+
+  void _onHover(bool isHovered) {
+    setState(() {
+      _isHovered = isHovered;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     CompanyModel companyMod = CompanyModel(
       id: 'NS apps innovations',
       profile: 'assets/images/nsapps.png',
@@ -270,35 +308,59 @@ class _Page2mWidgetState extends State<Page2m> {
           children: [
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 40),
-              child: Container(
-                width: 100,
-                height: 100,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Color(0xFFFFD8D8),
-                    width: 4,
+              child: MouseRegion(
+                onEnter: (_) => _onHover(true),
+                onExit: (_) => _onHover(false),
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  width: 100,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _isHovered
+                        ? Color.fromARGB(100, 195, 180, 252)
+                        : Color.fromARGB(0, 255, 255, 255),
+                    boxShadow: _isHovered
+                        ? [
+                            BoxShadow(
+                              color: Colors.black26,
+                              blurRadius: 10,
+                              offset: Offset(0, 10),
+                            ),
+                          ]
+                        : [],
                   ),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.all(10),
                   child: Container(
-                    width: 95,
-                    height: 95,
-                    clipBehavior: Clip.antiAlias,
+                    width: 100,
+                    height: 100,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
+                      border: Border.all(
+                        color: Color(0xFFFFD8D8),
+                        width: 4,
+                      ),
                     ),
-                    child: Image.asset(
-                      image,
-                      fit: BoxFit.cover,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Container(
+                        width: 95,
+                        height: 95,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: Image.asset(
+                          widget.image,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
             ),
             Text(
-              name,
+              widget.name,
               style: GoogleFonts.poppins(
                 color: Color(0xFFF8F8F8),
                 fontSize: 16,
@@ -307,7 +369,7 @@ class _Page2mWidgetState extends State<Page2m> {
               ),
             ),
             Text(
-              about,
+              widget.about,
               style: GoogleFonts.poppins(
                 color: Color.fromARGB(255, 225, 225, 225),
                 fontSize: 14,

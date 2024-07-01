@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_application_1/Model/company.dart';
@@ -209,7 +210,7 @@ class mobileSection1p extends StatelessWidget {
                 ),
               ]),
           Padding(
-            padding: EdgeInsetsDirectional.only(top:10),
+            padding: EdgeInsetsDirectional.only(top: 10),
             child: Text(
               'About company',
               style: Textstylel(),
@@ -236,6 +237,7 @@ class mobileSection1p extends StatelessWidget {
   }
 
   void _showContactDialog(BuildContext context) {
+    final url = companyModel.website;
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -252,6 +254,19 @@ class mobileSection1p extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Contact us',
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: Row(
@@ -264,9 +279,19 @@ class mobileSection1p extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                        child: Text(
-                          companyModel.website,
-                          style: Textstyle(),
+                        child: GestureDetector(
+                          onTap: () async {
+                            const url = 'https://www.instagram.com/';
+                            if (await canLaunch(url)) {
+                              await launch(url);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                          child: Text(
+                            companyModel.website,
+                            style: Textstyle(),
+                          ),
                         ),
                       ),
                     ],

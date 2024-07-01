@@ -13,105 +13,127 @@ class section2p extends StatelessWidget {
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
           //child: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Company Team',
-                        style: Styleb(),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 30),
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    width: 50,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      border: Border.all(
-                                        color: Color(0xFF969595),
-                                      ),
-                                    ),
-                                    child: Icon(
-                                      Icons.add,
-                                      color: Colors.black,
-                                      size: 20,
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Company Team',
+                      style: Styleb(),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 30),
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 50,
+                                  height: 50,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Color(0xFF969595),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0, 15, 0, 0),
-                                    child: Text(
-                                      'Add Member',
-                                      style: TextMember(),
-                                    ),
+                                  child: Icon(
+                                    Icons.add,
+                                    color: Colors.black,
+                                    size: 20,
                                   ),
-                                ],
-                              ),
-                              Member(),
-                              Member(),
-                              Member(),
-                              Member(),
-                              Member(),
-                            ],
-                          ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 15, 0, 0),
+                                  child: Text(
+                                    'Add Member',
+                                    style: TextMember(),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Member(),
+                            Member(),
+                            Member(),
+                            Member(),
+                            Member(),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 40, 0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Show case',
-                            style: Styleb(),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 40, 0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Show case',
+                          style: Styleb(),
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Feed(context),
-                      Feed(context),
-                    ],
-                  ),
+                        ),
+                      ],
+                    ),
+                    Feed(
+                        context,
+                        'assets/images/pic1.png',
+                        'assets/images/pic2.png',
+                        'assets/images/pic3.png',
+                        'assets/images/pic3.png',
+                        'assets/images/pic2.png'),
+                    Feed2(
+                        context,
+                        'assets/images/pic1.png',
+                        'assets/images/pic2.png',
+                        'assets/images/pic3.png',
+                        'assets/images/pic3.png'),
+                    Feed3(context, 'assets/images/pic1.png',
+                        'assets/images/pic2.png', 'assets/images/pic3.png'),
+                    Feed4(context, 'assets/images/pic1.png',
+                        'assets/images/pic2.png'),
+                    Feed5(context, 'assets/images/pic1.png'),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
+          //),
         ),
-     // ),
+      ),
     );
   }
 
-  Padding Feed(BuildContext context) {
+  Padding Feed(
+      BuildContext context,
+      String showCase1image,
+      String showCase1image2,
+      String showCase1image3,
+      String showCase1image4,
+      String showCase1image5) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
       child: Container(
@@ -185,17 +207,7 @@ class section2p extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => FullScreenImage(
-                                imagePath: 'assets/images/pic1.png'),
-                          ),
-                        );
-                      },
-                    child:Container(
+                    Container(
                       width: MediaQuery.sizeOf(context).width * 0.18,
                       height: MediaQuery.sizeOf(context).height * 0.31,
                       decoration: BoxDecoration(
@@ -205,13 +217,12 @@ class section2p extends StatelessWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
-                          'assets/images/pic1.png',
+                          showCase1image,
                           width: 300,
                           height: 200,
                           fit: BoxFit.cover,
                         ),
                       ),
-                    ),
                     ),
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -233,7 +244,7 @@ class section2p extends StatelessWidget {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
                                   child: Image.asset(
-                                    'assets/images/pic2.png',
+                                    showCase1image2,
                                     width: 300,
                                     height: 200,
                                     fit: BoxFit.cover,
@@ -255,7 +266,7 @@ class section2p extends StatelessWidget {
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
                                   child: Image.asset(
-                                    'assets/images/pic3.png',
+                                    showCase1image3,
                                     width: 300,
                                     height: 200,
                                     fit: BoxFit.cover,
@@ -274,7 +285,8 @@ class section2p extends StatelessWidget {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 0.11,
+                                  width:
+                                      MediaQuery.sizeOf(context).width * 0.11,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.15,
                                   decoration: BoxDecoration(
@@ -284,7 +296,7 @@ class section2p extends StatelessWidget {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8),
                                     child: Image.asset(
-                                      'assets/images/pic2.png',
+                                      showCase1image4,
                                       width: 300,
                                       height: 200,
                                       fit: BoxFit.cover,
@@ -296,7 +308,8 @@ class section2p extends StatelessWidget {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
-                                  width: MediaQuery.sizeOf(context).width * 0.11,
+                                  width:
+                                      MediaQuery.sizeOf(context).width * 0.11,
                                   height:
                                       MediaQuery.sizeOf(context).height * 0.15,
                                   decoration: BoxDecoration(
@@ -306,7 +319,7 @@ class section2p extends StatelessWidget {
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8),
                                     child: Image.asset(
-                                      'assets/images/pic3.png',
+                                      showCase1image5,
                                       width: 300,
                                       height: 200,
                                       fit: BoxFit.cover,
@@ -318,6 +331,658 @@ class section2p extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Icon(
+                      Icons.visibility,
+                      color: Color(0xFF969595),
+                      size: 24,
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      child: Text(
+                        'views',
+                        style: GoogleFonts.poppins(
+                          letterSpacing: 0,
+                          fontSize: 14,
+                          decoration: TextDecoration.none,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Padding Feed2(
+    BuildContext context,
+    String showCase1image,
+    String showCase1image2,
+    String showCase1image3,
+    String showCase1image4,
+  ) {
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: 48,
+                          height: 48,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Container(
+                            width: 120,
+                            height: 120,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/profile1.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Ankit vatsal',
+                                style: TextMember(),
+                              ),
+                              Text(
+                                'Human resources',
+                                style: Brown(),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Icon(
+                    Icons.keyboard_control,
+                    color: Colors.black,
+                    size: 24,
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      width: MediaQuery.sizeOf(context).width * 0.15,
+                      height: MediaQuery.sizeOf(context).height * 0.31,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          showCase1image,
+                          width: 300,
+                          height: 200,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(start: 5),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 0.15,
+                        height: MediaQuery.sizeOf(context).height * 0.31,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            showCase1image,
+                            width: 300,
+                            height: 200,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 5),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 0.10,
+                            height: MediaQuery.sizeOf(context).height * 0.15,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showCase1image2,
+                                width: 300,
+                                height: 200,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 0.10,
+                            height: MediaQuery.sizeOf(context).height * 0.15,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showCase1image3,
+                                width: 300,
+                                height: 200,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Icon(
+                      Icons.visibility,
+                      color: Color(0xFF969595),
+                      size: 24,
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      child: Text(
+                        'views',
+                        style: GoogleFonts.poppins(
+                          letterSpacing: 0,
+                          fontSize: 14,
+                          decoration: TextDecoration.none,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Padding Feed3(
+    BuildContext context,
+    String showCase1image,
+    String showCase1image2,
+    String showCase1image3,
+  ) {
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: 48,
+                          height: 48,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Container(
+                            width: 120,
+                            height: 120,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/profile1.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Ankit vatsal',
+                                style: TextMember(),
+                              ),
+                              Text(
+                                'Human resources',
+                                style: Brown(),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Icon(
+                    Icons.keyboard_control,
+                    color: Colors.black,
+                    size: 24,
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      width: MediaQuery.sizeOf(context).width * 0.2,
+                      height: MediaQuery.sizeOf(context).height * 0.31,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          showCase1image,
+                          width: 300,
+                          height: 200,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 0.2,
+                            height: MediaQuery.sizeOf(context).height * 0.15,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showCase1image2,
+                                width: 300,
+                                height: 200,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 0.2,
+                            height: MediaQuery.sizeOf(context).height * 0.15,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showCase1image3,
+                                width: 300,
+                                height: 200,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Icon(
+                      Icons.visibility,
+                      color: Color(0xFF969595),
+                      size: 24,
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      child: Text(
+                        'views',
+                        style: GoogleFonts.poppins(
+                          letterSpacing: 0,
+                          fontSize: 14,
+                          decoration: TextDecoration.none,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Padding Feed4(
+    BuildContext context,
+    String showCase1image,
+    String showCase1image2,
+  ) {
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: 48,
+                          height: 48,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Container(
+                            width: 120,
+                            height: 120,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/profile1.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Ankit vatsal',
+                                style: TextMember(),
+                              ),
+                              Text(
+                                'Human resources',
+                                style: Brown(),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Icon(
+                    Icons.keyboard_control,
+                    color: Colors.black,
+                    size: 24,
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      width: MediaQuery.sizeOf(context).width * 0.2,
+                      height: MediaQuery.sizeOf(context).height * 0.31,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          showCase1image,
+                          width: 300,
+                          height: 200,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.only(start: 5),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 0.2,
+                        height: MediaQuery.sizeOf(context).height * 0.31,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            showCase1image,
+                            width: 300,
+                            height: 200,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Icon(
+                      Icons.visibility,
+                      color: Color(0xFF969595),
+                      size: 24,
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                      child: Text(
+                        'views',
+                        style: GoogleFonts.poppins(
+                          letterSpacing: 0,
+                          fontSize: 14,
+                          decoration: TextDecoration.none,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Padding Feed5(
+    BuildContext context,
+    String showCase1image,
+  ) {
+    return Padding(
+      padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 20),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Container(
+                          width: 48,
+                          height: 48,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Container(
+                            width: 120,
+                            height: 120,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/profile1.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Ankit vatsal',
+                                style: TextMember(),
+                              ),
+                              Text(
+                                'Human resources',
+                                style: Brown(),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Icon(
+                    Icons.keyboard_control,
+                    color: Colors.black,
+                    size: 24,
+                  ),
+                ],
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Container(
+                      width: MediaQuery.sizeOf(context).width * 0.4,
+                      height: MediaQuery.sizeOf(context).height * 0.31,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          showCase1image,
+                          width: 300,
+                          height: 200,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -443,6 +1108,7 @@ class section2p extends StatelessWidget {
         fontWeight: FontWeight.w400);
   }
 }
+
 class FullScreenImage extends StatelessWidget {
   final String imagePath;
 
