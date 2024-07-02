@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:full_screen_image/full_screen_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_application_1/Model/company.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -48,9 +49,19 @@ class mobileSection1p extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                       ),
-                      child: Image.asset(
-                        companyModel.profile,
-                        fit: BoxFit.cover,
+                      child: FullScreenWidget(
+                        disposeLevel: DisposeLevel.Low,
+                        child: Center(
+                          child: Hero(
+                            tag: "smallImage1",
+                            child: ClipRRect(
+                              child: Image.asset(
+                                companyModel.profile,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ),

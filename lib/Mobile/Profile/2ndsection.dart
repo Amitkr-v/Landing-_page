@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:full_screen_image/full_screen_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class mobileSection2p extends StatelessWidget {
@@ -97,13 +98,42 @@ class mobileSection2p extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Feed(context),
-                  Feed1(context),
-                  Feed3(context),
-                  Feed4(context),
-                  Feed5(
-                    context,
-                  )
+                  Feed(
+                      context,
+                      'Ankit',
+                      'Manager',
+                      'assets/images/profile1.png',
+                      'assets/images/pic1.jpg',
+                      'assets/images/pic2.png',
+                      'assets/images/pic3.png',
+                      'assets/images/pic3.png',
+                      'assets/images/pic1.jpg'),
+                  Feed1(
+                      context,
+                      'Ankush',
+                      'Manager',
+                      'assets/images/profilep2.png',
+                      'assets/images/pic1.jpg',
+                      'assets/images/pic1.png'),
+                  Feed3(
+                      context,
+                      'Muskan',
+                      'Manager',
+                      'assets/images/profilep3.png',
+                      'assets/images/pic1.jpg',
+                      'assets/images/pic3.png',
+                      'assets/images/pic2.png'),
+                  Feed4(
+                      context,
+                      'Ankit',
+                      'Manager',
+                      'assets/images/profilep2.png',
+                      'assets/images/pic1.jpg',
+                      'assets/images/pic2.png',
+                      'assets/images/pic3.png',
+                      'assets/images/pic1.png'),
+                  Feed5(context, 'Ankit', 'Manager',
+                      'assets/images/profilep2.png', 'assets/images/pic1.jpg'),
                 ],
               ),
             ),
@@ -113,7 +143,16 @@ class mobileSection2p extends StatelessWidget {
     );
   }
 
-  Padding Feed(BuildContext context) {
+  Padding Feed(
+      BuildContext context,
+      String showcasename,
+      String showcaseabout,
+      String showcaseprofile,
+      String Showcase1image,
+      String Showcase1image2,
+      String Showcase1image3,
+      String Showcase1image4,
+      String Showcase1image5) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
       child: Container(
@@ -143,17 +182,25 @@ class mobileSection2p extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Container(
-                            width: 120,
-                            height: 120,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                              width: 120,
+                              height: 120,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Hero(
+                                  tag: "Profile_$showcasename",
+                                  child: ClipRRect(
+                                    child: Image.asset(
+                                      showcaseprofile,
+                                      
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              )),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
@@ -162,11 +209,11 @@ class mobileSection2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit Vatsal',
+                                showcasename,
                                 style: textMember(),
                               ),
                               Text(
-                                'Human Resources',
+                                showcaseabout,
                                 style: brown(),
                               ),
                             ],
@@ -188,22 +235,25 @@ class mobileSection2p extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                      width: MediaQuery.sizeOf(context).width * 0.36,
-                      height: MediaQuery.sizeOf(context).height * 0.31,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/images/pic1.png',
-                          width: 300,
-                          height: 200,
-                          fit: BoxFit.cover,
+                        width: MediaQuery.sizeOf(context).width * 0.36,
+                        height: MediaQuery.sizeOf(context).height * 0.31,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                      ),
-                    ),
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: Hero(
+                            tag: "Image_1_$showcasename",
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                Showcase1image,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        )),
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -214,45 +264,53 @@ class mobileSection2p extends StatelessWidget {
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                               child: Container(
-                                width: MediaQuery.sizeOf(context).width * 0.22,
-                                height:
-                                    MediaQuery.sizeOf(context).height * 0.15,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
-                                  child: Image.asset(
-                                    'assets/images/pic2.png',
-                                    width: 300,
-                                    height: 200,
-                                    fit: BoxFit.cover,
+                                  width:
+                                      MediaQuery.sizeOf(context).width * 0.22,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.15,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
-                                ),
-                              ),
+                                  child: FullScreenWidget(
+                                    disposeLevel: DisposeLevel.Low,
+                                    child: Hero(
+                                      tag: "Image_2_$showcasename",
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.asset(
+                                          Showcase1image2,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  )),
                             ),
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                               child: Container(
-                                width: MediaQuery.sizeOf(context).width * 0.22,
-                                height:
-                                    MediaQuery.sizeOf(context).height * 0.15,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
-                                  child: Image.asset(
-                                    'assets/images/pic3.png',
-                                    width: 300,
-                                    height: 200,
-                                    fit: BoxFit.cover,
+                                  width:
+                                      MediaQuery.sizeOf(context).width * 0.22,
+                                  height:
+                                      MediaQuery.sizeOf(context).height * 0.15,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(10),
                                   ),
-                                ),
-                              ),
+                                  child: FullScreenWidget(
+                                    disposeLevel: DisposeLevel.Low,
+                                    child: Hero(
+                                      tag: "Image_3_$showcasename",
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.asset(
+                                          Showcase1image3,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ),
+                                  )),
                             ),
                           ],
                         ),
@@ -265,47 +323,55 @@ class mobileSection2p extends StatelessWidget {
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
-                                  width:
-                                      MediaQuery.sizeOf(context).width * 0.22,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 0.15,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      'assets/images/pic2.png',
-                                      width: 300,
-                                      height: 200,
-                                      fit: BoxFit.cover,
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.22,
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.15,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
-                                  ),
-                                ),
+                                    child: FullScreenWidget(
+                                      disposeLevel: DisposeLevel.Low,
+                                      child: Hero(
+                                        tag: "Image_4_$showcasename",
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          child: Image.asset(
+                                            Showcase1image4,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    )),
                               ),
                               Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
-                                  width:
-                                      MediaQuery.sizeOf(context).width * 0.22,
-                                  height:
-                                      MediaQuery.sizeOf(context).height * 0.15,
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      'assets/images/pic3.png',
-                                      width: 300,
-                                      height: 200,
-                                      fit: BoxFit.cover,
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 0.22,
+                                    height: MediaQuery.sizeOf(context).height *
+                                        0.15,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10),
                                     ),
-                                  ),
-                                ),
+                                    child: FullScreenWidget(
+                                      disposeLevel: DisposeLevel.Low,
+                                      child: Hero(
+                                        tag: "Image_5_$showcasename",
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          child: Image.asset(
+                                            Showcase1image5,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                    )),
                               ),
                             ],
                           ),
@@ -347,7 +413,8 @@ class mobileSection2p extends StatelessWidget {
     );
   }
 
-  Padding Feed1(BuildContext context) {
+  Padding Feed1(BuildContext context, String showcasename, String showcaseabout,
+      String showcaseprofile, String showcase1image, String Showcase1image2) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
       child: Container(
@@ -383,10 +450,19 @@ class mobileSection2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
+                            child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: Hero(
+                            tag: "Profile2_$showcasename",
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showcaseprofile,
+                                fit: BoxFit.cover,
+                              ),
                             ),
+                          ),
+                        )
                           ),
                         ),
                         Padding(
@@ -396,11 +472,11 @@ class mobileSection2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit Vatsal',
+                                showcasename,
                                 style: textMember(),
                               ),
                               Text(
-                                'Human Resources',
+                                showcaseabout,
                                 style: brown(),
                               ),
                             ],
@@ -423,41 +499,47 @@ class mobileSection2p extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: MediaQuery.sizeOf(context).width * 0.4,
-                      height: MediaQuery.sizeOf(context).height * 0.31,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/images/pic1.png',
-                          width: 300,
-                          height: 200,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 5),
-                      child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.4,
                         height: MediaQuery.sizeOf(context).height * 0.31,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            'assets/images/pic2.png',
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.cover,
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: Hero(
+                            tag: "Image2_1_$showcasename",
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showcase1image,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
+                        )),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(start: 5),
+                      child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.4,
+                          height: MediaQuery.sizeOf(context).height * 0.31,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: FullScreenWidget(
+                            disposeLevel: DisposeLevel.Low,
+                            child: Hero(
+                              tag: "Image2_2_$showcasename",
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.asset(
+                                  Showcase1image2,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          )),
                     ),
                   ],
                 ),
@@ -494,7 +576,14 @@ class mobileSection2p extends StatelessWidget {
     );
   }
 
-  Padding Feed3(BuildContext context) {
+  Padding Feed3(
+      BuildContext context,
+      String showcasename,
+      String showcaseabout,
+      String showcaseprofile,
+      String showcase1image,
+      String showcase1image2,
+      String Showcase1image3) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
       child: Container(
@@ -524,17 +613,25 @@ class mobileSection2p extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Container(
-                            width: 120,
-                            height: 120,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                              width: 120,
+                              height: 120,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Hero(
+                                  tag: "Profile3_$showcasename",
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Image.asset(
+                                      showcaseprofile,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              )),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
@@ -543,11 +640,11 @@ class mobileSection2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit Vatsal',
+                                showcasename,
                                 style: textMember(),
                               ),
                               Text(
-                                'Human Resources',
+                                showcaseabout,
                                 style: brown(),
                               ),
                             ],
@@ -570,64 +667,73 @@ class mobileSection2p extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: MediaQuery.sizeOf(context).width * 0.4,
-                      height: MediaQuery.sizeOf(context).height * 0.31,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/images/pic1.png',
-                          width: 300,
-                          height: 200,
-                          fit: BoxFit.cover,
+                        width: MediaQuery.sizeOf(context).width * 0.4,
+                        height: MediaQuery.sizeOf(context).height * 0.31,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                      ),
-                    ),
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: Hero(
+                            tag: "Image3_1_$showcasename",
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showcase1image,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                        )),
                     Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 5),
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.4,
-                            height: MediaQuery.sizeOf(context).height * 0.15,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                'assets/images/pic2.png',
-                                width: 300,
-                                height: 200,
-                                fit: BoxFit.cover,
+                              width: MediaQuery.sizeOf(context).width * 0.4,
+                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                            ),
-                          ),
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Hero(
+                                  tag: "Image3_2_$showcasename",
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Image.asset(
+                                      showcase1image2,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              )),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.4,
-                            height: MediaQuery.sizeOf(context).height * 0.15,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                'assets/images/pic3.png',
-                                width: 300,
-                                height: 200,
-                                fit: BoxFit.cover,
+                              width: MediaQuery.sizeOf(context).width * 0.4,
+                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                            ),
-                          ),
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Hero(
+                                  tag: "Image3_3_$showcasename",
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Image.asset(
+                                      Showcase1image3,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              )),
                         ),
                       ],
                     ),
@@ -666,7 +772,15 @@ class mobileSection2p extends StatelessWidget {
     );
   }
 
-  Padding Feed4(BuildContext context) {
+  Padding Feed4(
+      BuildContext context,
+      String showcasename,
+      String showcaseabout,
+      String showcaseprofile,
+      String showcase1image,
+      String showcase1image2,
+      String showcase1image3,
+      String Showcase1image4) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
       child: Container(
@@ -696,17 +810,25 @@ class mobileSection2p extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Container(
-                            width: 120,
-                            height: 120,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                              width: 120,
+                              height: 120,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Hero(
+                                  tag: "Profile4_$showcasename",
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Image.asset(
+                                      showcaseprofile,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              )),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
@@ -715,11 +837,11 @@ class mobileSection2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit Vatsal',
+                                showcasename,
                                 style: textMember(),
                               ),
                               Text(
-                                'Human Resources',
+                                showcaseabout,
                                 style: brown(),
                               ),
                             ],
@@ -742,41 +864,47 @@ class mobileSection2p extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Container(
-                      width: MediaQuery.sizeOf(context).width * 0.28,
-                      height: MediaQuery.sizeOf(context).height * 0.31,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/images/pic1.png',
-                          width: 300,
-                          height: 200,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.only(start: 5),
-                      child: Container(
                         width: MediaQuery.sizeOf(context).width * 0.28,
                         height: MediaQuery.sizeOf(context).height * 0.31,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            'assets/images/pic1.png',
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.cover,
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: Hero(
+                            tag: "Image4_1_$showcasename",
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showcase1image2,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
+                        )),
+                    Padding(
+                      padding: const EdgeInsetsDirectional.only(start: 5),
+                      child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.28,
+                          height: MediaQuery.sizeOf(context).height * 0.31,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: FullScreenWidget(
+                            disposeLevel: DisposeLevel.Low,
+                            child: Hero(
+                              tag: "Image4_2_$showcasename",
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.asset(
+                                  showcase1image2,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          )),
                     ),
                     Column(
                       mainAxisSize: MainAxisSize.max,
@@ -785,42 +913,48 @@ class mobileSection2p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.20,
-                            height: MediaQuery.sizeOf(context).height * 0.15,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                'assets/images/pic2.png',
-                                width: 300,
-                                height: 200,
-                                fit: BoxFit.cover,
+                              width: MediaQuery.sizeOf(context).width * 0.20,
+                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                            ),
-                          ),
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Hero(
+                                  tag: "Image4_3_$showcasename",
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Image.asset(
+                                      showcase1image3,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              )),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 0),
                           child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.20,
-                            height: MediaQuery.sizeOf(context).height * 0.15,
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                'assets/images/pic3.png',
-                                width: 300,
-                                height: 200,
-                                fit: BoxFit.cover,
+                              width: MediaQuery.sizeOf(context).width * 0.20,
+                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(10),
                               ),
-                            ),
-                          ),
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Hero(
+                                  tag: "Image4_4_$showcasename",
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Image.asset(
+                                      Showcase1image4,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              )),
                         ),
                       ],
                     ),
@@ -859,7 +993,8 @@ class mobileSection2p extends StatelessWidget {
     );
   }
 
-  Padding Feed5(BuildContext context) {
+  Padding Feed5(BuildContext context, String showcasename, String showcaseabout,
+      String showcaseprofile, String showcase1image) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
       child: Container(
@@ -889,17 +1024,25 @@ class mobileSection2p extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Container(
-                            width: 120,
-                            height: 120,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
+                              width: 120,
+                              height: 120,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Hero(
+                                  tag: "Profile5_$showcasename",
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(8),
+                                    child: Image.asset(
+                                      showcaseprofile,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              )),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
@@ -908,11 +1051,11 @@ class mobileSection2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit Vatsal',
+                                showcasename,
                                 style: textMember(),
                               ),
                               Text(
-                                'Human Resources',
+                                showcaseabout,
                                 style: brown(),
                               ),
                             ],
@@ -933,34 +1076,26 @@ class mobileSection2p extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => FullScreenImage(
-                                imagePath: 'assets/images/pic1.png'),
-                          ),
-                        );
-                      },
-                      child: Container(
+                    Container(
                         width: MediaQuery.sizeOf(context).width * 0.8,
                         height: MediaQuery.sizeOf(context).height * 0.31,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            'assets/images/pic1.png',
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.cover,
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: Hero(
+                            tag: "Image5_1_$showcasename",
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showcase1image,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    ),
+                        )),
                   ],
                 ),
               ),

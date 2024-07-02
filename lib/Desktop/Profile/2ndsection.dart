@@ -103,6 +103,9 @@ class section2p extends StatelessWidget {
                     ),
                     Feed(
                         context,
+                        'Ankit',
+                        'Hr',
+                        'assets/images/profile1.png',
                         'assets/images/pic1.jpg',
                         'assets/images/pic2.png',
                         'assets/images/pic3.png',
@@ -110,15 +113,25 @@ class section2p extends StatelessWidget {
                         'assets/images/pic2.png'),
                     Feed2(
                         context,
+                        'Ankit',
+                        'Hr',
+                        'assets/images/profile1.png',
                         'assets/images/pic1.jpg',
                         'assets/images/pic2.png',
                         'assets/images/pic3.png',
                         'assets/images/pic3.png'),
-                    Feed3(context, 'assets/images/pic1.jpg',
-                        'assets/images/pic2.png', 'assets/images/pic3.png'),
-                    Feed4(context, 'assets/images/pic1.jpg',
-                        'assets/images/pic2.png'),
-                    Feed5(context, 'assets/images/pic1.jpg'),
+                    Feed3(
+                        context,
+                        'Ankit',
+                        'Hr',
+                        'assets/images/profile1.png',
+                        'assets/images/pic1.jpg',
+                        'assets/images/pic2.png',
+                        'assets/images/pic3.png'),
+                    Feed4(context, 'Ankit', 'Hr', 'assets/images/profile1.png',
+                        'assets/images/pic1.jpg', 'assets/images/pic2.png'),
+                    Feed5(context, 'Ankit', 'Hr', 'assets/images/profile1.png',
+                        'assets/images/pic1.jpg'),
                   ],
                 ),
               ),
@@ -132,6 +145,9 @@ class section2p extends StatelessWidget {
 
   Padding Feed(
       BuildContext context,
+      String showcasename,
+      String showcaseabout,
+      String showcaseprofile,
       String showCase1image,
       String showCase1image2,
       String showCase1image3,
@@ -172,9 +188,19 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
+                            child: FullScreenWidget(
+                              disposeLevel: DisposeLevel.Low,
+                              child: Center(
+                                child: Hero(
+                                  tag: "unique",
+                                  child: ClipRRect(
+                                    child: Image.asset(
+                                      showcaseprofile,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -185,11 +211,11 @@ class section2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit vatsal',
+                                showcasename,
                                 style: TextMember(),
                               ),
                               Text(
-                                'Human resources',
+                                showcaseabout,
                                 style: Brown(),
                               ),
                             ],
@@ -387,6 +413,9 @@ class section2p extends StatelessWidget {
 
   Padding Feed2(
     BuildContext context,
+    String showcasename,
+    String showcaseabout,
+    String showcaseprofile,
     String showCase1image,
     String showCase1image2,
     String showCase1image3,
@@ -427,9 +456,19 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
+                            child: FullScreenWidget(
+                              disposeLevel: DisposeLevel.Low,
+                              child: Center(
+                                child: Hero(
+                                  tag: "smallImage",
+                                  child: ClipRRect(
+                                    child: Image.asset(
+                                      showcaseprofile,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -440,11 +479,11 @@ class section2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit vatsal',
+                                showcasename,
                                 style: TextMember(),
                               ),
                               Text(
-                                'Human resources',
+                                showcaseabout,
                                 style: Brown(),
                               ),
                             ],
@@ -596,6 +635,9 @@ class section2p extends StatelessWidget {
 
   Padding Feed3(
     BuildContext context,
+    String showcasename,
+    String showcaseabout,
+    String showcaseprofile,
     String showCase1image,
     String showCase1image2,
     String showCase1image3,
@@ -635,9 +677,19 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
+                            child: FullScreenWidget(
+                              disposeLevel: DisposeLevel.Low,
+                              child: Center(
+                                child: Hero(
+                                  tag: "hello",
+                                  child: ClipRRect(
+                                    child: Image.asset(
+                                      showcaseprofile,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -648,11 +700,11 @@ class section2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit vatsal',
+                                showcasename,
                                 style: TextMember(),
                               ),
                               Text(
-                                'Human resources',
+                                showcaseabout,
                                 style: Brown(),
                               ),
                             ],
@@ -781,6 +833,9 @@ class section2p extends StatelessWidget {
 
   Padding Feed4(
     BuildContext context,
+    String showcasename,
+    String showcaseabout,
+    String showcaseprofile,
     String showCase1image,
     String showCase1image2,
   ) {
@@ -819,9 +874,19 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
+                            child: FullScreenWidget(
+                              disposeLevel: DisposeLevel.Low,
+                              child: Center(
+                                child: Hero(
+                                  tag: "largeImage",
+                                  child: ClipRRect(
+                                    child: Image.asset(
+                                      showcaseprofile,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -832,11 +897,11 @@ class section2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit vatsal',
+                                showcasename,
                                 style: TextMember(),
                               ),
                               Text(
-                                'Human resources',
+                                showcaseabout,
                                 style: Brown(),
                               ),
                             ],
@@ -937,6 +1002,9 @@ class section2p extends StatelessWidget {
 
   Padding Feed5(
     BuildContext context,
+    String showcasename,
+    String showcaseabout,
+    String showcaseprofile,
     String showCase1image,
   ) {
     return Padding(
@@ -974,9 +1042,19 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.asset(
-                              'assets/images/profile1.png',
-                              fit: BoxFit.cover,
+                            child: FullScreenWidget(
+                              disposeLevel: DisposeLevel.Low,
+                              child: Center(
+                                child: Hero(
+                                  tag: "uniqueImage",
+                                  child: ClipRRect(
+                                    child: Image.asset(
+                                      showcaseprofile,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ),
                           ),
                         ),
@@ -987,11 +1065,11 @@ class section2p extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                'Ankit vatsal',
+                                showcasename,
                                 style: TextMember(),
                               ),
                               Text(
-                                'Human resources',
+                                showcaseabout,
                                 style: Brown(),
                               ),
                             ],
