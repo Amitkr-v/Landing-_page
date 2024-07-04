@@ -48,6 +48,7 @@ class Page4m extends StatelessWidget {
                                 fontSize: 20,
                                 letterSpacing: 0,
                                 fontWeight: FontWeight.w900,
+                                color: Colors.black
                               ),
                               children: const <TextSpan>[
                                 TextSpan(

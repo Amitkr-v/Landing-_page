@@ -55,16 +55,16 @@ class Section1m extends StatelessWidget {
         ),
         Container(
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(10,0,10, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(10,0,0, 0),
             child: Column(
               mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ImageTextWidget1(
                   "Explore & Discover",
                   "Connect with Bihar's brightest startups based on various criteria and search options.",
-                  'assets/images/exp.png',
+                  'assets/images/Exp.png',
                 ),
                 ImageTextWidget1(
                   "Connect with Startup",

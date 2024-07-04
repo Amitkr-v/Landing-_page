@@ -29,6 +29,7 @@ class _NavbarState extends State<Navbar> {
                     fontSize: 25,
                     letterSpacing: 0,
                     fontWeight: FontWeight.w900,
+                    color:Colors.black,
                   ),
                   children: const <TextSpan>[
                     TextSpan(

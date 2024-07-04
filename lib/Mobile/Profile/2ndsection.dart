@@ -207,6 +207,7 @@ class mobileSection2p extends StatelessWidget {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            
                             children: [
                               Text(
                                 showcasename,
@@ -233,10 +234,11 @@ class mobileSection2p extends StatelessWidget {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                         width: MediaQuery.sizeOf(context).width * 0.36,
-                        height: MediaQuery.sizeOf(context).height * 0.31,
+                        height: MediaQuery.sizeOf(context).height * 0.25,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -265,9 +267,9 @@ class mobileSection2p extends StatelessWidget {
                                   EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                               child: Container(
                                   width:
-                                      MediaQuery.sizeOf(context).width * 0.22,
+                                      MediaQuery.sizeOf(context).width * 0.20,
                                   height:
-                                      MediaQuery.sizeOf(context).height * 0.15,
+                                      MediaQuery.sizeOf(context).height * 0.12,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10),
@@ -291,9 +293,9 @@ class mobileSection2p extends StatelessWidget {
                                   EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                               child: Container(
                                   width:
-                                      MediaQuery.sizeOf(context).width * 0.22,
+                                      MediaQuery.sizeOf(context).width * 0.20,
                                   height:
-                                      MediaQuery.sizeOf(context).height * 0.15,
+                                      MediaQuery.sizeOf(context).height * 0.12,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10),
@@ -315,7 +317,7 @@ class mobileSection2p extends StatelessWidget {
                           ],
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -324,9 +326,9 @@ class mobileSection2p extends StatelessWidget {
                                     EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
                                     width:
-                                        MediaQuery.sizeOf(context).width * 0.22,
+                                        MediaQuery.sizeOf(context).width * 0.20,
                                     height: MediaQuery.sizeOf(context).height *
-                                        0.15,
+                                        0.12,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(10),
@@ -351,9 +353,9 @@ class mobileSection2p extends StatelessWidget {
                                     EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                 child: Container(
                                     width:
-                                        MediaQuery.sizeOf(context).width * 0.22,
+                                        MediaQuery.sizeOf(context).width * 0.20,
                                     height: MediaQuery.sizeOf(context).height *
-                                        0.15,
+                                        0.12,
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(10),
@@ -497,10 +499,11 @@ class mobileSection2p extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                        width: MediaQuery.sizeOf(context).width * 0.4,
-                        height: MediaQuery.sizeOf(context).height * 0.31,
+                        width: MediaQuery.sizeOf(context).width * 0.38,
+                        height: MediaQuery.sizeOf(context).height * 0.24,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -521,8 +524,8 @@ class mobileSection2p extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsetsDirectional.only(start: 5),
                       child: Container(
-                          width: MediaQuery.sizeOf(context).width * 0.4,
-                          height: MediaQuery.sizeOf(context).height * 0.31,
+                          width: MediaQuery.sizeOf(context).width * 0.38,
+                          height: MediaQuery.sizeOf(context).height * 0.24,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
@@ -665,10 +668,11 @@ class mobileSection2p extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                        width: MediaQuery.sizeOf(context).width * 0.4,
-                        height: MediaQuery.sizeOf(context).height * 0.31,
+                        width: MediaQuery.sizeOf(context).width * 0.38,
+                        height: MediaQuery.sizeOf(context).height * 0.25,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -692,8 +696,8 @@ class mobileSection2p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 5),
                           child: Container(
-                              width: MediaQuery.sizeOf(context).width * 0.4,
-                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              width: MediaQuery.sizeOf(context).width * 0.36,
+                              height: MediaQuery.sizeOf(context).height * 0.12,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
@@ -715,8 +719,8 @@ class mobileSection2p extends StatelessWidget {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                           child: Container(
-                              width: MediaQuery.sizeOf(context).width * 0.4,
-                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              width: MediaQuery.sizeOf(context).width * 0.36,
+                              height: MediaQuery.sizeOf(context).height * 0.12,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
@@ -862,10 +866,11 @@ class mobileSection2p extends StatelessWidget {
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
                         width: MediaQuery.sizeOf(context).width * 0.28,
-                        height: MediaQuery.sizeOf(context).height * 0.31,
+                        height: MediaQuery.sizeOf(context).height * 0.24,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -887,7 +892,7 @@ class mobileSection2p extends StatelessWidget {
                       padding: const EdgeInsetsDirectional.only(start: 5),
                       child: Container(
                           width: MediaQuery.sizeOf(context).width * 0.28,
-                          height: MediaQuery.sizeOf(context).height * 0.31,
+                          height: MediaQuery.sizeOf(context).height * 0.24,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
@@ -914,7 +919,7 @@ class mobileSection2p extends StatelessWidget {
                           padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                           child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.20,
-                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              height: MediaQuery.sizeOf(context).height * 0.11,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
@@ -937,7 +942,7 @@ class mobileSection2p extends StatelessWidget {
                           padding: EdgeInsetsDirectional.fromSTEB(5, 5, 0, 0),
                           child: Container(
                               width: MediaQuery.sizeOf(context).width * 0.20,
-                              height: MediaQuery.sizeOf(context).height * 0.15,
+                              height: MediaQuery.sizeOf(context).height * 0.12,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
@@ -1077,8 +1082,8 @@ class mobileSection2p extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     Container(
-                        width: MediaQuery.sizeOf(context).width * 0.8,
-                        height: MediaQuery.sizeOf(context).height * 0.31,
+                        width: MediaQuery.sizeOf(context).width * 0.78,
+                        height: MediaQuery.sizeOf(context).height * 0.24,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
