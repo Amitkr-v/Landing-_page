@@ -4,7 +4,6 @@ import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class mobileSection3p extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(

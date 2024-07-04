@@ -312,7 +312,7 @@ class _CompanyItemState extends State<companyItem> {
                 onEnter: (_) => _onHover(true),
                 onExit: (_) => _onHover(false),
                 child: AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
+                  duration: Duration(milliseconds:50),
                   width: 100,
                   height: 100,
                   decoration: BoxDecoration(

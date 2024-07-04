@@ -13,14 +13,14 @@ class Bodym extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
-            width: MediaQuery.sizeOf(context).width * 0.4,
+            width: MediaQuery.sizeOf(context).width * 0.8,
             decoration: BoxDecoration(),
             child: Text(
               '',
               style: TextStyle(
                 color: Color(0xFFff5700),
                 letterSpacing: 1,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 fontSize: 20,
               ),
             ),

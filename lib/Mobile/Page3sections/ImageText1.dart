@@ -11,59 +11,63 @@ class ImageTextWidget1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 20),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 150,
-            height: 140,
-            decoration: BoxDecoration(
-              color: Color.fromARGB(255, 240, 240, 240),
-              borderRadius: BorderRadius.circular(5),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
-                image,
-                fit: BoxFit.contain,
+      child: Container(
+        width: MediaQuery.of(context).size.width*0.9,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 150,
+              height: 140,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 240, 240, 240),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  image,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
-          ),
-          Column(
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                child: Container(
-                  width: MediaQuery.of(context).size.height * 0.20,
-                  child: Text(
-                    t1,
-                    style: TextStyle(
-                      fontSize: 18,
-                      letterSpacing: 2,
-                      fontWeight: FontWeight.bold,
+            Column(
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width*0.45,
+                    child: Text(
+                      t1,
+                      style: TextStyle(
+                        fontSize: 18,
+                        letterSpacing: 2,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
-                child: Container(
-                  width: MediaQuery.of(context).size.height * 0.20,
-                  child: Text(
-                    t2,
-                    style: TextStyle(
-                      fontSize: 15,
-                      letterSpacing: 1,
-                      fontWeight: FontWeight.w500,
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
+                  child: Container(
+                    width: MediaQuery.of(context).size.width*0.45,
+
+                    child: Text(
+                      t2,
+                      style: TextStyle(
+                        fontSize: 15,
+                        letterSpacing: 1,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

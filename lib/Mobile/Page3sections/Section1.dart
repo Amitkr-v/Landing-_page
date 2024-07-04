@@ -57,9 +57,9 @@ class Section1m extends StatelessWidget {
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(10,0,0, 0),
             child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 ImageTextWidget1(
                   "Explore & Discover",
