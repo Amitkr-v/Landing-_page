@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Desktop/Profile/Details.dart';
 import 'package:flutter_application_1/Desktop/Profile/newProfile.dart';
-import 'package:flutter_application_1/Mobile/Profile/mprofile.dart';
 import 'package:flutter_application_1/Mobile/Profile/profile.dart';
 import 'package:flutter_application_1/Model/company.dart';
 import 'package:responsive_builder/responsive_builder.dart';

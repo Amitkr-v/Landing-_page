@@ -3,7 +3,7 @@ import 'package:flutter_application_1/Desktop/Profile/1stsection.dart';
 import 'package:flutter_application_1/Desktop/Profile/2ndsection.dart';
 import 'package:flutter_application_1/Desktop/Profile/3rdsection.dart';
 import 'package:flutter_application_1/Model/company.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class MainProfile1Widget extends StatelessWidget {
   final CompanyModel companyModel;

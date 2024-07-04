@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_application_1/Mobile/Profile/1stsection.dart';
 import 'package:flutter_application_1/Mobile/Profile/2ndsection.dart';
 import 'package:flutter_application_1/Mobile/Profile/3rdsection.dart';

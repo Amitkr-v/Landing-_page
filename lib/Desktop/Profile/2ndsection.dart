@@ -1,5 +1,4 @@
 library full_screen_image;
-
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:full_screen_image/full_screen_image.dart';

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Desktop/Profile/newProfile.dart';
 import 'package:flutter_application_1/Homepage/home.dart';
 import 'package:google_fonts/google_fonts.dart';
 

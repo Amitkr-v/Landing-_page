@@ -110,8 +110,8 @@ flutter:
   #    - google_fonts/
   #     - images/bg.jpeg
     - assets/images/
-    - assets/anim/  
-    - assets/anim/
+    
+   
     - assets/fonts/
   
 
