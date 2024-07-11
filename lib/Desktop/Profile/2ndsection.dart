@@ -1,6 +1,8 @@
 library full_screen_image;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/Mobile/Profile/dialogue.dart';
 import 'package:full_screen_image/full_screen_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,129 +16,109 @@ class section2p extends StatelessWidget {
         ),
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
-          //child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Company Team',
-                      style: Styleb(),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 30),
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 50,
-                                  height: 50,
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color: Color(0xFF969595),
-                                    ),
-                                  ),
-                                  child: Icon(
-                                    Icons.add,
-                                    color: Colors.black,
-                                    size: 20,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 15, 0, 0),
-                                  child: Text(
-                                    'Add Member',
-                                    style: TextMember(),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Member(),
-                            Member(),
-                            Member(),
-                            Member(),
-                            Member(),
-                          ],
-                        ),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Company Team',
+                        style: Styleb(),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 20, 40, 0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          'Show case',
-                          style: Styleb(),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 30),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Member(),
+                              Member(),
+                              Member(),
+                              Member(),
+                              Member(),
+                            ],
                           ),
                         ),
-                      ],
-                    ),
-                    Feed(
-                        context,
-                        'Ankit',
-                        'Hr',
-                        'assets/images/profile1.png',
-                        'assets/images/pic1.jpg',
-                        'assets/images/pic2.png',
-                        'assets/images/pic3.png',
-                        'assets/images/pic3.png',
-                        'assets/images/pic2.png'),
-                    Feed2(
-                        context,
-                        'Ankit',
-                        'Hr',
-                        'assets/images/profile1.png',
-                        'assets/images/pic1.jpg',
-                        'assets/images/pic2.png',
-                        'assets/images/pic3.png',
-                        'assets/images/pic3.png'),
-                    Feed3(
-                        context,
-                        'Ankit',
-                        'Hr',
-                        'assets/images/profile1.png',
-                        'assets/images/pic1.jpg',
-                        'assets/images/pic2.png',
-                        'assets/images/pic3.png'),
-                    Feed4(context, 'Ankit', 'Hr', 'assets/images/profile1.png',
-                        'assets/images/pic1.jpg', 'assets/images/pic2.png'),
-                    Feed5(context, 'Ankit', 'Hr', 'assets/images/profile1.png',
-                        'assets/images/pic1.jpg'),
-                  ],
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ],
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 40, 0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Show case',
+                            style: Styleb(),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Feed(
+                          context,
+                          'Ankit',
+                          'Hr',
+                          'assets/images/profile1.png',
+                          'assets/images/pic1.jpg',
+                          'assets/images/pic2.png',
+                          'assets/images/pic3.png',
+                          'assets/images/pic3.png',
+                          'assets/images/pic2.png'),
+                      Feed2(
+                          context,
+                          'Ankit',
+                          'Hr',
+                          'assets/images/profile1.png',
+                          'assets/images/pic1.jpg',
+                          'assets/images/pic2.png',
+                          'assets/images/pic3.png',
+                          'assets/images/pic3.png'),
+                      Feed3(
+                          context,
+                          'Ankit',
+                          'Hr',
+                          'assets/images/profile1.png',
+                          'assets/images/pic1.jpg',
+                          'assets/images/pic2.png',
+                          'assets/images/pic3.png'),
+                      Feed4(
+                          context,
+                          'Ankit',
+                          'Hr',
+                          'assets/images/profile1.png',
+                          'assets/images/pic1.jpg',
+                          'assets/images/pic2.png'),
+                      Feed5(
+                          context,
+                          'Ankit',
+                          'Hr',
+                          'assets/images/profile1.png',
+                          'assets/images/pic1.jpg'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-          //),
         ),
       ),
     );
@@ -187,15 +169,18 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: FullScreenWidget(
-                              disposeLevel: DisposeLevel.Low,
-                              child: Center(
-                                child: Hero(
-                                  tag: "unique",
-                                  child: ClipRRect(
-                                    child: Image.asset(
-                                      showcaseprofile,
-                                      fit: BoxFit.cover,
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Center(
+                                  child: Hero(
+                                    tag: "unique",
+                                    child: ClipRRect(
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -223,10 +208,21 @@ class section2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -242,15 +238,18 @@ class section2p extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: FullScreenWidget(
-                        disposeLevel: DisposeLevel.Low,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            showCase1image,
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.cover,
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              showCase1image,
+                              width: 300,
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -272,15 +271,18 @@ class section2p extends StatelessWidget {
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                child: FullScreenWidget(
-                                  disposeLevel: DisposeLevel.Low,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      showCase1image2,
-                                      width: 300,
-                                      height: 200,
-                                      fit: BoxFit.cover,
+                                child: MouseRegion(
+                                  cursor: SystemMouseCursors.click,
+                                  child: FullScreenWidget(
+                                    disposeLevel: DisposeLevel.Low,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        showCase1image2,
+                                        width: 300,
+                                        height: 200,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -297,15 +299,18 @@ class section2p extends StatelessWidget {
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                child: FullScreenWidget(
-                                  disposeLevel: DisposeLevel.Low,
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      showCase1image3,
-                                      width: 300,
-                                      height: 200,
-                                      fit: BoxFit.cover,
+                                child: MouseRegion(
+                                  cursor: SystemMouseCursors.click,
+                                  child: FullScreenWidget(
+                                    disposeLevel: DisposeLevel.Low,
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        showCase1image3,
+                                        width: 300,
+                                        height: 200,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -330,15 +335,18 @@ class section2p extends StatelessWidget {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: FullScreenWidget(
-                                    disposeLevel: DisposeLevel.Low,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
-                                      child: Image.asset(
-                                        showCase1image4,
-                                        width: 300,
-                                        height: 200,
-                                        fit: BoxFit.cover,
+                                  child: MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: FullScreenWidget(
+                                      disposeLevel: DisposeLevel.Low,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.asset(
+                                          showCase1image4,
+                                          width: 300,
+                                          height: 200,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -356,15 +364,18 @@ class section2p extends StatelessWidget {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: FullScreenWidget(
-                                    disposeLevel: DisposeLevel.Low,
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(8),
-                                      child: Image.asset(
-                                        showCase1image5,
-                                        width: 300,
-                                        height: 200,
-                                        fit: BoxFit.cover,
+                                  child: MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: FullScreenWidget(
+                                      disposeLevel: DisposeLevel.Low,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(8),
+                                        child: Image.asset(
+                                          showCase1image5,
+                                          width: 300,
+                                          height: 200,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -455,15 +466,18 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: FullScreenWidget(
-                              disposeLevel: DisposeLevel.Low,
-                              child: Center(
-                                child: Hero(
-                                  tag: "smallImage",
-                                  child: ClipRRect(
-                                    child: Image.asset(
-                                      showcaseprofile,
-                                      fit: BoxFit.cover,
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Center(
+                                  child: Hero(
+                                    tag: "smallImage",
+                                    child: ClipRRect(
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -510,15 +524,18 @@ class section2p extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: FullScreenWidget(
-                        disposeLevel: DisposeLevel.Low,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            showCase1image,
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.cover,
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              showCase1image,
+                              width: 300,
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -532,15 +549,18 @@ class section2p extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: FullScreenWidget(
-                          disposeLevel: DisposeLevel.Low,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.asset(
-                              showCase1image,
-                              width: 300,
-                              height: 200,
-                              fit: BoxFit.cover,
+                        child: MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: FullScreenWidget(
+                            disposeLevel: DisposeLevel.Low,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showCase1image,
+                                width: 300,
+                                height: 200,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -558,15 +578,18 @@ class section2p extends StatelessWidget {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: FullScreenWidget(
-                              disposeLevel: DisposeLevel.Low,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.asset(
-                                  showCase1image2,
-                                  width: 300,
-                                  height: 200,
-                                  fit: BoxFit.cover,
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.asset(
+                                    showCase1image2,
+                                    width: 300,
+                                    height: 200,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -581,15 +604,18 @@ class section2p extends StatelessWidget {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: FullScreenWidget(
-                              disposeLevel: DisposeLevel.Low,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.asset(
-                                  showCase1image2,
-                                  width: 300,
-                                  height: 200,
-                                  fit: BoxFit.cover,
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.asset(
+                                    showCase1image2,
+                                    width: 300,
+                                    height: 200,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -676,15 +702,18 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: FullScreenWidget(
-                              disposeLevel: DisposeLevel.Low,
-                              child: Center(
-                                child: Hero(
-                                  tag: "hello",
-                                  child: ClipRRect(
-                                    child: Image.asset(
-                                      showcaseprofile,
-                                      fit: BoxFit.cover,
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Center(
+                                  child: Hero(
+                                    tag: "hello",
+                                    child: ClipRRect(
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -731,15 +760,18 @@ class section2p extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: FullScreenWidget(
-                        disposeLevel: DisposeLevel.Low,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            showCase1image,
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.cover,
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              showCase1image,
+                              width: 300,
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -756,15 +788,18 @@ class section2p extends StatelessWidget {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: FullScreenWidget(
-                              disposeLevel: DisposeLevel.Low,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.asset(
-                                  showCase1image2,
-                                  width: 300,
-                                  height: 200,
-                                  fit: BoxFit.cover,
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.asset(
+                                    showCase1image2,
+                                    width: 300,
+                                    height: 200,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -779,15 +814,18 @@ class section2p extends StatelessWidget {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(10),
                             ),
-                            child: FullScreenWidget(
-                              disposeLevel: DisposeLevel.Low,
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.asset(
-                                  showCase1image3,
-                                  width: 300,
-                                  height: 200,
-                                  fit: BoxFit.cover,
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.asset(
+                                    showCase1image3,
+                                    width: 300,
+                                    height: 200,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -873,15 +911,18 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: FullScreenWidget(
-                              disposeLevel: DisposeLevel.Low,
-                              child: Center(
-                                child: Hero(
-                                  tag: "largeImage",
-                                  child: ClipRRect(
-                                    child: Image.asset(
-                                      showcaseprofile,
-                                      fit: BoxFit.cover,
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Center(
+                                  child: Hero(
+                                    tag: "largeImage",
+                                    child: ClipRRect(
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -928,15 +969,18 @@ class section2p extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: FullScreenWidget(
-                        disposeLevel: DisposeLevel.Low,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            showCase1image,
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.cover,
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              showCase1image,
+                              width: 300,
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -950,15 +994,18 @@ class section2p extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: FullScreenWidget(
-                          disposeLevel: DisposeLevel.Low,
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
-                            child: Image.asset(
-                              showCase1image2,
-                              width: 300,
-                              height: 200,
-                              fit: BoxFit.cover,
+                        child: MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: FullScreenWidget(
+                            disposeLevel: DisposeLevel.Low,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8),
+                              child: Image.asset(
+                                showCase1image2,
+                                width: 300,
+                                height: 200,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -1041,15 +1088,18 @@ class section2p extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: FullScreenWidget(
-                              disposeLevel: DisposeLevel.Low,
-                              child: Center(
-                                child: Hero(
-                                  tag: "uniqueImage",
-                                  child: ClipRRect(
-                                    child: Image.asset(
-                                      showcaseprofile,
-                                      fit: BoxFit.cover,
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: FullScreenWidget(
+                                disposeLevel: DisposeLevel.Low,
+                                child: Center(
+                                  child: Hero(
+                                    tag: "uniqueImage",
+                                    child: ClipRRect(
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -1096,15 +1146,18 @@ class section2p extends StatelessWidget {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: FullScreenWidget(
-                        disposeLevel: DisposeLevel.Low,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            showCase1image,
-                            width: 300,
-                            height: 200,
-                            fit: BoxFit.cover,
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              showCase1image,
+                              width: 300,
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
@@ -1231,24 +1284,5 @@ class section2p extends StatelessWidget {
         fontSize: 12,
         decoration: TextDecoration.none,
         fontWeight: FontWeight.w400);
-  }
-}
-
-class FullScreenImage extends StatelessWidget {
-  final String imagePath;
-
-  FullScreenImage({required this.imagePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        iconTheme: IconThemeData(color: Colors.white),
-      ),
-      body: Center(
-        child: Image.asset(imagePath),
-      ),
-    );
   }
 }

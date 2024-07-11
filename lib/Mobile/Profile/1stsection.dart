@@ -49,15 +49,18 @@ class mobileSection1p extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                       ),
-                      child: FullScreenWidget(
-                        disposeLevel: DisposeLevel.Low,
-                        child: Center(
-                          child: Hero(
-                            tag: "smallImage1",
-                            child: ClipRRect(
-                              child: Image.asset(
-                                companyModel.profile,
-                                fit: BoxFit.cover,
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: FullScreenWidget(
+                          disposeLevel: DisposeLevel.Low,
+                          child: Center(
+                            child: Hero(
+                              tag: "smallImage1",
+                              child: ClipRRect(
+                                child: Image.asset(
+                                  companyModel.profile,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -124,7 +127,7 @@ class mobileSection1p extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width * 0.88,
+                  width: MediaQuery.of(context).size.width * 0.9,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
@@ -193,26 +196,29 @@ class mobileSection1p extends StatelessWidget {
                             ),
                           ),
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            _showContactDialog(context);
-                          },
-                          child: Column(
-                            children: [
-                              Icon(
-                                Icons.contact_mail,
-                                color: Colors.black,
-                                size: 24,
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                                child: Text(
-                                  'Contact',
-                                  style: Textstyle(),
+                        MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () {
+                              _showContactDialog(context);
+                            },
+                            child: Column(
+                              children: [
+                                Icon(
+                                  Icons.contact_mail,
+                                  color: Colors.black,
+                                  size: 24,
                                 ),
-                              ),
-                            ],
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0, 10, 0, 0),
+                                  child: Text(
+                                    'Contact',
+                                    style: Textstyle(),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -284,24 +290,27 @@ class mobileSection1p extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
-                        Icons.ads_click_sharp,
+                        Icons.travel_explore,
                         color: Colors.black,
                         size: 24,
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                        child: GestureDetector(
-                          onTap: () async {
-                            const url = 'https://www.instagram.com/';
-                            if (await canLaunch(url)) {
-                              await launch(url);
-                            } else {
-                              throw 'Could not launch $url';
-                            }
-                          },
-                          child: Text(
-                            companyModel.website,
-                            style: Textstyle(),
+                        child: MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () async {
+                              const url = 'https://www.instagram.com/';
+                              if (await canLaunch(url)) {
+                                await launch(url);
+                              } else {
+                                throw 'Could not launch $url';
+                              }
+                            },
+                            child: Text(
+                              companyModel.website,
+                              style: Textstyle(),
+                            ),
                           ),
                         ),
                       ),

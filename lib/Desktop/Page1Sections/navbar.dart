@@ -47,6 +47,7 @@ class _NavbarState extends State<Navbar> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(90, 0, 20, 0),
                 child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
                   onEnter: (_) {
                     setState(() {
                       isResourceHovered = true;
@@ -86,6 +87,7 @@ class _NavbarState extends State<Navbar> {
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                 child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
                   onEnter: (_) {
                     setState(() {
                       isNewsHovered = true;

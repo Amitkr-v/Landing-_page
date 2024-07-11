@@ -11,94 +11,94 @@ class section3p extends StatelessWidget {
       child: Container(
         color: Colors.white,
         //child: SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 50, 20, 10),
-                child: Text(
-                  'Services',
-                  style: Styleb(),
-                ),
+        child: Column(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(20, 50, 20, 10),
+              child: Text(
+                'Services',
+                style: Styleb(),
               ),
-              servicedata(
-                  context,
-                  'assets/images/appdevelop.png',
-                  'App development',
-                  'Our website development company specializes in creating custom, user-friendly websites tailored to your business needs, ensuring a seamless online presence.'),
-              servicedata(
-                  context,
-                  'assets/images/webdev.png',
-                  'Web development',
-                  'Our website development company specializes in creating custom, user-friendly websites tailored to your business needs, ensuring a seamless online presence.')
-            ],
-          ),
+            ),
+            servicedata(
+                context,
+                'assets/images/appdevelop.png',
+                'App development',
+                'Our website development company specializes in creating custom, user-friendly websites tailored to your business needs, ensuring a seamless online presence.'),
+            servicedata(context, 'assets/images/webdev.png', 'Web development',
+                'Our website development company specializes in creating custom, user-friendly websites tailored to your business needs, ensuring a seamless online presence.')
+          ],
         ),
+      ),
       //),
     );
   }
 
-  GestureDetector servicedata(
+  MouseRegion servicedata(
       BuildContext context, String image, String title, String about) {
-    return GestureDetector(
-      onTap: () {
-        _showContactDialog(context);
-      },
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Color(0xFFF9F9F9),
-          ),
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20.0),
-                        topRight: Radius.circular(20.0),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {
+          _showContactDialog(context);
+        },
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(20, 20, 0, 0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Color(0xFFF9F9F9),
+            ),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
+                        ),
                       ),
-                    ),
-                    width: MediaQuery.of(context).size.width * 1,
-                    height: MediaQuery.of(context).size.height * 0.15,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20.0),
-                        topRight: Radius.circular(20.0),
-                      ),
-                      child: Image.asset(
-                        image,
-                        fit: BoxFit.cover,
+                      width: MediaQuery.of(context).size.width * 1,
+                      height: MediaQuery.of(context).size.height * 0.15,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
+                        ),
+                        child: Image.asset(
+                          image,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.only(start: 20, top: 10),
-                      child: Text(title, style: TextService1()),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 5, 5, 5),
-                      child: Text(about, style: Brown()),
-                    ),
-                  ],
-                ),
-              ],
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.only(
+                            start: 20, top: 10),
+                        child: Text(title, style: TextService1()),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 5, 5, 5),
+                        child: Text(about, style: Brown()),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -224,7 +224,6 @@ void _showContactDialog(BuildContext context) {
               ),
               // 50% of screen height
               Center(
-                
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -301,7 +300,6 @@ void _showContactDialog(BuildContext context) {
                           backgroundColor: Colors.black,
                           textColor: Colors.white,
                           fontSize: 16.0,
-                          
                         );
                         Navigator.of(context).pop();
                       },

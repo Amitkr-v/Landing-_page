@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/Mobile/Profile/dialogue.dart';
 import 'package:full_screen_image/full_screen_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -35,35 +36,6 @@ class mobileSection2p extends StatelessWidget {
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 50,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Color(0xFF969595),
-                                  ),
-                                ),
-                                child: Icon(
-                                  Icons.add,
-                                  color: Colors.black,
-                                  size: 20,
-                                ),
-                              ),
-                              Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
-                                child: Text(
-                                  'Add Member',
-                                  style: textMember(),
-                                ),
-                              ),
-                            ],
-                          ),
                           Member(),
                           Member(),
                           Member(),
@@ -188,15 +160,17 @@ class mobileSection2p extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
-                              child: FullScreenWidget(
-                                disposeLevel: DisposeLevel.Low,
-                                child: Hero(
-                                  tag: "Profile_$showcasename",
-                                  child: ClipRRect(
-                                    child: Image.asset(
-                                      showcaseprofile,
-                                      
-                                      fit: BoxFit.cover,
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: FullScreenWidget(
+                                  disposeLevel: DisposeLevel.Low,
+                                  child: Hero(
+                                    tag: "Profile_$showcasename",
+                                    child: ClipRRect(
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -207,7 +181,6 @@ class mobileSection2p extends StatelessWidget {
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             crossAxisAlignment: CrossAxisAlignment.start,
-                            
                             children: [
                               Text(
                                 showcasename,
@@ -223,10 +196,21 @@ class mobileSection2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -243,15 +227,18 @@ class mobileSection2p extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: FullScreenWidget(
-                          disposeLevel: DisposeLevel.Low,
-                          child: Hero(
-                            tag: "Image_1_$showcasename",
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                Showcase1image,
-                                fit: BoxFit.cover,
+                        child: MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: FullScreenWidget(
+                            disposeLevel: DisposeLevel.Low,
+                            child: Hero(
+                              tag: "Image_1_$showcasename",
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.asset(
+                                  Showcase1image,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -274,15 +261,19 @@ class mobileSection2p extends StatelessWidget {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: FullScreenWidget(
-                                    disposeLevel: DisposeLevel.Low,
-                                    child: Hero(
-                                      tag: "Image_2_$showcasename",
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.asset(
-                                          Showcase1image2,
-                                          fit: BoxFit.cover,
+                                  child: MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: FullScreenWidget(
+                                      disposeLevel: DisposeLevel.Low,
+                                      child: Hero(
+                                        tag: "Image_2_$showcasename",
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          child: Image.asset(
+                                            Showcase1image2,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -300,15 +291,18 @@ class mobileSection2p extends StatelessWidget {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: FullScreenWidget(
-                                    disposeLevel: DisposeLevel.Low,
-                                    child: Hero(
-                                      tag: "Image_3_$showcasename",
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(8),
-                                        child: Image.asset(
-                                          Showcase1image3,
-                                          fit: BoxFit.cover,
+                                  child: MouseRegion(
+                                    child: FullScreenWidget(
+                                      disposeLevel: DisposeLevel.Low,
+                                      child: Hero(
+                                        tag: "Image_3_$showcasename",
+                                        child: ClipRRect(
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                          child: Image.asset(
+                                            Showcase1image3,
+                                            fit: BoxFit.cover,
+                                          ),
                                         ),
                                       ),
                                     ),
@@ -333,16 +327,18 @@ class mobileSection2p extends StatelessWidget {
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: FullScreenWidget(
-                                      disposeLevel: DisposeLevel.Low,
-                                      child: Hero(
-                                        tag: "Image_4_$showcasename",
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          child: Image.asset(
-                                            Showcase1image4,
-                                            fit: BoxFit.cover,
+                                    child: MouseRegion(
+                                      child: FullScreenWidget(
+                                        disposeLevel: DisposeLevel.Low,
+                                        child: Hero(
+                                          tag: "Image_4_$showcasename",
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            child: Image.asset(
+                                              Showcase1image4,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -360,16 +356,19 @@ class mobileSection2p extends StatelessWidget {
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(10),
                                     ),
-                                    child: FullScreenWidget(
-                                      disposeLevel: DisposeLevel.Low,
-                                      child: Hero(
-                                        tag: "Image_5_$showcasename",
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                          child: Image.asset(
-                                            Showcase1image5,
-                                            fit: BoxFit.cover,
+                                    child: MouseRegion(
+                                      cursor: SystemMouseCursors.click,
+                                      child: FullScreenWidget(
+                                        disposeLevel: DisposeLevel.Low,
+                                        child: Hero(
+                                          tag: "Image_5_$showcasename",
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                            child: Image.asset(
+                                              Showcase1image5,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
                                         ),
                                       ),
@@ -446,26 +445,28 @@ class mobileSection2p extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Container(
-                            width: 120,
-                            height: 120,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: FullScreenWidget(
-                          disposeLevel: DisposeLevel.Low,
-                          child: Hero(
-                            tag: "Profile2_$showcasename",
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                showcaseprofile,
-                                fit: BoxFit.cover,
+                              width: 120,
+                              height: 120,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
                               ),
-                            ),
-                          ),
-                        )
-                          ),
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: FullScreenWidget(
+                                  disposeLevel: DisposeLevel.Low,
+                                  child: Hero(
+                                    tag: "Profile2_$showcasename",
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              )),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
@@ -508,15 +509,18 @@ class mobileSection2p extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: FullScreenWidget(
-                          disposeLevel: DisposeLevel.Low,
-                          child: Hero(
-                            tag: "Image2_1_$showcasename",
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                showcase1image,
-                                fit: BoxFit.cover,
+                        child: MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: FullScreenWidget(
+                            disposeLevel: DisposeLevel.Low,
+                            child: Hero(
+                              tag: "Image2_1_$showcasename",
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.asset(
+                                  showcase1image,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -530,15 +534,18 @@ class mobileSection2p extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: FullScreenWidget(
-                            disposeLevel: DisposeLevel.Low,
-                            child: Hero(
-                              tag: "Image2_2_$showcasename",
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.asset(
-                                  Showcase1image2,
-                                  fit: BoxFit.cover,
+                          child: MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: FullScreenWidget(
+                              disposeLevel: DisposeLevel.Low,
+                              child: Hero(
+                                tag: "Image2_2_$showcasename",
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.asset(
+                                    Showcase1image2,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -622,15 +629,18 @@ class mobileSection2p extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
-                              child: FullScreenWidget(
-                                disposeLevel: DisposeLevel.Low,
-                                child: Hero(
-                                  tag: "Profile3_$showcasename",
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      showcaseprofile,
-                                      fit: BoxFit.cover,
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: FullScreenWidget(
+                                  disposeLevel: DisposeLevel.Low,
+                                  child: Hero(
+                                    tag: "Profile3_$showcasename",
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -677,15 +687,17 @@ class mobileSection2p extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: FullScreenWidget(
-                          disposeLevel: DisposeLevel.Low,
-                          child: Hero(
-                            tag: "Image3_1_$showcasename",
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                showcase1image,
-                                fit: BoxFit.cover,
+                        child: MouseRegion(
+                          child: FullScreenWidget(
+                            disposeLevel: DisposeLevel.Low,
+                            child: Hero(
+                              tag: "Image3_1_$showcasename",
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.asset(
+                                  showcase1image,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -702,15 +714,18 @@ class mobileSection2p extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: FullScreenWidget(
-                                disposeLevel: DisposeLevel.Low,
-                                child: Hero(
-                                  tag: "Image3_2_$showcasename",
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      showcase1image2,
-                                      fit: BoxFit.cover,
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: FullScreenWidget(
+                                  disposeLevel: DisposeLevel.Low,
+                                  child: Hero(
+                                    tag: "Image3_2_$showcasename",
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        showcase1image2,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -725,15 +740,18 @@ class mobileSection2p extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: FullScreenWidget(
-                                disposeLevel: DisposeLevel.Low,
-                                child: Hero(
-                                  tag: "Image3_3_$showcasename",
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      Showcase1image3,
-                                      fit: BoxFit.cover,
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: FullScreenWidget(
+                                  disposeLevel: DisposeLevel.Low,
+                                  child: Hero(
+                                    tag: "Image3_3_$showcasename",
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        Showcase1image3,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -820,15 +838,18 @@ class mobileSection2p extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
-                              child: FullScreenWidget(
-                                disposeLevel: DisposeLevel.Low,
-                                child: Hero(
-                                  tag: "Profile4_$showcasename",
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      showcaseprofile,
-                                      fit: BoxFit.cover,
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: FullScreenWidget(
+                                  disposeLevel: DisposeLevel.Low,
+                                  child: Hero(
+                                    tag: "Profile4_$showcasename",
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -875,15 +896,18 @@ class mobileSection2p extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: FullScreenWidget(
-                          disposeLevel: DisposeLevel.Low,
-                          child: Hero(
-                            tag: "Image4_1_$showcasename",
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
-                              child: Image.asset(
-                                showcase1image2,
-                                fit: BoxFit.cover,
+                        child: MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: FullScreenWidget(
+                            disposeLevel: DisposeLevel.Low,
+                            child: Hero(
+                              tag: "Image4_1_$showcasename",
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(8),
+                                child: Image.asset(
+                                  showcase1image2,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -897,15 +921,18 @@ class mobileSection2p extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: FullScreenWidget(
-                            disposeLevel: DisposeLevel.Low,
-                            child: Hero(
-                              tag: "Image4_2_$showcasename",
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
-                                child: Image.asset(
-                                  showcase1image2,
-                                  fit: BoxFit.cover,
+                          child: MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: FullScreenWidget(
+                              disposeLevel: DisposeLevel.Low,
+                              child: Hero(
+                                tag: "Image4_2_$showcasename",
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(8),
+                                  child: Image.asset(
+                                    showcase1image2,
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
                               ),
                             ),
@@ -924,15 +951,18 @@ class mobileSection2p extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: FullScreenWidget(
-                                disposeLevel: DisposeLevel.Low,
-                                child: Hero(
-                                  tag: "Image4_3_$showcasename",
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      showcase1image3,
-                                      fit: BoxFit.cover,
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: FullScreenWidget(
+                                  disposeLevel: DisposeLevel.Low,
+                                  child: Hero(
+                                    tag: "Image4_3_$showcasename",
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        showcase1image3,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -947,15 +977,18 @@ class mobileSection2p extends StatelessWidget {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
                               ),
-                              child: FullScreenWidget(
-                                disposeLevel: DisposeLevel.Low,
-                                child: Hero(
-                                  tag: "Image4_4_$showcasename",
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      Showcase1image4,
-                                      fit: BoxFit.cover,
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: FullScreenWidget(
+                                  disposeLevel: DisposeLevel.Low,
+                                  child: Hero(
+                                    tag: "Image4_4_$showcasename",
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        Showcase1image4,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -1035,15 +1068,18 @@ class mobileSection2p extends StatelessWidget {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
-                              child: FullScreenWidget(
-                                disposeLevel: DisposeLevel.Low,
-                                child: Hero(
-                                  tag: "Profile5_$showcasename",
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.asset(
-                                      showcaseprofile,
-                                      fit: BoxFit.cover,
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: FullScreenWidget(
+                                  disposeLevel: DisposeLevel.Low,
+                                  child: Hero(
+                                    tag: "Profile5_$showcasename",
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        showcaseprofile,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                   ),
                                 ),

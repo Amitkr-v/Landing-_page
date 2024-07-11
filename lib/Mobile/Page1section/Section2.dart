@@ -3,7 +3,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Desktop/Page1Sections/stest.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class Bodym1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -114,12 +113,11 @@ class Bodym1 extends StatelessWidget {
         ),
         Container(
           width: MediaQuery.sizeOf(context).width * 0.7,
-          decoration: BoxDecoration(),
           child: ClipRRect(
             borderRadius: BorderRadius.zero,
             child: Image.asset(
               'assets/images/asset1.png',
-              fit: BoxFit.cover,
+              fit: BoxFit.contain,
             ),
           ),
         ),

@@ -32,65 +32,68 @@ class mobileSection3p extends StatelessWidget {
     );
   }
 
-  GestureDetector servicedata(
+  MouseRegion servicedata(
       BuildContext context, String image, String title, String about) {
-    return GestureDetector(
-      onTap: () {
-        _showContactDialog(context);
-      },
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
-        child: Container(
-          decoration: BoxDecoration(
-            color: Color(0xFFF9F9F9),
-          ),
-          child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20.0),
-                        topRight: Radius.circular(20.0),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {
+          _showContactDialog(context);
+        },
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Color(0xFFF9F9F9),
+            ),
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
+                        ),
                       ),
-                    ),
-                    width: MediaQuery.of(context).size.width * 1,
-                    height: MediaQuery.of(context).size.height * 0.15,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(20.0),
-                        topRight: Radius.circular(20.0),
-                      ),
-                      child: Image.asset(
-                        image,
-                        fit: BoxFit.cover,
+                      width: MediaQuery.of(context).size.width * 1,
+                      height: MediaQuery.of(context).size.height * 0.15,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(20.0),
+                          topRight: Radius.circular(20.0),
+                        ),
+                        child: Image.asset(
+                          image,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                   ),
-                ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.only(start: 20, top: 10),
-                      child: Text(title, style: TextService1()),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(20, 5, 5, 5),
-                      child: Text(about, style: Brown()),
-                    ),
-                  ],
-                ),
-              ],
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsetsDirectional.only(
+                            start: 20, top: 10),
+                        child: Text(title, style: TextService1()),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(20, 5, 5, 5),
+                        child: Text(about, style: Brown()),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -214,7 +217,6 @@ void _showContactDialog(BuildContext context) {
                   child: Image.asset('assets/images/el1.png'),
                 ),
               ),
-              
               Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

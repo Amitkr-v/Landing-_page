@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Desktop/Page1Sections/dialog.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 
@@ -93,6 +94,7 @@ class _BodySectionState extends State<BodySection> {
                 Padding(
                   padding: EdgeInsetsDirectional.only(top: 30),
                   child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
                     onEnter: (_) {
                       setState(() {
                         isDownloadHovered = true;
@@ -105,7 +107,10 @@ class _BodySectionState extends State<BodySection> {
                     },
                     child: GestureDetector(
                       onTap: () {
-                        _showDownloadDialog(context);
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => dialog(),
+                        );
                       },
                       child: Container(
                         width: 215,
@@ -275,8 +280,8 @@ class _BodySectionState extends State<BodySection> {
                         decoration: BoxDecoration(),
                         child: ClipRRect(
                           borderRadius: BorderRadius.zero,
-                          child: Lottie.asset(
-                            'assets/images/anim1.json',
+                          child: Image.asset(
+                            'assets/images/asset1.png',
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -289,43 +294,6 @@ class _BodySectionState extends State<BodySection> {
           ),
         ],
       ),
-    );
-  }
-
-  void _showDownloadDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return Dialog(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-          ),
-          child: Container(
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: MediaQuery.of(context).size.height * 0.5,
-            padding: EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: Lottie.asset(
-                    'assets/images/dialog1.json', // Replace with your animation file path
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                Text(
-                  'Thank you for choosing us!',
-                  style: TextStyle(
-                    fontSize: 40,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        );
-      },
     );
   }
 }

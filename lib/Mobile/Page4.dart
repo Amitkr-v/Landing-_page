@@ -12,7 +12,7 @@ class Page4m extends StatelessWidget {
         color: Colors.white,
       ),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+        padding: EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -45,11 +45,10 @@ class Page4m extends StatelessWidget {
                             text: TextSpan(
                               text: 'Startup Space',
                               style: TextStyle(
-                                fontSize: 20,
-                                letterSpacing: 0,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.black
-                              ),
+                                  fontSize: 20,
+                                  letterSpacing: 0,
+                                  fontWeight: FontWeight.w900,
+                                  color: Colors.black),
                               children: const <TextSpan>[
                                 TextSpan(
                                   text: '.',
@@ -203,96 +202,108 @@ class Page4m extends StatelessWidget {
                 ),
                 Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                    child: GestureDetector(
-                      onTap: () async {
-                        const url = 'https://www.instagram.com/';
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch $url';
-                        }
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(0),
-                          child: SvgPicture.asset(
-                            'assets/images/instagram.svg',
-                            width: 20,
-                            height: 20,
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () async {
+                          const url = 'https://www.instagram.com/';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(0),
+                            child: SvgPicture.asset(
+                              'assets/images/instagram.svg',
+                              width: 20,
+                              height: 20,
+                            ),
                           ),
                         ),
                       ),
                     )),
                 Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                    child: GestureDetector(
-                      onTap: () async {
-                        const url =
-                            'https://www.linkedin.com/in/followbhub/?originalSubdomain=in';
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch $url';
-                        }
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(0),
-                          child: SvgPicture.asset(
-                            'assets/images/linkedin.svg',
-                            width: 20,
-                            height: 20,
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () async {
+                          const url =
+                              'https://www.linkedin.com/in/followbhub/?originalSubdomain=in';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(0),
+                            child: SvgPicture.asset(
+                              'assets/images/linkedin.svg',
+                              width: 20,
+                              height: 20,
+                            ),
                           ),
                         ),
                       ),
                     )),
                 Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                    child: GestureDetector(
-                      onTap: () async {
-                        const url =
-                            'https://x.com/i/flow/login?redirect_after_login=%2FFollowBhub';
-                        if (await canLaunch(url)) {
-                          await launch(url);
-                        } else {
-                          throw 'Could not launch $url';
-                        }
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(0),
-                          child: SvgPicture.asset(
-                            'assets/images/tw.svg',
-                            width: 20,
-                            height: 20,
-                            fit: BoxFit.contain,
+                    child: MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                        onTap: () async {
+                          const url =
+                              'https://x.com/i/flow/login?redirect_after_login=%2FFollowBhub';
+                          if (await canLaunch(url)) {
+                            await launch(url);
+                          } else {
+                            throw 'Could not launch $url';
+                          }
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(0),
+                            child: SvgPicture.asset(
+                              'assets/images/tw.svg',
+                              width: 20,
+                              height: 20,
+                              fit: BoxFit.contain,
+                            ),
                           ),
                         ),
                       ),
                     )),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                  child: GestureDetector(
-                    onTap: () async {
-                      const url = 'https://dribbble.com/';
-                      if (await canLaunch(url)) {
-                        await launch(url);
-                      } else {
-                        throw 'Could not launch $url';
-                      }
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(0),
-                        child: SvgPicture.asset(
-                          'assets/images/dribbble.svg',
-                          width: 24,
-                          height: 24,
-                          fit: BoxFit.contain,
+                  child: MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () async {
+                        const url = 'https://dribbble.com/';
+                        if (await canLaunch(url)) {
+                          await launch(url);
+                        } else {
+                          throw 'Could not launch $url';
+                        }
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(0),
+                          child: SvgPicture.asset(
+                            'assets/images/dribbble.svg',
+                            width: 24,
+                            height: 24,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ),

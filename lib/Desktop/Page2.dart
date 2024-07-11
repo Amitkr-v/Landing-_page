@@ -341,6 +341,7 @@ class _CompanyItemState extends State<CompanyItem> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 40),
             child: MouseRegion(
+              cursor: SystemMouseCursors.click,
               onEnter: (_) => _onHover(true),
               onExit: (_) => _onHover(false),
               child: AnimatedContainer(
