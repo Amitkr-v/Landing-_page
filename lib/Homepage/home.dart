@@ -3,7 +3,6 @@ import 'package:flutter_application_1/Desktop/Page1Sections/bodySection.dart';
 import 'package:flutter_application_1/Desktop/Page1Sections/navbar.dart';
 import 'package:flutter_application_1/Desktop/Page1Sections/stest.dart';
 import 'package:flutter_application_1/Desktop/Page2.dart';
-import 'package:flutter_application_1/Desktop/Page3.dart';
 import 'package:flutter_application_1/Desktop/Page3sections/Section1.dart';
 import 'package:flutter_application_1/Desktop/Page4.dart';
 import 'package:flutter_application_1/Mobile/Page1section/Section1.dart';
@@ -40,7 +39,6 @@ class DesktopLayout extends StatelessWidget {
     return Container(
       color: Colors.white,
       width: screenWidth,
-      
       child: Stack(
         children: [
           Column(
@@ -57,7 +55,7 @@ class DesktopLayout extends StatelessWidget {
                       Page2Widget(),
                       Section1(),
                       Container(
-                        color: Colors.white,
+                        color: Color.fromARGB(255, 250, 250, 250),
                         child: BottomPage(),
                       ),
                     ],
