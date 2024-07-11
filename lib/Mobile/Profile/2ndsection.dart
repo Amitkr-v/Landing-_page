@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_application_1/Mobile/Profile/dialogue.dart';
+import 'package:flutter_application_1/Mobile/Profile/deldialogue.dart';
 import 'package:full_screen_image/full_screen_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -488,10 +488,21 @@ class mobileSection2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -666,10 +677,21 @@ class mobileSection2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -875,10 +897,21 @@ class mobileSection2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -1105,10 +1138,21 @@ class mobileSection2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -1259,25 +1303,6 @@ class mobileSection2p extends StatelessWidget {
       fontSize: 12,
       decoration: TextDecoration.none,
       fontWeight: FontWeight.w400,
-    );
-  }
-}
-
-class FullScreenImage extends StatelessWidget {
-  final String imagePath;
-
-  FullScreenImage({required this.imagePath});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        iconTheme: IconThemeData(color: Colors.white),
-      ),
-      body: Center(
-        child: Image.asset(imagePath),
-      ),
     );
   }
 }

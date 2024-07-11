@@ -2,7 +2,7 @@ library full_screen_image;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_application_1/Mobile/Profile/dialogue.dart';
+import 'package:flutter_application_1/Mobile/Profile/deldialogue.dart';
 import 'package:full_screen_image/full_screen_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -505,10 +505,21 @@ class section2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -741,10 +752,21 @@ class section2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -950,10 +972,21 @@ class section2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
@@ -1127,10 +1160,21 @@ class section2p extends StatelessWidget {
                       ],
                     ),
                   ),
-                  Icon(
-                    Icons.keyboard_control,
-                    color: Colors.black,
-                    size: 24,
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () {
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) => Dialogue(),
+                        );
+                      },
+                      child: Icon(
+                        Icons.keyboard_control,
+                        color: Colors.black,
+                        size: 24,
+                      ),
+                    ),
                   ),
                 ],
               ),
