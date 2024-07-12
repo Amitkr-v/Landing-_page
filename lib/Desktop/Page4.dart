@@ -122,8 +122,7 @@ class BottomPage extends StatelessWidget {
                                       10, 0, 0, 0),
                                   child: GestureDetector(
                                     onTap: () async {
-                                      const url =
-                                          'https://www.instagram.com/';
+                                      const url = 'https://www.instagram.com/';
                                       if (await canLaunch(url)) {
                                         await launch(url);
                                       } else {
@@ -172,7 +171,8 @@ class BottomPage extends StatelessWidget {
                                       20, 0, 0, 0),
                                   child: GestureDetector(
                                     onTap: () async {
-                                      const url = 'https://x.com/i/flow/login?redirect_after_login=%2FFollowBhub';
+                                      const url =
+                                          'https://x.com/i/flow/login?redirect_after_login=%2FFollowBhub';
                                       if (await canLaunch(url)) {
                                         await launch(url);
                                       } else {
@@ -396,6 +396,15 @@ class BottomPage extends StatelessWidget {
                           color: Color(0xFF67788A),
                           fontWeight: FontWeight.w200,
                         ),
+                      ),
+                    ),
+                    Text(
+                      'NS apps innovation',
+                      style: TextStyle(
+                        fontSize: 16,
+                        letterSpacing: 0,
+                        color: Color(0xFF67788A),
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],

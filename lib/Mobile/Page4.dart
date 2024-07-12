@@ -385,10 +385,13 @@ class Page4m extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [],
-                      ),
+                      Text(
+                          'NS apps innovation',
+                          style: TextStyle(
+                            fontSize: 16,
+                            letterSpacing: 0,
+                          ),
+                        ),
                     ],
                   ),
                 ],
