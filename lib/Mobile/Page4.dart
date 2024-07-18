@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Desktop/Page4/dialog.dart';
+import 'package:flutter_application_1/Homepage/home.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -96,42 +98,46 @@ class Page4m extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'HOME',
-                        style: TextStyle(
-                          color: Color(0xFF67788A),
-                          fontSize: 16,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      Text(
-                        'STORIES',
-                        style: TextStyle(
-                          color: Color(0xFF67788A),
-                          fontSize: 16,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      Text(
-                        'TOOLS',
-                        style: TextStyle(
-                          color: Color(0xFF67788A),
-                          fontSize: 16,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      Text(
-                        'TEAMS',
-                        style: TextStyle(
-                          color: Color(0xFF67788A),
-                          fontSize: 16,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
+                      MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeMain()),
+                            ),
+                            child: text1('Home'),
+                          )),
+                      MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                              onTap: () => showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => dialog1(
+                                        'Stories',
+                                        'The Stories section on our website showcases inspiring success stories and innovative projects from various startups we\'ve connected. Discover how these collaborations have led to groundbreaking solutions and transformed industries, illustrating the power of networking and partnership in the startup ecosystem.'),
+                                  ),
+                              child: text1('STORIES'))),
+                      MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                              onTap: () => showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => dialog1(
+                                        'Tools',
+                                        'The Tools on our website offers a range of cutting-edge resources designed to empower startups. Explore our suite of tools that streamline operations, enhance productivity, and drive innovation, enabling startups to achieve their full potential'),
+                                  ),
+                              child: text1('TOOLS'))),
+                      MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                              onTap: () => showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => dialog1(
+                                        'Teams',
+                                        'The Teams section on our website highlights the diverse and talented groups driving innovation in various startups. Discover the dynamic collaborations and skilled professionals whose expertise and dedication are transforming ideas into successful ventures.'),
+                                  ),
+                              child: text1('TEAMS'))),
                     ],
                   ),
                   Column(
@@ -139,42 +145,47 @@ class Page4m extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'COMPANY INFO',
-                        style: TextStyle(
-                          color: Color(0xFF67788A),
-                          fontSize: 16,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      Text(
-                        'NEWSROOM',
-                        style: TextStyle(
-                          color: Color(0xFF67788A),
-                          fontSize: 16,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      Text(
-                        'CAREERS',
-                        style: TextStyle(
-                          color: Color(0xFF67788A),
-                          fontSize: 16,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                      Text(
-                        'BRAND RESOURCES',
-                        style: TextStyle(
-                          color: Color(0xFF67788A),
-                          fontSize: 16,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
+                      MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                              onTap: () => showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => dialog1(
+                                        'Company info',
+                                        'Discover Bihar\'s brightest startup coworking space located in Patna\'s Mauryalok Complex. Our vibrant community provides the perfect environment for innovation, collaboration, and growth for emerging entrepreneurs'),
+                                  ),
+                              child: text1('COMPANY INFO'))),
+                      MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                              onTap: () => showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => dialog1(
+                                        'Newsroom',
+                                        'Explore our Newsroom for the latest updates and insights into the dynamic startup ecosystem, featuring impactful stories and industry trends. Stay informed about our initiatives and achievements as we continue to drive innovation in Bihar and beyond.'),
+                                  ),
+                              child: text1('NEWSROOM'))),
+                      MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                              onTap: () => showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => dialog1(
+                                        'careers',
+                                        'Discover opportunities to join Bihar\'s brightest startup coworking space located in Patna\'s Mauryalok complex. Explore diverse roles that empower you to contribute to our mission of fostering innovation and supporting emerging startups'),
+                                  ),
+                              child: text1('CAREERS'))),
+                      MouseRegion(
+                          cursor: SystemMouseCursors.click,
+                          child: GestureDetector(
+                            onTap: () => showDialog(
+                              context: context,
+                              builder: (BuildContext context) => dialog1(
+                                  'Brand resources',
+                                  'Explore our brand resources and discover how we maintain our identity as Bihar\'s brightest startup coworking space in Patna\'s Mauryalok complex. Access logos, guidelines, and assets that embody our commitment to fostering innovation and supporting emerging startups'),
+                            ),
+                            child: text1('BRAND RESOURCES'),
+                          ))
                     ],
                   ),
                 ],
@@ -326,38 +337,47 @@ class Page4m extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Terms',
-                    style: TextStyle(
-                      fontSize: 16,
-                      letterSpacing: 0,
-                      color: Color(0xFF67788A),
+                  MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                          onTap: () => showDialog(
+                                context: context,
+                                builder: (BuildContext context) => dialog1(
+                                    'Terms',
+                                    'Our Terms ensure your data security through encryption and caching for improved user experience. We prioritize safeguarding your information while enhancing site performance. Our Privacy Policy outlines these measures to protect your data integrity and confidentiality.'),
+                              ),
+                          child: text1('Terms'))),
+                  MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                          onTap: () => showDialog(
+                                context: context,
+                                builder: (BuildContext context) => dialog1(
+                                    'Privacy',
+                                    'Our Terms ensure your data security through encryption and caching for improved user experience. We prioritize safeguarding your information while enhancing site performance. Our Privacy Policy outlines these measures to protect your data integrity and confidentiality.'),
+                              ),
+                          child: text1('Privacy'))),
+                  MouseRegion(
+                      cursor: SystemMouseCursors.click,
+                      child: GestureDetector(
+                          onTap: () => showDialog(
+                                context: context,
+                                builder: (BuildContext context) => dialog1(
+                                    'Cookies',
+                                    'Our Terms ensure your data security through encryption and caching for improved user experience. We prioritize safeguarding your information while enhancing site performance. Our Privacy Policy outlines these measures to protect your data integrity and confidentiality.'),
+                              ),
+                          child: text1('Cookies'))),
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: () => showDialog(
+                        context: context,
+                        builder: (BuildContext context) => dialog1('Sitemap',
+                            'Our Sitemap provides a structured overview of our website\'s content, facilitating easy navigation and access to all sections. It ensures a streamlined browsing experience, helping you find information quickly and efficiently'),
+                      ),
+                      child: text1('Sitemap'),
                     ),
-                  ),
-                  Text(
-                    'Privacy',
-                    style: TextStyle(
-                      fontSize: 16,
-                      letterSpacing: 0,
-                      color: Color(0xFF67788A),
-                    ),
-                  ),
-                  Text(
-                    'Cookies',
-                    style: TextStyle(
-                      fontSize: 16,
-                      letterSpacing: 0,
-                      color: Color(0xFF67788A),
-                    ),
-                  ),
-                  Text(
-                    'Sitemap',
-                    style: TextStyle(
-                      fontSize: 16,
-                      letterSpacing: 0,
-                      color: Color(0xFF67788A),
-                    ),
-                  ),
+                  )
                 ],
               ),
             ),
@@ -376,22 +396,9 @@ class Page4m extends StatelessWidget {
                         size: 24,
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                        child: Text(
-                          '2024',
-                          style: TextStyle(
-                            fontSize: 16,
-                            letterSpacing: 0,
-                          ),
-                        ),
-                      ),
-                      Text(
-                          'NS apps innovation',
-                          style: TextStyle(
-                            fontSize: 16,
-                            letterSpacing: 0,
-                          ),
-                        ),
+                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                          child: text1('2024')),
+                      text1('NS apps innovation')
                     ],
                   ),
                 ],
@@ -399,6 +406,18 @@ class Page4m extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Text text1(String text) {
+    return Text(
+      text,
+      style: TextStyle(
+        color: Color(0xFF67788A),
+        fontSize: 16,
+        letterSpacing: 0,
+        fontWeight: FontWeight.w300,
       ),
     );
   }

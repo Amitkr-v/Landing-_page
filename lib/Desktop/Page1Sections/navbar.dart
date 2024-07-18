@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_application_1/Homepage/home.dart';
 
 class Navbar extends StatefulWidget {
   @override
@@ -22,26 +22,35 @@ class _NavbarState extends State<Navbar> {
           Row(
             mainAxisSize: MainAxisSize.max,
             children: [
-              RichText(
-                text: TextSpan(
-                  text: 'Startup Space',
-                  style: TextStyle(
-                    fontSize: 25,
-                    letterSpacing: 0,
-                    fontWeight: FontWeight.w900,
-                    color:Colors.black,
+              MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (((context) => HomeMain()))),
                   ),
-                  children: const <TextSpan>[
-                    TextSpan(
-                      text: '.',
+                  child: RichText(
+                    text: TextSpan(
+                      text: 'Startup Space',
                       style: TextStyle(
                         fontSize: 25,
                         letterSpacing: 0,
                         fontWeight: FontWeight.w900,
-                        color: Colors.red,
+                        color: Colors.black,
                       ),
+                      children: const <TextSpan>[
+                        TextSpan(
+                          text: '.',
+                          style: TextStyle(
+                            fontSize: 25,
+                            letterSpacing: 0,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.red,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
               ),
               Padding(

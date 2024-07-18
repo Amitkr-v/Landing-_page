@@ -4,7 +4,7 @@ import 'package:flutter_application_1/Desktop/Page1Sections/navbar.dart';
 import 'package:flutter_application_1/Desktop/Page1Sections/stest.dart';
 import 'package:flutter_application_1/Desktop/Page2.dart';
 import 'package:flutter_application_1/Desktop/Page3sections/Section1.dart';
-import 'package:flutter_application_1/Desktop/Page4.dart';
+import 'package:flutter_application_1/Desktop/Page4/Page4.dart';
 import 'package:flutter_application_1/Mobile/Page1section/Section1.dart';
 import 'package:flutter_application_1/Mobile/Page1section/Section2.dart';
 import 'package:flutter_application_1/Mobile/Page2.dart';
