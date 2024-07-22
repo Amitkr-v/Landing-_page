@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Profile.dart';
+import 'package:flutter_application_1/Model/Showcase.dart';
 import 'package:flutter_application_1/Model/company.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -294,11 +295,22 @@ class _CompanyItemState extends State<companyItem> {
       about:
           'NS APPS INNOVATION LLP is an innovative initiative by the Bihar government aimed at fostering the growth of startups in the region. Located in the heart of Bihar, B-Hub provides budding entrepreneurs with state-of-the-art infrastructure, mentorship, and access to a network of investors and industry experts.',
     );
+    ShowcaseModel showcaseModel = ShowcaseModel(
+      id: '1',
+      name: 'Summer Collection',
+      description: 'A showcase of our latest summer apparel.',
+      profileImage: 'assets/images/profile1.png',
+      images: [
+        'assets/images/pic1.png',
+        'assets/images/pic2.png',
+        'assets/images/pic3.png',
+      ],
+    );
 
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
-        MaterialPageRoute(builder: (((context) => Profile(companyMod)))),
+        MaterialPageRoute(builder: (((context) => Profile(companyMod,showcaseModel)))),
       ),
       child: Padding(
         padding: const EdgeInsetsDirectional.only(start: 10, end: 10),

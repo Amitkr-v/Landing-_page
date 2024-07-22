@@ -24,8 +24,9 @@ class dialog extends StatelessWidget {
             ),
             Text(
               'Thank you for choosing us!',
+              textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 40,
+                fontSize: 30,
                 fontWeight: FontWeight.bold,
               ),
             ),

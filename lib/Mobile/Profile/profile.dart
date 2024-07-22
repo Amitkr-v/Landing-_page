@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Mobile/Profile/1stsection.dart';
 import 'package:flutter_application_1/Mobile/Profile/2ndsection.dart';
 import 'package:flutter_application_1/Mobile/Profile/3rdsection.dart';
+import 'package:flutter_application_1/Model/Showcase.dart';
 import 'package:flutter_application_1/Model/company.dart';
 
 class mobileProfile extends StatelessWidget {
-  final CompanyModel companyModel;
-  mobileProfile(this.companyModel);
+   final CompanyModel companyModel;
+  final ShowcaseModel showcaseModel;
+  mobileProfile(this.companyModel,this.showcaseModel);
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class mobileProfile extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         mobileSection1p(companyModel),
-        mobileSection2p(),
+        mobileSection2p(showcaseModel: showcaseModel),
         mobileSection3p(),
       ],
     );

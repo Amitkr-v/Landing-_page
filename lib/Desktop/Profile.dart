@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Profile/newProfile.dart';
 import 'package:flutter_application_1/Mobile/Profile/profile.dart';
+import 'package:flutter_application_1/Model/Showcase.dart';
 import 'package:flutter_application_1/Model/company.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class Profile extends StatelessWidget {
   final CompanyModel companyModel;
-  Profile(this.companyModel);
+  final ShowcaseModel showcaseModel;
+  Profile(this.companyModel,this.showcaseModel);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -14,9 +16,9 @@ class Profile extends StatelessWidget {
         body: SafeArea(
             top: true,
             child: ScreenTypeLayout.builder(
-              mobile: (BuildContext context) => Mobilelayout(companyModel),
-              desktop: (BuildContext context) => DesktopLayout(companyModel),
-              tablet: (BuildContext context) => TabletLayout(companyModel),
+              mobile: (BuildContext context) => Mobilelayout(companyModel,showcaseModel),
+              desktop: (BuildContext context) => DesktopLayout(companyModel,showcaseModel),
+              tablet: (BuildContext context) => TabletLayout(companyModel,showcaseModel),
             )),
       ),
     );
@@ -25,7 +27,8 @@ class Profile extends StatelessWidget {
 
 class DesktopLayout extends StatelessWidget {
   final CompanyModel companyModel;
-  DesktopLayout(this.companyModel);
+  final ShowcaseModel showcaseModel;
+  DesktopLayout(this.companyModel,this.showcaseModel);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -40,7 +43,7 @@ class DesktopLayout extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    MainProfile1Widget(companyModel),
+                    MainProfile1Widget(companyModel,showcaseModel),
                   ],
                 ),
               ),
@@ -54,7 +57,8 @@ class DesktopLayout extends StatelessWidget {
 
 class TabletLayout extends StatelessWidget {
   final CompanyModel companyModel;
-  TabletLayout(this.companyModel);
+  final ShowcaseModel showcaseModel;
+  TabletLayout(this.companyModel,this.showcaseModel);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -67,7 +71,7 @@ class TabletLayout extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    mobileProfile(companyModel),
+                    mobileProfile(companyModel,showcaseModel),
                   ],
                 ),
               ),
@@ -81,7 +85,8 @@ class TabletLayout extends StatelessWidget {
 
 class Mobilelayout extends StatelessWidget {
   final CompanyModel companyModel;
-  Mobilelayout(this.companyModel);
+  final ShowcaseModel showcaseModel;
+  Mobilelayout(this.companyModel,this.showcaseModel);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -94,7 +99,7 @@ class Mobilelayout extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    mobileProfile(companyModel),
+                    mobileProfile(companyModel,showcaseModel),
                   ],
                 ),
               ),

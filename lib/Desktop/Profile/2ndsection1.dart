@@ -1,3 +1,5 @@
+library full_screen_image;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Mobile/Profile/deldialogue.dart';
@@ -5,91 +7,101 @@ import 'package:flutter_application_1/Model/Showcase.dart';
 import 'package:full_screen_image/full_screen_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class mobileSection2p extends StatelessWidget {
-    final ShowcaseModel showcaseModel;
+class Section2P extends StatelessWidget {
+  final ShowcaseModel showcaseModel;
 
-  mobileSection2p({required this.showcaseModel});
-  @override
+  Section2P({required this.showcaseModel});
+
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Color(0xFFF9F9F9),
-      ),
-      child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Company Team',
-                    style: styleb(),
-                  ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 30),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Member(),
-                          Member(),
-                          Member(),
-                          Member(),
-                          Member(),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+    return Expanded(
+      flex: 8,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color(0xFFF9F9F9),
+        ),
+        child: Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(30, 0, 0, 0),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(
-                        'Show case',
-                        style: styleb(),
+                        'Company Team',
+                        style: Styleb(),
                       ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 30),
+                        child: SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Member(),
+                              Member(),
+                              Member(),
+                              Member(),
+                              Member(),
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
-                Feed(
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 40, 0),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Showcase',
+                            style: Styleb(),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: Colors.black,
+                                width: 1,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Feed(
                         context,
                         showcaseModel.name,
                         showcaseModel.description,
                         showcaseModel.profileImage,
                         showcaseModel.images,
                       ),
-                ],
-              ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
   }
-  Padding Feed(BuildContext context, String showcasename, String showcaseabout,
+}
+
+Padding Feed(BuildContext context, String showcasename, String showcaseabout,
     String showcaseprofile, List<String> showcaseImages) {
   return Padding(
     padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
@@ -151,18 +163,13 @@ class mobileSection2p extends StatelessWidget {
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            
-                              Text(
-                                showcasename,
-                                style: textMember(),
-                              ),
-                            
-                            Container(
-                              width: MediaQuery.of(context).size.width*0.5,
-                              child: Text(
-                                showcaseabout,
-                                style: brown(),
-                              ),
+                            Text(
+                              showcasename,
+                              style: TextMember(),
+                            ),
+                            Text(
+                              showcaseabout,
+                              style: Brown(),
                             ),
                           ],
                         ),
@@ -226,7 +233,7 @@ class mobileSection2p extends StatelessWidget {
 
 Widget _buildImageLayout(BuildContext context, List<String> images) {
   Widget _buildImageContainer(
-      String imagePath, double widthFactor, double heightFactor, int index) {
+      String imagePath, double widthFactor, double heightFactor) {
     return Padding(
       padding: EdgeInsets.all(5), // Adding padding around each image
       child: Container(
@@ -238,18 +245,15 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
         ),
         child: MouseRegion(
           cursor: SystemMouseCursors.click,
-          child: Hero(
-            tag: 'imageHero-$index',
-            child: FullScreenWidget(
-              disposeLevel: DisposeLevel.Low,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: Image.asset(
-                  imagePath,
-                  width: double.infinity,
-                  height: double.infinity,
-                  fit: BoxFit.cover,
-                ),
+          child: FullScreenWidget(
+            disposeLevel: DisposeLevel.Low,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8),
+              child: Image.asset(
+                imagePath,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover,
               ),
             ),
           ),
@@ -264,16 +268,16 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
         mainAxisSize: MainAxisSize.max,
         children: [
           _buildImageContainer(
-              images[0], 0.735, 0.3,0), // Larger container for one image
+              images[0], 0.4, 0.3), // Larger container for one image
         ],
       );
     case 2:
       return Row(
         mainAxisSize: MainAxisSize.max,
         children: [
-          _buildImageContainer(images[0], 0.3675,
-              0.3,0), // Slightly larger containers for two images
-          _buildImageContainer(images[1], 0.3675, 0.3,1),
+          _buildImageContainer(images[0], 0.2,
+              0.3), // Slightly larger containers for two images
+          _buildImageContainer(images[1], 0.2, 0.3),
         ],
       );
     case 3:
@@ -284,9 +288,9 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
             mainAxisSize: MainAxisSize.max,
             children: [
               _buildImageContainer(
-                  images[0], 0.245, 0.3,0), // Adjusted size for three images
-              _buildImageContainer(images[1], 0.245, 0.3,1),
-              _buildImageContainer(images[2], 0.245, 0.3,2),
+                  images[0], 0.13, 0.3), // Adjusted size for three images
+              _buildImageContainer(images[1], 0.13, 0.3),
+              _buildImageContainer(images[2], 0.13, 0.3),
             ],
           ),
           
@@ -302,15 +306,15 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  _buildImageContainer(images[1], 0.3675, 0.15,0),
-                  _buildImageContainer(images[2], 0.3675, 0.15,1),
+                  _buildImageContainer(images[1], 0.2, 0.15),
+                  _buildImageContainer(images[2], 0.2, 0.15),
                 ],
               ),
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  _buildImageContainer(images[3], 0.3675, 0.15,3),
-                  _buildImageContainer(images[4], 0.3675, 0.15,4),
+                  _buildImageContainer(images[3], 0.2, 0.15),
+                  _buildImageContainer(images[4], 0.2, 0.15),
                 ],
               ),
             ],
@@ -325,114 +329,143 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
             mainAxisSize: MainAxisSize.max,
             children: [
               _buildImageContainer(
-                  images[0], 0.245, 0.3,0), // For more than 4 images
+                  images[0], 0.18, 0.31), // For more than 4 images
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  _buildImageContainer(images[1], 0.245, 0.15,1),
-                  _buildImageContainer(images[2], 0.245, 0.15,2),
+                  _buildImageContainer(images[1], 0.11, 0.15),
+                  _buildImageContainer(images[2], 0.11, 0.15),
                 ],
               ),
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  _buildImageContainer(images[3], 0.245, 0.15,3),
-                  _buildImageContainer(images[4], 0.245, 0.15,4),
+                  _buildImageContainer(images[3], 0.11, 0.15),
+                  _buildImageContainer(images[4], 0.11, 0.15),
                 ],
               ),
             ],
           )
         ],
       );
-  }}
+  }
+}
 
-  Padding Member() {
-    return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-      child: Column(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 50,
-            height: 50,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFF4B39EF),
-                  Color(0xFF39D2C0),
-                ],
-                stops: [0, 1],
-                begin: AlignmentDirectional(0, -1),
-                end: AlignmentDirectional(0, 1),
-              ),
-              shape: BoxShape.circle,
+Padding Member() {
+  return Padding(
+    padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+    child: Column(
+      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              colors: [
+                Color(0xFF4B39EF),
+                Color(0xFF39D2C0),
+              ],
+              stops: [0, 1],
+              begin: AlignmentDirectional(0, -1),
+              end: AlignmentDirectional(0, 1),
             ),
-            child: Padding(
-              padding: EdgeInsets.all(1),
+            shape: BoxShape.circle,
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(1),
+            child: Container(
+              width: 48,
+              height: 48,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(
+                  color: Color(0xFF969595),
+                ),
+              ),
               child: Container(
-                width: 48,
-                height: 48,
+                width: 120,
+                height: 120,
+                clipBehavior: Clip.antiAlias,
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(
-                    color: Color(0xFF969595),
-                  ),
                 ),
-                child: Container(
-                  width: 120,
-                  height: 120,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                  ),
-                  child: Image.asset(
-                    'assets/images/profilep3.png',
-                    fit: BoxFit.cover,
-                  ),
+                child: Image.asset(
+                  'assets/images/profilep3.png',
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
-            child: Text(
-              'Emily',
-              style: textMember(),
-            ),
+        ),
+        Padding(
+          padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+          child: Text(
+            'Emily',
+            style: TextMember(),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
 
-  TextStyle textMember() {
-    return GoogleFonts.poppins(
-      letterSpacing: 0,
-      fontWeight: FontWeight.w600,
-      fontSize: 12,
-      decoration: TextDecoration.none,
-      color: Colors.black,
-    );
-  }
+TextStyle TextMember() {
+  return GoogleFonts.poppins(
+    letterSpacing: 0,
+    fontWeight: FontWeight.w600,
+    fontSize: 12,
+    decoration: TextDecoration.none,
+    color: Colors.black,
+  );
+}
 
-  TextStyle styleb() {
-    return GoogleFonts.poppins(
-      fontSize: 18,
-      letterSpacing: 0,
-      fontWeight: FontWeight.w600,
-      decoration: TextDecoration.none,
-      color: Colors.black,
-    );
-  }
+TextStyle Styleb() {
+  return GoogleFonts.poppins(
+    fontSize: 18,
+    letterSpacing: 0,
+    fontWeight: FontWeight.w600,
+    decoration: TextDecoration.none,
+    color: Colors.black,
+  );
+}
 
-  TextStyle brown() {
-    return GoogleFonts.poppins(
+TextStyle Brown() {
+  return GoogleFonts.poppins(
       color: Color.fromARGB(190, 150, 149, 149),
       letterSpacing: 0,
       fontSize: 12,
       decoration: TextDecoration.none,
-      fontWeight: FontWeight.w400,
-    );
-  }
+      fontWeight: FontWeight.w400);
+}
+
+Widget _buildImageContainer(BuildContext context, String imagePath,
+    double widthFactor, double heightFactor) {
+  return Padding(
+    padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+    child: Container(
+      width: MediaQuery.sizeOf(context).width * widthFactor,
+      height: MediaQuery.sizeOf(context).height * heightFactor,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: MouseRegion(
+        cursor: SystemMouseCursors.click,
+        child: FullScreenWidget(
+          disposeLevel: DisposeLevel.Low,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(8),
+            child: Image.asset(
+              imagePath,
+              width: 300,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+      ),
+    ),
+  );
 }

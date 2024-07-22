@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Profile.dart';
+import 'package:flutter_application_1/Model/Showcase.dart';
 import 'package:flutter_application_1/Model/company.dart';
 
 class search1 extends StatefulWidget {
@@ -66,11 +67,22 @@ class _search1State extends State<search1> {
       about:
           'NS APPS INNOVATION LLP is an innovative initiative by the Bihar government aimed at fostering the growth of startups in the region. Located in the heart of Bihar, B-Hub provides budding entrepreneurs with state-of-the-art infrastructure, mentorship, and access to a network of investors and industry experts.',
     );
+    ShowcaseModel showcaseModel = ShowcaseModel(
+      id: '1',
+      name: 'Summer Collection',
+      description: 'A showcase of our latest summer apparel.',
+      profileImage: 'assets/images/profile.png',
+      images: [
+        'assets/images/image1.jpg',
+        'assets/images/image2.jpg',
+        'assets/images/image3.jpg',
+      ],
+    );
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => Profile(companyMod),
+        builder: (context) => Profile(companyMod, showcaseModel),
       ),
     );
   }
@@ -118,7 +130,8 @@ class _search1State extends State<search1> {
                           ),
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 20),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 20),
                               child: TextField(
                                 controller: _search1Controller,
                                 decoration: const InputDecoration(
@@ -143,7 +156,8 @@ class _search1State extends State<search1> {
                     ),
                     if (_search1Controller.text.isNotEmpty && showListView)
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(4, 10, 0, 6),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(4, 10, 0, 6),
                         child: Container(
                           width: 300,
                           decoration: BoxDecoration(
@@ -183,11 +197,10 @@ class _search1State extends State<search1> {
                                   child: Container(
                                     decoration: BoxDecoration(
                                       color: _hoveredIndex == index
-                                        ? Colors.grey[200]
-                                        : Colors.transparent,
+                                          ? Colors.grey[200]
+                                          : Colors.transparent,
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    
                                     child: ListTile(
                                       title: Text(_filteredJobs[index]),
                                     ),

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Profile/1stsection.dart';
 import 'package:flutter_application_1/Desktop/Profile/2ndsection.dart';
+import 'package:flutter_application_1/Desktop/Profile/2ndsection1.dart';
 import 'package:flutter_application_1/Desktop/Profile/3rdsection.dart';
+import 'package:flutter_application_1/Model/Showcase.dart';
 import 'package:flutter_application_1/Model/company.dart';
 
-
 class MainProfile1Widget extends StatelessWidget {
-  final CompanyModel companyModel;
-  MainProfile1Widget(this.companyModel);
+  ShowcaseModel showcaseModel;
+  CompanyModel companyModel;
+  MainProfile1Widget(this.companyModel,this.showcaseModel);
+
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +25,8 @@ class MainProfile1Widget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 section1p(companyModel),
-                section2p(),
+                
+                Section2P(showcaseModel: showcaseModel),
                 section3p(),
               ],
             ),
@@ -32,3 +36,4 @@ class MainProfile1Widget extends StatelessWidget {
     );
   }
 }
+

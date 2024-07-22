@@ -6,7 +6,7 @@ import 'package:flutter_application_1/Mobile/Profile/deldialogue.dart';
 import 'package:full_screen_image/full_screen_image.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class section2p extends StatelessWidget {
+class section2p1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: 8,
