@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Profile.dart';
+import 'package:flutter_application_1/Model/Services.dart';
 import 'package:flutter_application_1/Model/Showcase.dart';
 import 'package:flutter_application_1/Model/company.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -306,11 +307,19 @@ class _CompanyItemState extends State<companyItem> {
         'assets/images/pic3.png',
       ],
     );
+ServiceModel serviceModel = ServiceModel(
+  id: '2',
+  image: 'assets/images/webdev.png',
+  title: 'Web development',
+  titleDesc: 'Our website development company specializes in creating custom, user-friendly websites tailored to your business needs, ensuring a seamless online presence.',
+);
+  // Add more services here
+
 
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
-        MaterialPageRoute(builder: (((context) => Profile(companyMod,showcaseModel)))),
+        MaterialPageRoute(builder: (((context) => Profile(companyMod,showcaseModel,serviceModel)))),
       ),
       child: Padding(
         padding: const EdgeInsetsDirectional.only(start: 10, end: 10),

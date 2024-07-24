@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Profile.dart';
+import 'package:flutter_application_1/Model/Services.dart';
 import 'package:flutter_application_1/Model/Showcase.dart';
 import 'package:flutter_application_1/Model/company.dart';
 
@@ -71,18 +72,26 @@ class _search1State extends State<search1> {
       id: '1',
       name: 'Summer Collection',
       description: 'A showcase of our latest summer apparel.',
-      profileImage: 'assets/images/profile.png',
+      profileImage: 'assets/images/profile1.png',
       images: [
-        'assets/images/image1.jpg',
-        'assets/images/image2.jpg',
-        'assets/images/image3.jpg',
+        'assets/images/pic1.png',
+        'assets/images/pic2.png',
+        'assets/images/pic3.png',
       ],
+    );
+
+    ServiceModel serviceModel = ServiceModel(
+      id: '2',
+      image: 'assets/images/webdev.png',
+      title: 'Web development',
+      titleDesc:
+          'Our website development company specializes in creating custom, user-friendly websites tailored to your business needs, ensuring a seamless online presence.',
     );
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => Profile(companyMod, showcaseModel),
+        builder: (context) => Profile(companyMod, showcaseModel, serviceModel),
       ),
     );
   }

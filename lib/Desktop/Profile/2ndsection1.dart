@@ -275,8 +275,8 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
       return Row(
         mainAxisSize: MainAxisSize.max,
         children: [
-          _buildImageContainer(images[0], 0.2,
-              0.3), // Slightly larger containers for two images
+          _buildImageContainer(
+              images[0], 0.2, 0.3), // Slightly larger containers for two images
           _buildImageContainer(images[1], 0.2, 0.3),
         ],
       );
@@ -293,7 +293,6 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
               _buildImageContainer(images[2], 0.13, 0.3),
             ],
           ),
-          
         ],
       );
     case 4:

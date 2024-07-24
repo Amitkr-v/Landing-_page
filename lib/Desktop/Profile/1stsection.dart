@@ -182,9 +182,12 @@ class section1p extends StatelessWidget {
                                     throw 'Could not launch $url';
                                   }
                                 },
-                                child: Text(
-                                  companyModel.website,
-                                  style: Textstyle(),
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width*0.12,
+                                  child: Text(
+                                    companyModel.website,
+                                    style: Textstyle(),
+                                  ),
                                 ),
                               ),
                             ),

@@ -1,10 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_application_1/Desktop/Profile/3rdsecdialog.dart';
+import 'package:flutter_application_1/Model/Services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class mobileSection3p extends StatelessWidget {
+  final ServiceModel serviceModel;
+  mobileSection3p(this.serviceModel);
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
@@ -20,25 +25,28 @@ class mobileSection3p extends StatelessWidget {
               style: Styleb(),
             ),
           ),
-          servicedata(
+          
+                        _serviceData(
               context,
-              'assets/images/appdevelop.png',
-              'App development',
-              'Our website development company specializes in creating custom, user-friendly websites tailored to your business needs, ensuring a seamless online presence.'),
-          servicedata(context, 'assets/images/webdev.png', 'Web development',
-              'Our website development company specializes in creating custom, user-friendly websites tailored to your business needs, ensuring a seamless online presence.')
+              serviceModel.image,
+              serviceModel.title,
+              serviceModel.titleDesc,
+            ),
         ],
       ),
     );
   }
 
-  MouseRegion servicedata(
-      BuildContext context, String image, String title, String about) {
+  MouseRegion _serviceData(
+      BuildContext context, String image, String title, String titleDesc) {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
         onTap: () {
-          _showContactDialog(context);
+           showDialog(
+            context: context,
+            builder: (BuildContext context) => DialogSec3(),
+          );
         },
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 0),
@@ -88,7 +96,7 @@ class mobileSection3p extends StatelessWidget {
                       ),
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(20, 5, 5, 5),
-                        child: Text(about, style: Brown()),
+                        child: Text(titleDesc, style: Brown()),
                       ),
                     ],
                   ),
@@ -184,163 +192,4 @@ class mobileSection3p extends StatelessWidget {
   }
 }
 
-void _showContactDialog(BuildContext context) {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController messageController = TextEditingController();
 
-  showDialog(
-    context: context,
-    builder: (BuildContext context) {
-      bool isDownloadHovered = true;
-      return Dialog(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20.0),
-        ),
-        child: Container(
-          width: MediaQuery.of(context).size.width * 0.8,
-          height: MediaQuery.of(context).size.height * 0.8,
-          child: Stack(
-            children: [
-              Positioned(
-                top: -100,
-                left: 0,
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  child: Image.asset('assets/images/el.png'),
-                ),
-              ),
-              Positioned(
-                bottom: -20,
-                right: -30,
-                child: Container(
-                  width: MediaQuery.of(context).size.width * 0.4,
-                  child: Image.asset('assets/images/el1.png'),
-                ),
-              ),
-              Center(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Avail Service',
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          color: Color(0xFFA08E8E),
-                        ),
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.6,
-                      height: MediaQuery.of(context).size.height * 0.1,
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
-                            20, 10, 20, 20),
-                        child: TextField(
-                          controller: emailController,
-                          decoration: InputDecoration(
-                            hintText: 'Email',
-                            hintStyle: TextStyle(
-                              color: Color(0xFF7E7E7E),
-                              letterSpacing: 0,
-                            ),
-                            border: InputBorder.none,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(
-                          color: Color(0xFFA08E8E),
-                        ),
-                      ),
-                      width: MediaQuery.of(context).size.width * 0.6,
-                      height: MediaQuery.of(context).size.height * 0.25,
-                      child: Padding(
-                        padding:
-                            const EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
-                        child: TextField(
-                          controller: messageController,
-                          decoration: InputDecoration(
-                            hintText: 'Your message...',
-                            hintStyle: TextStyle(
-                              color: Color(0xFF7E7E7E),
-                              letterSpacing: 0,
-                            ),
-                            border: InputBorder.none,
-                          ),
-                          maxLines: 4,
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    GestureDetector(
-                      onTap: () {
-                        Fluttertoast.showToast(
-                          msg:
-                              "You will be notified on your mail! Thank you for contacting us.",
-                          toastLength: Toast.LENGTH_LONG,
-                          gravity: ToastGravity.BOTTOM,
-                          backgroundColor: Colors.black,
-                          textColor: Colors.white,
-                          fontSize: 16.0,
-                        );
-                        Navigator.of(context).pop();
-                      },
-                      child: Container(
-                        width: 120,
-                        decoration: BoxDecoration(
-                          color: isDownloadHovered
-                              ? Color.fromARGB(255, 252, 110, 39)
-                              : Color(0xFFff5700),
-                          boxShadow: [
-                            BoxShadow(
-                              blurRadius: 2,
-                              color: Color.fromARGB(51, 237, 236, 236),
-                              offset: Offset(0, 2),
-                              spreadRadius: 2,
-                            ),
-                          ],
-                          borderRadius: BorderRadius.circular(10),
-                          shape: BoxShape.rectangle,
-                        ),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.all(12),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Submit',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: Color(0xFFFFFFFF),
-                                  letterSpacing: 0,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    },
-  );
-}

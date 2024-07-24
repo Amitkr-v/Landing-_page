@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Profile/newProfile.dart';
 import 'package:flutter_application_1/Mobile/Profile/profile.dart';
+import 'package:flutter_application_1/Model/Services.dart';
 import 'package:flutter_application_1/Model/Showcase.dart';
 import 'package:flutter_application_1/Model/company.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -8,7 +9,8 @@ import 'package:responsive_builder/responsive_builder.dart';
 class Profile extends StatelessWidget {
   final CompanyModel companyModel;
   final ShowcaseModel showcaseModel;
-  Profile(this.companyModel,this.showcaseModel);
+  final ServiceModel serviceModel;
+  Profile(this.companyModel, this.showcaseModel, this.serviceModel);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,9 +18,12 @@ class Profile extends StatelessWidget {
         body: SafeArea(
             top: true,
             child: ScreenTypeLayout.builder(
-              mobile: (BuildContext context) => Mobilelayout(companyModel,showcaseModel),
-              desktop: (BuildContext context) => DesktopLayout(companyModel,showcaseModel),
-              tablet: (BuildContext context) => TabletLayout(companyModel,showcaseModel),
+              mobile: (BuildContext context) =>
+                  Mobilelayout(companyModel, showcaseModel, serviceModel),
+              desktop: (BuildContext context) =>
+                  DesktopLayout(companyModel, showcaseModel, serviceModel),
+              tablet: (BuildContext context) =>
+                  TabletLayout(companyModel, showcaseModel, serviceModel),
             )),
       ),
     );
@@ -28,7 +33,8 @@ class Profile extends StatelessWidget {
 class DesktopLayout extends StatelessWidget {
   final CompanyModel companyModel;
   final ShowcaseModel showcaseModel;
-  DesktopLayout(this.companyModel,this.showcaseModel);
+  final ServiceModel serviceModel;
+  DesktopLayout(this.companyModel, this.showcaseModel, this.serviceModel);
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -43,7 +49,8 @@ class DesktopLayout extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    MainProfile1Widget(companyModel,showcaseModel),
+                    MainProfile1Widget(
+                        companyModel, showcaseModel, serviceModel),
                   ],
                 ),
               ),
@@ -58,7 +65,8 @@ class DesktopLayout extends StatelessWidget {
 class TabletLayout extends StatelessWidget {
   final CompanyModel companyModel;
   final ShowcaseModel showcaseModel;
-  TabletLayout(this.companyModel,this.showcaseModel);
+  final ServiceModel serviceModel;
+  TabletLayout(this.companyModel, this.showcaseModel, this.serviceModel);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -71,7 +79,7 @@ class TabletLayout extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    mobileProfile(companyModel,showcaseModel),
+                    mobileProfile(companyModel, showcaseModel, serviceModel),
                   ],
                 ),
               ),
@@ -86,7 +94,8 @@ class TabletLayout extends StatelessWidget {
 class Mobilelayout extends StatelessWidget {
   final CompanyModel companyModel;
   final ShowcaseModel showcaseModel;
-  Mobilelayout(this.companyModel,this.showcaseModel);
+  final ServiceModel serviceModel;
+  Mobilelayout(this.companyModel, this.showcaseModel, this.serviceModel);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -99,7 +108,7 @@ class Mobilelayout extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    mobileProfile(companyModel,showcaseModel),
+                    mobileProfile(companyModel, showcaseModel, serviceModel),
                   ],
                 ),
               ),

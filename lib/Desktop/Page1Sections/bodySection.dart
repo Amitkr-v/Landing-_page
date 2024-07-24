@@ -14,8 +14,13 @@ class _BodySectionState extends State<BodySection> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(90, 80, 90, 0),
+      padding: EdgeInsets.symmetric(
+        vertical: screenWidth*0.01,
+        horizontal: screenHeight*0.1
+      ),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
