@@ -54,7 +54,7 @@ class DialogSec3 extends StatelessWidget {
                         color: Color(0xFFA08E8E),
                       ),
                     ),
-                    width: MediaQuery.of(context).size.width * 0.20,
+                    width: MediaQuery.of(context).size.width * 0.26,
                     height: MediaQuery.of(context).size.height * 0.08,
                     child: Padding(
                       padding:
@@ -80,7 +80,7 @@ class DialogSec3 extends StatelessWidget {
                         color: Color(0xFFA08E8E),
                       ),
                     ),
-                    width: MediaQuery.of(context).size.width * 0.25,
+                    width: MediaQuery.of(context).size.width * 0.34,
                     height: MediaQuery.of(context).size.height * 0.15,
                     child: Padding(
                       padding:

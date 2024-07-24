@@ -34,7 +34,7 @@ class Bodym extends StatelessWidget {
                     text: 'Discover and ',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 35,
+                      fontSize: 38,
                       letterSpacing: 1.5,
                       fontWeight: FontWeight.w600,
                     ),
@@ -43,7 +43,7 @@ class Bodym extends StatelessWidget {
                     text: 'connect ',
                     style: GoogleFonts.poppins(
                         color: Color(0xFF5824ff), // Highlight color
-                        fontSize: 35,
+                        fontSize: 38,
                         letterSpacing: 1.5,
                         fontWeight: FontWeight.w600),
                   ),
@@ -51,7 +51,7 @@ class Bodym extends StatelessWidget {
                     text: 'with startups',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 35,
+                      fontSize: 38,
                       letterSpacing: 1.5,
                       fontWeight: FontWeight.w600,
                     ),
@@ -67,6 +67,7 @@ class Bodym extends StatelessWidget {
               padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
               child: Text(
                 'Connecting You to Bihars Brightest Startups\n',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0xFF2E2D2C),
                   letterSpacing: 1,

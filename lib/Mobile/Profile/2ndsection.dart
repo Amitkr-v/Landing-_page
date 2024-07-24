@@ -264,7 +264,7 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
         mainAxisSize: MainAxisSize.max,
         children: [
           _buildImageContainer(
-              images[0], 0.735, 0.3,0), // Larger container for one image
+              images[0], 0.735, 0.24,0), // Larger container for one image
         ],
       );
     case 2:
@@ -272,8 +272,8 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
         mainAxisSize: MainAxisSize.max,
         children: [
           _buildImageContainer(images[0], 0.3675,
-              0.3,0), // Slightly larger containers for two images
-          _buildImageContainer(images[1], 0.3675, 0.3,1),
+              0.24,0), // Slightly larger containers for two images
+          _buildImageContainer(images[1], 0.3675, 0.24,1),
         ],
       );
     case 3:
@@ -284,9 +284,14 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
             mainAxisSize: MainAxisSize.max,
             children: [
               _buildImageContainer(
-                  images[0], 0.245, 0.3,0), // Adjusted size for three images
-              _buildImageContainer(images[1], 0.245, 0.3,1),
-              _buildImageContainer(images[2], 0.245, 0.3,2),
+                  images[0], 0.3675, 0.254,10), // Adjusted size for three images
+              Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  _buildImageContainer(images[1], 0.3675, 0.12,3),
+                  _buildImageContainer(images[2], 0.3675, 0.12,4),
+                ],
+              ),
             ],
           ),
           
@@ -302,15 +307,15 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  _buildImageContainer(images[1], 0.3675, 0.15,0),
-                  _buildImageContainer(images[2], 0.3675, 0.15,1),
+                  _buildImageContainer(images[0], 0.3675, 0.12,0),
+                  _buildImageContainer(images[1], 0.3675, 0.12,1),
                 ],
               ),
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  _buildImageContainer(images[3], 0.3675, 0.15,3),
-                  _buildImageContainer(images[4], 0.3675, 0.15,4),
+                  _buildImageContainer(images[2], 0.3675, 0.12,3),
+                  _buildImageContainer(images[3], 0.3675, 0.12,4),
                 ],
               ),
             ],
@@ -325,19 +330,19 @@ Widget _buildImageLayout(BuildContext context, List<String> images) {
             mainAxisSize: MainAxisSize.max,
             children: [
               _buildImageContainer(
-                  images[0], 0.245, 0.3,0), // For more than 4 images
+                  images[0], 0.245, 0.255,0), // For more than 4 images
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  _buildImageContainer(images[1], 0.245, 0.15,1),
-                  _buildImageContainer(images[2], 0.245, 0.15,2),
+                  _buildImageContainer(images[1], 0.245, 0.12,1),
+                  _buildImageContainer(images[2], 0.245, 0.12,2),
                 ],
               ),
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  _buildImageContainer(images[3], 0.245, 0.15,3),
-                  _buildImageContainer(images[4], 0.245, 0.15,4),
+                  _buildImageContainer(images[3], 0.245, 0.12,3),
+                  _buildImageContainer(images[4], 0.245, 0.12,4),
                 ],
               ),
             ],

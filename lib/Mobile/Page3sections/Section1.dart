@@ -18,6 +18,7 @@ class Section1m extends StatelessWidget {
               Container(
                 width: MediaQuery.of(context).size.width * 0.9,
                 child: Text.rich(
+                  
                   TextSpan(children: [
                     TextSpan(
                       text: '\nExplore, ',
@@ -48,6 +49,7 @@ class Section1m extends StatelessWidget {
                       ),
                     )
                   ]),
+                  textAlign: TextAlign.center,
                 ),
               ),
             ],

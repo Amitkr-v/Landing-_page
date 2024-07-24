@@ -12,7 +12,7 @@ class ImageTextWidget1 extends StatelessWidget {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 20),
       child: Container(
-        width: MediaQuery.of(context).size.width*0.9,
+        width: MediaQuery.of(context).size.width * 0.9,
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -38,7 +38,7 @@ class ImageTextWidget1 extends StatelessWidget {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                   child: Container(
-                    width: MediaQuery.of(context).size.width*0.45,
+                    width: MediaQuery.of(context).size.width * 0.45,
                     child: Text(
                       t1,
                       style: TextStyle(
@@ -52,8 +52,7 @@ class ImageTextWidget1 extends StatelessWidget {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(20, 10, 0, 0),
                   child: Container(
-                    width: MediaQuery.of(context).size.width*0.45,
-
+                    width: MediaQuery.of(context).size.width * 0.45,
                     child: Text(
                       t2,
                       style: TextStyle(

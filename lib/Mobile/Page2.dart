@@ -305,6 +305,8 @@ class _CompanyItemState extends State<companyItem> {
         'assets/images/pic1.png',
         'assets/images/pic2.png',
         'assets/images/pic3.png',
+        'assets/images/pic3.png',
+        'assets/images/pic3.png',
       ],
     );
 ServiceModel serviceModel = ServiceModel(
