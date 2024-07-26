@@ -106,7 +106,7 @@ class Page4m extends StatelessWidget {
                               MaterialPageRoute(
                                   builder: (context) => HomeMain()),
                             ),
-                            child: text1('Home'),
+                            child: text1('HOME'),
                           )),
                       MouseRegion(
                           cursor: SystemMouseCursors.click,

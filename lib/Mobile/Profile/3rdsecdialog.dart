@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class DialogSec3 extends StatelessWidget {
+class MdialogSec3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final TextEditingController emailController = TextEditingController();
@@ -17,18 +17,18 @@ class DialogSec3 extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              top: -80,
+              top: 0,
               left: 0,
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.2,
+                width: MediaQuery.of(context).size.width * 0.3,
                 child: Image.asset('assets/images/el.png'),
               ),
             ),
             Positioned(
-              top: 50,
+              bottom: 50,
               right: -30,
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.2,
+                width: MediaQuery.of(context).size.width * 0.4,
                 child: Image.asset('assets/images/el1.png'),
               ),
             ),
@@ -54,11 +54,11 @@ class DialogSec3 extends StatelessWidget {
                         color: Color(0xFFA08E8E),
                       ),
                     ),
-                    width: MediaQuery.of(context).size.width * 0.26,
-                    height: MediaQuery.of(context).size.height * 0.08,
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.06,
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20, 8, 20, 20),
+                          const EdgeInsetsDirectional.fromSTEB(14, 14, 14, 14),
                       child: TextField(
                         controller: emailController,
                         decoration: InputDecoration(
@@ -69,6 +69,7 @@ class DialogSec3 extends StatelessWidget {
                           ),
                           border: InputBorder.none,
                         ),
+                        maxLines: 1,
                       ),
                     ),
                   ),
@@ -80,7 +81,7 @@ class DialogSec3 extends StatelessWidget {
                         color: Color(0xFFA08E8E),
                       ),
                     ),
-                    width: MediaQuery.of(context).size.width * 0.34,
+                    width: MediaQuery.of(context).size.width * 0.5,
                     height: MediaQuery.of(context).size.height * 0.15,
                     child: Padding(
                       padding:

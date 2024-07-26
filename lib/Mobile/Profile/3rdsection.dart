@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_application_1/Desktop/Profile/3rdsecdialog.dart';
+import 'package:flutter_application_1/Mobile/Profile/3rdsecdialog.dart';
 import 'package:flutter_application_1/Model/Services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -45,7 +46,7 @@ class mobileSection3p extends StatelessWidget {
         onTap: () {
            showDialog(
             context: context,
-            builder: (BuildContext context) => DialogSec3(),
+            builder: (BuildContext context) => MdialogSec3(),
           );
         },
         child: Padding(
