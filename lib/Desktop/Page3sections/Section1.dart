@@ -85,8 +85,9 @@ class _Section1State extends State<Section1> {
         Container(
           height: 350, // Fixed height for the PageView
           child: PageView(
+            physics: NeverScrollableScrollPhysics(),
             controller: _controller,
-            children:  [
+            children: [
               ImageTextWidget(
                 "Explore & Discover",
                 "Connect with Bihar's brightest startups based on various criteria and search options.",
@@ -109,13 +110,11 @@ class _Section1State extends State<Section1> {
         SmoothPageIndicator(
           controller: _controller,
           count: 3,
-          effect: const ScrollingDotsEffect(
-            dotWidth: 12.0,
-            dotHeight: 12.0,
-            strokeWidth: 1,
-            fixedCenter: true,
-            paintStyle: PaintingStyle.stroke,
-            dotColor: Colors.orange,
+          effect: WormEffect(
+            dotColor: Colors.grey,
+            dotWidth:10,
+            dotHeight:10,
+            activeDotColor: Color(0xFF102C57),
           ),
         ),
       ],
