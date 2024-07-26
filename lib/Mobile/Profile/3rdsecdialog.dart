@@ -20,7 +20,7 @@ class MdialogSec3 extends StatelessWidget {
               top: 0,
               left: 0,
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.3,
+                width: MediaQuery.of(context).size.width * 0.2,
                 child: Image.asset('assets/images/el.png'),
               ),
             ),
@@ -28,7 +28,7 @@ class MdialogSec3 extends StatelessWidget {
               bottom: 50,
               right: -30,
               child: Container(
-                width: MediaQuery.of(context).size.width * 0.4,
+                width: MediaQuery.of(context).size.width * 0.2,
                 child: Image.asset('assets/images/el1.png'),
               ),
             ),
@@ -58,7 +58,7 @@ class MdialogSec3 extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.06,
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(14, 14, 14, 14),
+                          const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 8),
                       child: TextField(
                         controller: emailController,
                         decoration: InputDecoration(

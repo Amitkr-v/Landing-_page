@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Desktop/Page3sections/ImageText.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -114,7 +113,7 @@ class _Section1State extends State<Section1> {
             dotColor: Colors.grey,
             dotWidth:10,
             dotHeight:10,
-            activeDotColor: Color(0xFF102C57),
+            activeDotColor: const Color(0xFF704FE6),
           ),
         ),
       ],
