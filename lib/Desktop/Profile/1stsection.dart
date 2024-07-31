@@ -84,6 +84,7 @@ class section1p extends StatelessWidget {
                                 EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                             child: Text(
                               companyModel.name,
+                              textAlign: TextAlign.center,
                               style: GoogleFonts.poppins(
                                 fontSize: 20,
                                 letterSpacing: 0,
@@ -97,6 +98,7 @@ class section1p extends StatelessWidget {
                             padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                             child: Text(
                               companyModel.address,
+                              textAlign: TextAlign.center,
                               style: Brown(),
                             ),
                           ),

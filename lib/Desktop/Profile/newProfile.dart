@@ -19,7 +19,9 @@ class MainProfile1Widget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
+      padding: EdgeInsets.symmetric(
+        horizontal: MediaQuery.of(context).size.width * 0.028,
+      ),
       child: SingleChildScrollView(
         child: Column(
           children: [
